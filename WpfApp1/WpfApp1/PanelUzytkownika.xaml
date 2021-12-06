@@ -1,0 +1,76 @@
+﻿<Window x:Class="PoliceApp.PanelUzytkownika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoliceApp"
+        mc:Ignorable="d"
+        Title="PanelUzytkownika" Height="584" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="DodgerBlue" Offset="1" />
+                <GradientStop Color="DarkBlue" Offset="0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle  HorizontalAlignment="Left" Height="531" Margin="32,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="717">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                    <GradientStop Color="DeepSkyBlue" Offset="1" />
+                    <GradientStop Color="RoyalBlue" Offset="0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="65,97,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+                FontSize="25" Click="Button_Click_Podwladni">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="65,180,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+                FontSize="25" Click="Button_Click_Regiony">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="65,260,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+                FontSize="25" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Panel Główny" HorizontalAlignment="Left" Margin="576,514,0,0" VerticalAlignment="Top" Width="173" Height="44" Background="CadetBlue"
+            FontSize="25" Click="Button_Click_Back">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="65,42,0,0" Height="50" Width="515"
+                   FontSize="35" FontStyle="Oblique"/>
+        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="65,342,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+            FontSize="25" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Zarządzanie Przestepstwami" HorizontalAlignment="Left" Margin="65,425,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+            FontSize="25" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+
+</Window>
