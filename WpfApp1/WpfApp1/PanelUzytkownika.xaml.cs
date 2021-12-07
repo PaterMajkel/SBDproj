@@ -47,5 +47,30 @@ namespace PoliceApp
         {
 
         }
+
+        private void Button_Click_Regiony(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Kartoteka(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Back(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Wykroczenia(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Przestepstwa(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -38,7 +38,7 @@
             </Button.Resources>
         </Button>
         <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="65,260,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-                FontSize="25" Click="Button_Click">
+                FontSize="25" Click="Button_Click_Kartoteka">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -56,7 +56,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="65,42,0,0" Height="50" Width="515"
                    FontSize="35" FontStyle="Oblique"/>
         <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="65,342,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-            FontSize="25" Click="Button_Click">
+            FontSize="25" Click="Button_Click_Wykroczenia">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -64,7 +64,7 @@
             </Button.Resources>
         </Button>
         <Button Content="Zarządzanie Przestepstwami" HorizontalAlignment="Left" Margin="65,425,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-            FontSize="25" Click="Button_Click">
+            FontSize="25" Click="Button_Click_Przestepstwa">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
