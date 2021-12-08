@@ -25,7 +25,7 @@ namespace PoliceApp
         List<Button> buttons;
         Uzytkownik uzytkownik;
         public DatabaseService databaseService = new DatabaseService();
-        public LoginPanel(ref Button button1,ref Button button2, ref Uzytkownik uzytkownik)
+        public LoginPanel(ref Button button1,ref Button button2, Uzytkownik uzytkownik)
         {
             this.uzytkownik = uzytkownik;
             buttons = new List<Button>();
@@ -47,7 +47,7 @@ namespace PoliceApp
             {
                 
                 buttons[0].IsEnabled = true;
-                if (x.Rola == "Admin")
+                if (x.Rola.ToUpper() == "ADMIN")
                     buttons[1].IsEnabled = true;
                 Close();
                 this.uzytkownik = x;

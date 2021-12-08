@@ -30,17 +30,17 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        /*public MainWindow(Uzytkownik uzytkownik)
+        public MainWindow(Uzytkownik uzytkownik)
         {
             if (uzytkownik.Rola == "Admin")
                 AdminPanel.IsEnabled=true;
             UserPanel.IsEnabled = true;
             InitializeComponent();
-        }*/
+        }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            Window loginPanel = new LoginPanel( ref UserPanel, ref AdminPanel, ref uzytkownik);
+            Window loginPanel = new LoginPanel( ref UserPanel, ref AdminPanel, uzytkownik);
             loginPanel.Show();
 
         }

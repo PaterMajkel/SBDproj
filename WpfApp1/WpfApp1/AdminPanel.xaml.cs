@@ -30,9 +30,9 @@ namespace PoliceApp
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
+            Window main=new MainWindow(uzytkownik);
+            main.Show();
             this.Close();
-            //Window main=new MainWindow(uzytkownik);
-            //main.Show();
         }
 
         private void Button_Click_Radiowozy(object sender, RoutedEventArgs e)
