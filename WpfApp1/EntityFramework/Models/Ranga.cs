@@ -10,7 +10,7 @@ namespace EntityFramework.Models
     public class Ranga
     {
         [Key]
-        public int ID_rangi { get; set; }
+        public int RangaId { get; set; }
         public string Nazwa { get; set; }
         public double Pensja { get; set; }
     }

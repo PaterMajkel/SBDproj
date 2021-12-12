@@ -24,7 +24,7 @@
         </Rectangle>
         <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.jpg" />
         <Label x:Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="734,118,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="716,296,0,0" VerticalAlignment="Top" Height="30" Width="43" Click="Button_Click_DodajOrEdytuj"/>
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="716,296,0,0" VerticalAlignment="Top" Height="30" Width="43" Click="Button_Click_DodajOrEdytuj"/>
         <Button Content="Usuń" Margin="776,443,55,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Height="29"/>
         <Label Content="Panel zarządzania komisariatami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
@@ -46,8 +46,8 @@
         <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="716,163,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Adres_TextChanged"/>
         <ComboBox Name="MiastoBox" HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxMiasto_SelectionChanged"/>
         <ComboBox Name="RegionBox" HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxRegion_SelectionChanged"/>
-        <Button Content="Edytuj" Margin="644,443,187,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"/>
-        <Button Content="Zatrzymaj" Visibility="Hidden" HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="31" Width="61"/>
+        <Button x:Name="EditButton" Content="Edytuj" Margin="644,443,187,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"/>
+        <Button x:Name="Abort" Content="Zatrzymaj" Visibility="Hidden"  HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="31" Width="61"/>
 
     </Grid>
 </Page>

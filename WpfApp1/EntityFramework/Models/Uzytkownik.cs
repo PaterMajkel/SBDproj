@@ -10,13 +10,13 @@ namespace EntityFramework.Models
     public class Uzytkownik
     {
         [Key]
-        public int ID_uzytkownika { get; set; }
+        public int UzytkownikId { get; set; }
 
         public string Rola { get; set; }
         public string Login { get; set; }
 
         public string Password { get; set; }
-        public int? ID_policjanta { get; set; }
+        public int? PolicjantId { get; set; }
         public Policjant Policjant { get; set; }
     }
 }

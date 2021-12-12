@@ -10,7 +10,7 @@ namespace EntityFramework.Models
     public class Miasto
     {
         [Key]
-        public int ID_miasta { get; set; }
+        public int MiastoId { get; set; }
         public string Nazwa { get; set; }
     }
 }

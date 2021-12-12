@@ -48,7 +48,7 @@ namespace EntityFramework.Services
         {
             //do zrobienia wciaz -> przykladowe zapytanie do podpatrzenia sb
             var query = from x in _context.Kartotekas
-                        where x.ID_osoby == id
+                        where x.KartotekaId == id
                         select x;
             var y = _context.Kartotekas.FromSqlRaw($"select * from * where id={id}");
             return query.ToList();
@@ -61,18 +61,20 @@ namespace EntityFramework.Services
             return uzytkownik;
         }
         //xD kocham SQL ;* od majkela
-        public ICollection<Komenda_Miasto_Region> GetKomendas()
+        public ICollection<Komenda> GetKomendas()
         {
-            return _context.Komendas
+            /* Tworzenie kwerendy
+             * return _context.Komendas
                 .Join(_context.Miastos.Join(_context.Region_Miastas, miasto=>miasto.ID_miasta, region=>region.ID_miasta, (miasto, region) => new { ID=region.ID_regionu, Nazwa_regionu= region.Nazwa, Nazwa_miasta = miasto.Nazwa, Stopien_Zagrozenia = region.Stopien_zagrozenia })
                 , komenda=>komenda.ID_regionu, _a=>_a.ID, (komenda, _a) => new Komenda_Miasto_Region { ID_komendy = komenda.ID_komendy, ID_regionu=komenda.ID_regionu, Nazwa_regionu=_a.Nazwa_regionu, Nazwa_miasta=_a.Nazwa_miasta, Stopien_zagrozenia=_a.Stopien_Zagrozenia, Adres=komenda.Adres} )
-                .ToList();
+                .ToList();*/
+            return _context.Komendas.Include(k => k.Region_Miasta).ThenInclude(kr=>kr.Miasto).ToList();
         }
-        public void DeleteKomendas(ICollection<Komenda_Miasto_Region> data)
+        public void DeleteKomendas(ICollection<Komenda> data)
         {
             foreach(var element in data)
             {
-                var temp = _context.Komendas.Find(element.ID_komendy);
+                var temp = _context.Komendas.Find(element.KomendaId);
                 if (temp != null)
                     _context.Remove(temp);
             }
@@ -86,7 +88,7 @@ namespace EntityFramework.Services
 
         public ICollection<Region_Miasta> getRegionsOfMiasto(Miasto miasto)
         {
-            return _context.Region_Miastas.Where(r => r.ID_miasta == miasto.ID_miasta).ToList();
+            return _context.Region_Miastas.Where(r => r.MiastoId == miasto.MiastoId).ToList();
         }
 
         public void AddKomenda(Komenda komenda)

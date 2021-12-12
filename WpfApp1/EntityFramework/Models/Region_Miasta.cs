@@ -10,8 +10,8 @@ namespace EntityFramework.Models
     public class Region_Miasta
     {
         [Key]
-        public int ID_regionu { get; set; }
-        public int ID_miasta { get; set; }
+        public int Region_MiastaId { get; set; }
+        public int MiastoId { get; set; }
         public Miasto Miasto { get; set; }
         public string Nazwa { get; set; }
         public string Stopien_zagrozenia { get; set; }

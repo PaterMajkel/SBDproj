@@ -10,7 +10,7 @@ namespace EntityFramework.Models
     public class Kartoteka
     {
         [Key]
-        public int ID_osoby { get; set; }
+        public int KartotekaId { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public int Wiek { get; set; }

@@ -4,14 +4,16 @@ using EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntityFramework.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    partial class EFDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211212185429_IsItDueWrongConvention")]
+    partial class IsItDueWrongConvention
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace EntityFramework.Migrations
 
             modelBuilder.Entity("EntityFramework.Models.Kartoteka", b =>
                 {
-                    b.Property<int>("KartotekaId")
+                    b.Property<int>("ID_osoby")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -38,14 +40,14 @@ namespace EntityFramework.Migrations
                     b.Property<byte[]>("Zdjecie")
                         .HasColumnType("varbinary(max)");
 
-                    b.HasKey("KartotekaId");
+                    b.HasKey("ID_osoby");
 
                     b.ToTable("Kartotekas");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Komenda", b =>
                 {
-                    b.Property<int>("KomendaId")
+                    b.Property<int>("ID_komendy")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -53,75 +55,78 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Adres")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Region_MiastaId")
+                    b.Property<int>("ID_regionu")
                         .HasColumnType("int");
 
-                    b.HasKey("KomendaId");
+                    b.Property<int?>("Region_MiastaID_regionu")
+                        .HasColumnType("int");
 
-                    b.HasIndex("Region_MiastaId");
+                    b.HasKey("ID_komendy");
+
+                    b.HasIndex("Region_MiastaID_regionu");
 
                     b.ToTable("Komendas");
 
                     b.HasData(
                         new
                         {
-                            KomendaId = 1,
+                            ID_komendy = 1,
                             Adres = "Muchomorska 9",
-                            Region_MiastaId = 1
+                            ID_regionu = 1
                         },
                         new
                         {
-                            KomendaId = 2,
+                            ID_komendy = 2,
                             Adres = "Zawadiaków 14",
-                            Region_MiastaId = 2
+                            ID_regionu = 2
                         },
                         new
                         {
-                            KomendaId = 3,
+                            ID_komendy = 3,
                             Adres = "Mirosławska 15",
-                            Region_MiastaId = 4
+                            ID_regionu = 4
                         },
                         new
                         {
-                            KomendaId = 4,
+                            ID_komendy = 4,
                             Adres = "Piątków 21/7",
-                            Region_MiastaId = 5
+                            ID_regionu = 5
                         },
                         new
                         {
-                            KomendaId = 5,
+                            ID_komendy = 5,
                             Adres = "Miłosierdzia Pańskiego 2137",
-                            Region_MiastaId = 6
+                            ID_regionu = 6
                         },
                         new
                         {
-                            KomendaId = 6,
+                            ID_komendy = 6,
                             Adres = "Obi-Wana Kenobiego 3",
-                            Region_MiastaId = 7
+                            ID_regionu = 7
                         },
                         new
                         {
-                            KomendaId = 7,
+                            ID_komendy = 7,
                             Adres = "Plackowa 98",
-                            Region_MiastaId = 8
+                            ID_regionu = 8
                         },
                         new
                         {
-                            KomendaId = 8,
+                            ID_komendy = 8,
                             Adres = "Iglasta 41",
-                            Region_MiastaId = 3
+                            ID_regionu = 3
                         },
                         new
                         {
-                            KomendaId = 9,
+                            ID_komendy = 9,
                             Adres = "Chrobrego 21",
-                            Region_MiastaId = 9
+                            ID_regionu = 9
                         });
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Miasto", b =>
                 {
-                    b.Property<int>("MiastoId")
+                    b.Property<int>("ID_miasta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -129,61 +134,61 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Nazwa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MiastoId");
+                    b.HasKey("ID_miasta");
 
                     b.ToTable("Miastos");
 
                     b.HasData(
                         new
                         {
-                            MiastoId = 1,
+                            ID_miasta = 1,
                             Nazwa = "Białystok"
                         },
                         new
                         {
-                            MiastoId = 2,
+                            ID_miasta = 2,
                             Nazwa = "Kraków"
                         },
                         new
                         {
-                            MiastoId = 3,
+                            ID_miasta = 3,
                             Nazwa = "Warszawa"
                         },
                         new
                         {
-                            MiastoId = 4,
+                            ID_miasta = 4,
                             Nazwa = "Rzeszów"
                         },
                         new
                         {
-                            MiastoId = 5,
+                            ID_miasta = 5,
                             Nazwa = "Łódź"
                         },
                         new
                         {
-                            MiastoId = 6,
+                            ID_miasta = 6,
                             Nazwa = "Gdańsk"
                         },
                         new
                         {
-                            MiastoId = 7,
+                            ID_miasta = 7,
                             Nazwa = "Katowice"
                         },
                         new
                         {
-                            MiastoId = 8,
+                            ID_miasta = 8,
                             Nazwa = "Wrocław"
                         },
                         new
                         {
-                            MiastoId = 9,
+                            ID_miasta = 9,
                             Nazwa = "Poznań"
                         });
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Patrol", b =>
                 {
-                    b.Property<int>("PatrolId")
+                    b.Property<int>("ID_patrolu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -200,52 +205,64 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Godzina_zakonczenia")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PolicjantId")
+                    b.Property<int>("ID_policjanta")
                         .HasColumnType("int");
 
-                    b.Property<int>("RadiowozId")
+                    b.Property<int>("ID_radiowozu")
                         .HasColumnType("int");
 
-                    b.HasKey("PatrolId");
+                    b.Property<int?>("PolicjantID_policjanta")
+                        .HasColumnType("int");
 
-                    b.HasIndex("PolicjantId");
+                    b.Property<int?>("RadiowozID_radiowozu")
+                        .HasColumnType("int");
 
-                    b.HasIndex("RadiowozId");
+                    b.HasKey("ID_patrolu");
+
+                    b.HasIndex("PolicjantID_policjanta");
+
+                    b.HasIndex("RadiowozID_radiowozu");
 
                     b.ToTable("Patrols");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Policjant", b =>
                 {
-                    b.Property<int>("PolicjantId")
+                    b.Property<int>("ID_policjanta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ID_komendy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ID_rangi")
+                        .HasColumnType("int");
+
                     b.Property<string>("Imie")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KomendaId")
+                    b.Property<int?>("KomendaID_komendy")
                         .HasColumnType("int");
 
                     b.Property<string>("Nazwisko")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RangaId")
+                    b.Property<int?>("RangaID_rangi")
                         .HasColumnType("int");
 
-                    b.HasKey("PolicjantId");
+                    b.HasKey("ID_policjanta");
 
-                    b.HasIndex("KomendaId");
+                    b.HasIndex("KomendaID_komendy");
 
-                    b.HasIndex("RangaId");
+                    b.HasIndex("RangaID_rangi");
 
                     b.ToTable("Policjants");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Przestepstwo", b =>
                 {
-                    b.Property<int>("PrzestepstwoId")
+                    b.Property<int>("ID_przestepstwa")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -259,14 +276,14 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Nazwa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PrzestepstwoId");
+                    b.HasKey("ID_przestepstwa");
 
                     b.ToTable("Przestepstwos");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Radiowoz", b =>
                 {
-                    b.Property<int>("RadiowozId")
+                    b.Property<int>("ID_radiowozu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -280,14 +297,14 @@ namespace EntityFramework.Migrations
                     b.Property<int>("Rok_produkcji")
                         .HasColumnType("int");
 
-                    b.HasKey("RadiowozId");
+                    b.HasKey("ID_radiowozu");
 
                     b.ToTable("Radiowozs");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Ranga", b =>
                 {
-                    b.Property<int>("RangaId")
+                    b.Property<int>("ID_rangi")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -298,19 +315,22 @@ namespace EntityFramework.Migrations
                     b.Property<double>("Pensja")
                         .HasColumnType("float");
 
-                    b.HasKey("RangaId");
+                    b.HasKey("ID_rangi");
 
                     b.ToTable("Rangas");
                 });
 
             modelBuilder.Entity("EntityFramework.Models.Region_Miasta", b =>
                 {
-                    b.Property<int>("Region_MiastaId")
+                    b.Property<int>("ID_regionu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("MiastoId")
+                    b.Property<int>("ID_miasta")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MiastoID_miasta")
                         .HasColumnType("int");
 
                     b.Property<string>("Nazwa")
@@ -319,73 +339,73 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Stopien_zagrozenia")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Region_MiastaId");
+                    b.HasKey("ID_regionu");
 
-                    b.HasIndex("MiastoId");
+                    b.HasIndex("MiastoID_miasta");
 
                     b.ToTable("Region_Miastas");
 
                     b.HasData(
                         new
                         {
-                            Region_MiastaId = 1,
-                            MiastoId = 1,
+                            ID_regionu = 1,
+                            ID_miasta = 1,
                             Nazwa = "Piasta",
                             Stopien_zagrozenia = "Niski"
                         },
                         new
                         {
-                            Region_MiastaId = 2,
-                            MiastoId = 1,
+                            ID_regionu = 2,
+                            ID_miasta = 1,
                             Nazwa = "Skorupy",
                             Stopien_zagrozenia = "Wysoki"
                         },
                         new
                         {
-                            Region_MiastaId = 3,
-                            MiastoId = 5,
+                            ID_regionu = 3,
+                            ID_miasta = 5,
                             Nazwa = "Bałuty",
                             Stopien_zagrozenia = "Śmiertelny"
                         },
                         new
                         {
-                            Region_MiastaId = 4,
-                            MiastoId = 9,
+                            ID_regionu = 4,
+                            ID_miasta = 9,
                             Nazwa = "Paciorków",
                             Stopien_zagrozenia = "Średni"
                         },
                         new
                         {
-                            Region_MiastaId = 5,
-                            MiastoId = 4,
+                            ID_regionu = 5,
+                            ID_miasta = 4,
                             Nazwa = "Puchatkowo",
                             Stopien_zagrozenia = "Niski"
                         },
                         new
                         {
-                            Region_MiastaId = 6,
-                            MiastoId = 3,
+                            ID_regionu = 6,
+                            ID_miasta = 3,
                             Nazwa = "Niski Stok",
                             Stopien_zagrozenia = "Wysoki"
                         },
                         new
                         {
-                            Region_MiastaId = 7,
-                            MiastoId = 3,
+                            ID_regionu = 7,
+                            ID_miasta = 3,
                             Nazwa = "Średnia Górka",
                             Stopien_zagrozenia = "Niski"
                         },
                         new
                         {
-                            Region_MiastaId = 8,
-                            MiastoId = 8,
+                            ID_regionu = 8,
+                            ID_miasta = 8,
                             Nazwa = "Swoja",
                             Stopien_zagrozenia = "Średni"
                         },
                         new
                         {
-                            Region_MiastaId = 9,
-                            MiastoId = 7,
+                            ID_regionu = 9,
+                            ID_miasta = 7,
                             Nazwa = "Chmurzyńska Wieś",
                             Stopien_zagrozenia = "Śmiertelny"
                         });
@@ -393,10 +413,13 @@ namespace EntityFramework.Migrations
 
             modelBuilder.Entity("EntityFramework.Models.Uzytkownik", b =>
                 {
-                    b.Property<int>("UzytkownikId")
+                    b.Property<int>("ID_uzytkownika")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ID_policjanta")
+                        .HasColumnType("int");
 
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(max)");
@@ -404,22 +427,22 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PolicjantId")
+                    b.Property<int?>("PolicjantID_policjanta")
                         .HasColumnType("int");
 
                     b.Property<string>("Rola")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UzytkownikId");
+                    b.HasKey("ID_uzytkownika");
 
-                    b.HasIndex("PolicjantId");
+                    b.HasIndex("PolicjantID_policjanta");
 
                     b.ToTable("Uzytkowniks");
 
                     b.HasData(
                         new
                         {
-                            UzytkownikId = 1,
+                            ID_uzytkownika = 1,
                             Login = "Admin",
                             Password = "Admin",
                             Rola = "admin"
@@ -428,7 +451,7 @@ namespace EntityFramework.Migrations
 
             modelBuilder.Entity("EntityFramework.Models.Wykroczenia", b =>
                 {
-                    b.Property<int>("WykroczenieId")
+                    b.Property<int>("ID_wykroczenia")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -442,67 +465,67 @@ namespace EntityFramework.Migrations
                     b.Property<string>("Nazwa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("WykroczenieId");
+                    b.HasKey("ID_wykroczenia");
 
                     b.ToTable("Wykroczenias");
                 });
 
             modelBuilder.Entity("KartotekaPrzestepstwo", b =>
                 {
-                    b.Property<int>("KartotekasKartotekaId")
+                    b.Property<int>("KartotekasID_osoby")
                         .HasColumnType("int");
 
-                    b.Property<int>("PrzestepstwosPrzestepstwoId")
+                    b.Property<int>("PrzestepstwosID_przestepstwa")
                         .HasColumnType("int");
 
-                    b.HasKey("KartotekasKartotekaId", "PrzestepstwosPrzestepstwoId");
+                    b.HasKey("KartotekasID_osoby", "PrzestepstwosID_przestepstwa");
 
-                    b.HasIndex("PrzestepstwosPrzestepstwoId");
+                    b.HasIndex("PrzestepstwosID_przestepstwa");
 
                     b.ToTable("KartotekaPrzestepstwo");
                 });
 
             modelBuilder.Entity("KartotekaWykroczenia", b =>
                 {
-                    b.Property<int>("KartotekasKartotekaId")
+                    b.Property<int>("KartotekasID_osoby")
                         .HasColumnType("int");
 
-                    b.Property<int>("WykroczeniasWykroczenieId")
+                    b.Property<int>("WykroczeniasID_wykroczenia")
                         .HasColumnType("int");
 
-                    b.HasKey("KartotekasKartotekaId", "WykroczeniasWykroczenieId");
+                    b.HasKey("KartotekasID_osoby", "WykroczeniasID_wykroczenia");
 
-                    b.HasIndex("WykroczeniasWykroczenieId");
+                    b.HasIndex("WykroczeniasID_wykroczenia");
 
                     b.ToTable("KartotekaWykroczenia");
                 });
 
             modelBuilder.Entity("PolicjantPrzestepstwo", b =>
                 {
-                    b.Property<int>("PolicjantsPolicjantId")
+                    b.Property<int>("PolicjantsID_policjanta")
                         .HasColumnType("int");
 
-                    b.Property<int>("PrzestepstwosPrzestepstwoId")
+                    b.Property<int>("PrzestepstwosID_przestepstwa")
                         .HasColumnType("int");
 
-                    b.HasKey("PolicjantsPolicjantId", "PrzestepstwosPrzestepstwoId");
+                    b.HasKey("PolicjantsID_policjanta", "PrzestepstwosID_przestepstwa");
 
-                    b.HasIndex("PrzestepstwosPrzestepstwoId");
+                    b.HasIndex("PrzestepstwosID_przestepstwa");
 
                     b.ToTable("PolicjantPrzestepstwo");
                 });
 
             modelBuilder.Entity("PolicjantWykroczenia", b =>
                 {
-                    b.Property<int>("PolicjantsPolicjantId")
+                    b.Property<int>("PolicjantsID_policjanta")
                         .HasColumnType("int");
 
-                    b.Property<int>("WykroczeniasWykroczenieId")
+                    b.Property<int>("WykroczeniasID_wykroczenia")
                         .HasColumnType("int");
 
-                    b.HasKey("PolicjantsPolicjantId", "WykroczeniasWykroczenieId");
+                    b.HasKey("PolicjantsID_policjanta", "WykroczeniasID_wykroczenia");
 
-                    b.HasIndex("WykroczeniasWykroczenieId");
+                    b.HasIndex("WykroczeniasID_wykroczenia");
 
                     b.ToTable("PolicjantWykroczenia");
                 });
@@ -511,9 +534,7 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Region_Miasta", "Region_Miasta")
                         .WithMany()
-                        .HasForeignKey("Region_MiastaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Region_MiastaID_regionu");
 
                     b.Navigation("Region_Miasta");
                 });
@@ -522,15 +543,11 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Policjant", "Policjant")
                         .WithMany("Patrols")
-                        .HasForeignKey("PolicjantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PolicjantID_policjanta");
 
                     b.HasOne("EntityFramework.Models.Radiowoz", "Radiowoz")
                         .WithMany()
-                        .HasForeignKey("RadiowozId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RadiowozID_radiowozu");
 
                     b.Navigation("Policjant");
 
@@ -541,15 +558,11 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Komenda", "Komenda")
                         .WithMany()
-                        .HasForeignKey("KomendaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("KomendaID_komendy");
 
                     b.HasOne("EntityFramework.Models.Ranga", "Ranga")
                         .WithMany()
-                        .HasForeignKey("RangaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RangaID_rangi");
 
                     b.Navigation("Komenda");
 
@@ -560,9 +573,7 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Miasto", "Miasto")
                         .WithMany()
-                        .HasForeignKey("MiastoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MiastoID_miasta");
 
                     b.Navigation("Miasto");
                 });
@@ -571,7 +582,7 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Policjant", "Policjant")
                         .WithMany()
-                        .HasForeignKey("PolicjantId");
+                        .HasForeignKey("PolicjantID_policjanta");
 
                     b.Navigation("Policjant");
                 });
@@ -580,13 +591,13 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Kartoteka", null)
                         .WithMany()
-                        .HasForeignKey("KartotekasKartotekaId")
+                        .HasForeignKey("KartotekasID_osoby")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Models.Przestepstwo", null)
                         .WithMany()
-                        .HasForeignKey("PrzestepstwosPrzestepstwoId")
+                        .HasForeignKey("PrzestepstwosID_przestepstwa")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -595,13 +606,13 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Kartoteka", null)
                         .WithMany()
-                        .HasForeignKey("KartotekasKartotekaId")
+                        .HasForeignKey("KartotekasID_osoby")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Models.Wykroczenia", null)
                         .WithMany()
-                        .HasForeignKey("WykroczeniasWykroczenieId")
+                        .HasForeignKey("WykroczeniasID_wykroczenia")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -610,13 +621,13 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Policjant", null)
                         .WithMany()
-                        .HasForeignKey("PolicjantsPolicjantId")
+                        .HasForeignKey("PolicjantsID_policjanta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Models.Przestepstwo", null)
                         .WithMany()
-                        .HasForeignKey("PrzestepstwosPrzestepstwoId")
+                        .HasForeignKey("PrzestepstwosID_przestepstwa")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -625,13 +636,13 @@ namespace EntityFramework.Migrations
                 {
                     b.HasOne("EntityFramework.Models.Policjant", null)
                         .WithMany()
-                        .HasForeignKey("PolicjantsPolicjantId")
+                        .HasForeignKey("PolicjantsID_policjanta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Models.Wykroczenia", null)
                         .WithMany()
-                        .HasForeignKey("WykroczeniasWykroczenieId")
+                        .HasForeignKey("WykroczeniasID_wykroczenia")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

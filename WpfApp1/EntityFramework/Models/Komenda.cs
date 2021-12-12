@@ -10,10 +10,10 @@ namespace EntityFramework.Models
     public class Komenda
     {
         [Key]
-        public int ID_komendy { get; set; }
+        public int KomendaId { get; set; }
         public string Adres { get; set; }
-        public int ID_regionu { get; set; }
-        public Region_Miasta Region { get; set; }
+        public int Region_MiastaId { get; set; }
+        public Region_Miasta Region_Miasta { get; set; }
 
     }
 }

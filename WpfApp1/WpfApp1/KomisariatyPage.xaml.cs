@@ -24,7 +24,9 @@ namespace PoliceApp
     public partial class KomisariatyPage : Page
     {
         public DatabaseService databaseService = new();
-        public ICollection<Komenda_Miasto_Region> data;
+        public ICollection<Komenda> data;
+        public ICollection<Komenda> data2;
+
         public bool IdOrder = false;
         public Miasto pickedMiasto;
         public Region_Miasta pickedRegion;
@@ -32,6 +34,8 @@ namespace PoliceApp
         public ICollection<Region_Miasta> regiony;
         public string adres;
         public bool editMode = false;
+        public int position;
+        public List<Komenda_Miasto_Region> selectedToEdit;
         public KomisariatyPage()
         {
             InitializeComponent();
@@ -65,11 +69,11 @@ namespace PoliceApp
                     {
                         if (!IdOrder)
                         {
-                            data = (ICollection<Komenda_Miasto_Region>)data.OrderByDescending(id => id.ID_komendy).ToList();
+                            data = data.OrderByDescending(id => id.KomendaId).ToList();
                             IdOrder = !IdOrder;
                             break;
                         }
-                        data = (ICollection<Komenda_Miasto_Region>)data.OrderBy(id => id.ID_komendy).ToList();
+                        data = data.OrderBy(id => id.KomendaId).ToList();
                         IdOrder = !IdOrder;
                         break;
                     }
@@ -77,11 +81,11 @@ namespace PoliceApp
                     {
                         if (!IdOrder)
                         {
-                            data = (ICollection<Komenda_Miasto_Region>)data.OrderByDescending(id => id.Adres).ToList();
+                            data = data.OrderByDescending(id => id.Adres).ToList();
                             IdOrder = !IdOrder;
                             break;
                         }
-                        data = (ICollection<Komenda_Miasto_Region>)data.OrderBy(id => id.Adres).ToList();
+                        data = data.OrderBy(id => id.Adres).ToList();
                         IdOrder = !IdOrder;
                         break;
                     }
@@ -89,11 +93,11 @@ namespace PoliceApp
                     {
                         if (!IdOrder)
                         {
-                            data = (ICollection<Komenda_Miasto_Region>)data.OrderByDescending(id => id.Nazwa_regionu).ToList();
+                            data = data.OrderByDescending(id => id.Region_Miasta.Nazwa).ToList();
                             IdOrder = !IdOrder;
                             break;
                         }
-                        data = (ICollection<Komenda_Miasto_Region>)data.OrderBy(id => id.Nazwa_regionu).ToList();
+                        data = data.OrderBy(id => id.Region_Miasta.Nazwa).ToList();
                         IdOrder = !IdOrder;
                         break;
                     }
@@ -101,11 +105,11 @@ namespace PoliceApp
                     {
                         if (!IdOrder)
                         {
-                            data = (ICollection<Komenda_Miasto_Region>)data.OrderByDescending(id => id.Nazwa_miasta).ToList();
+                            data = data.OrderByDescending(id => id.Region_Miasta.Miasto.Nazwa).ToList();
                             IdOrder = !IdOrder;
                             break;
                         }
-                        data = (ICollection<Komenda_Miasto_Region>)data.OrderBy(id => id.Nazwa_miasta).ToList();
+                        data = data.OrderBy(id => id.Region_Miasta.Miasto.Nazwa).ToList();
                         IdOrder = !IdOrder;
                         break;
                     }
@@ -113,11 +117,11 @@ namespace PoliceApp
                     {
                         if (!IdOrder)
                         {
-                            data = (ICollection<Komenda_Miasto_Region>)data.OrderByDescending(id => id.Stopien_zagrozenia).ToList();
+                            data = data.OrderByDescending(id => id.Region_Miasta.Stopien_zagrozenia).ToList();
                             IdOrder = !IdOrder;
                             break;
                         }
-                        data = (ICollection<Komenda_Miasto_Region>)data.OrderBy(id => id.Stopien_zagrozenia).ToList();
+                        data = data.OrderBy(id => id.Region_Miasta.Stopien_zagrozenia).ToList();
                         IdOrder = !IdOrder;
                         break;
                     }
@@ -128,7 +132,7 @@ namespace PoliceApp
 
         private void Button_Click_Usun(object sender, RoutedEventArgs e)
         {
-            var selected = ListViewColumns.SelectedItems.Cast<Komenda_Miasto_Region>().ToList();
+            var selected = ListViewColumns.SelectedItems.Cast<Komenda>().ToList();
             if (selected == null)
             {
                 MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -145,13 +149,32 @@ namespace PoliceApp
         }
         private void Button_Click_Edytuj(object sender, RoutedEventArgs e)
         {
-            var selected = ListViewColumns.SelectedItems.Cast<Komenda_Miasto_Region>().ToList();
-            if (selected == null)
+            if(selectedToEdit==null)
+                selectedToEdit = ListViewColumns.SelectedItems.Cast<Komenda_Miasto_Region>().ToList();
+            if (selectedToEdit == null)
             {
                 MessageBox.Show("Błąd przy edytowaniu!", "Edytuj", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-           //TODO implement
+            if(position>selectedToEdit.Count-1)
+            {
+                editMode = true;
+                AddEdit.Content = "Dodaj";
+                Abort.Visibility = Visibility.Hidden;
+                CurrentMode.Content = $"Nowa pozycja";
+                EditButton.IsEnabled = true;
+            }
+            //TODO implement
+            editMode = true;
+            AddEdit.Content = "Zmień";
+            EditButton.IsEnabled = false;
+            Abort.Visibility = Visibility.Visible;
+            Adres.Text = selectedToEdit[position].Adres;
+            MiastoBox.SelectedItem = miasta.Where(p => p.Nazwa == selectedToEdit[0].Nazwa_miasta);
+            regiony = databaseService.getRegionsOfMiasto((Miasto)MiastoBox.SelectedItem);
+            MiastoBox.SelectedItem = regiony.Where(p => p.Region_MiastaId == selectedToEdit[0].ID_regionu);
+
+            CurrentMode.Content = $"Edytuj pozycję {position + 1} z {selectedToEdit.Count}";
             ListViewColumns.ItemsSource = null;
             ListViewColumns.ItemsSource = data;
         }
@@ -184,13 +207,17 @@ namespace PoliceApp
                     return;
                 }
 
-                databaseService.AddKomenda(new Komenda {Adres = adres, ID_regionu = pickedRegion.ID_regionu, Region = pickedRegion });
+                databaseService.AddKomenda(new Komenda {Adres = adres, Region_MiastaId = pickedRegion.Region_MiastaId, Region_Miasta = pickedRegion });
                 RefreshData();
+                return;
             }
+            
+            position++;
+
         }
         private void RefreshData()
         {
-            data = databaseService.GetKomendas();
+            data2 = databaseService.GetKomendas();
             miasta = databaseService.GetMiastos();
             ListViewColumns.ItemsSource = data;
             MiastoBox.ItemsSource = miasta;

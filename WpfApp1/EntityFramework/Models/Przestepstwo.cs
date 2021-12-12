@@ -10,7 +10,7 @@ namespace EntityFramework.Models
     public class Przestepstwo
     {
         [Key]
-        public int ID_przestepstwa { get; set; }
+        public int PrzestepstwoId { get; set; }
         public string Nazwa { get; set; }
         public string Data { get; set; }
         public string Godzina { get; set; }

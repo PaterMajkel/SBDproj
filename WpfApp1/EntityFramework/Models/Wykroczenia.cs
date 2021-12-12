@@ -10,7 +10,7 @@ namespace EntityFramework.Models
     public class Wykroczenia
     {
         [Key]
-        public int ID_wykroczenia { get; set; }
+        public int WykroczenieId { get; set; }
         public string Nazwa { get; set; }
         public string Data { get; set; }
         public string Godzina { get; set; }

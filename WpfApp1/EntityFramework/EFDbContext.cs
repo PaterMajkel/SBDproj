@@ -44,20 +44,20 @@ namespace EntityFramework
 
             //Uzytkownicy
             modelBuilder.Entity<Uzytkownik>().HasData(
-                new Uzytkownik { ID_uzytkownika = 1, Login = "Admin", Password = "Admin", Rola = "admin" }
+                new Uzytkownik { UzytkownikId = 1, Login = "Admin", Password = "Admin", Rola = "admin" }
                 );
 
             //Miasta
             modelBuilder.Entity<Miasto>().HasData(
-                new Miasto { ID_miasta = 1, Nazwa = "Białystok"},
-                new Miasto { ID_miasta = 2, Nazwa = "Kraków"},
-                new Miasto { ID_miasta = 3, Nazwa = "Warszawa"},
-                new Miasto { ID_miasta = 4, Nazwa = "Rzeszów"},
-                new Miasto { ID_miasta = 5, Nazwa = "Łódź" },
-                new Miasto { ID_miasta = 6, Nazwa = "Gdańsk" },
-                new Miasto { ID_miasta = 7, Nazwa = "Katowice" },
-                new Miasto { ID_miasta = 8, Nazwa = "Wrocław" },
-                new Miasto { ID_miasta = 9, Nazwa = "Poznań" }
+                new Miasto { MiastoId = 1, Nazwa = "Białystok"},
+                new Miasto { MiastoId = 2, Nazwa = "Kraków"},
+                new Miasto { MiastoId = 3, Nazwa = "Warszawa"},
+                new Miasto { MiastoId = 4, Nazwa = "Rzeszów"},
+                new Miasto { MiastoId = 5, Nazwa = "Łódź" },
+                new Miasto { MiastoId = 6, Nazwa = "Gdańsk" },
+                new Miasto { MiastoId = 7, Nazwa = "Katowice" },
+                new Miasto { MiastoId = 8, Nazwa = "Wrocław" },
+                new Miasto { MiastoId = 9, Nazwa = "Poznań" }
                 );
 
             //Komendy
@@ -68,15 +68,15 @@ namespace EntityFramework
                 public Region_Miasta Region { get; set; }
              */
             modelBuilder.Entity<Komenda>().HasData(
-               new Komenda { ID_komendy = 1, Adres = "Muchomorska 9", ID_regionu = 1 },
-               new Komenda { ID_komendy = 2, Adres = "Zawadiaków 14", ID_regionu = 2 },
-               new Komenda { ID_komendy = 3, Adres = "Mirosławska 15", ID_regionu = 4 },
-               new Komenda { ID_komendy = 4, Adres = "Piątków 21/7", ID_regionu = 5 },
-               new Komenda { ID_komendy = 5, Adres = "Miłosierdzia Pańskiego 2137", ID_regionu = 6 },
-               new Komenda { ID_komendy = 6, Adres = "Obi-Wana Kenobiego 3", ID_regionu = 7 },
-               new Komenda { ID_komendy = 7, Adres = "Plackowa 98", ID_regionu = 8 },
-               new Komenda { ID_komendy = 8, Adres = "Iglasta 41", ID_regionu = 3 },
-               new Komenda { ID_komendy = 9, Adres = "Chrobrego 21", ID_regionu = 9 }
+               new Komenda { KomendaId = 1, Adres = "Muchomorska 9", Region_MiastaId = 1 },
+               new Komenda { KomendaId = 2, Adres = "Zawadiaków 14", Region_MiastaId = 2 },
+               new Komenda { KomendaId = 3, Adres = "Mirosławska 15", Region_MiastaId = 4 },
+               new Komenda { KomendaId = 4, Adres = "Piątków 21/7", Region_MiastaId = 5 },
+               new Komenda { KomendaId = 5, Adres = "Miłosierdzia Pańskiego 2137", Region_MiastaId = 6 },
+               new Komenda { KomendaId = 6, Adres = "Obi-Wana Kenobiego 3", Region_MiastaId = 7 },
+               new Komenda { KomendaId = 7, Adres = "Plackowa 98", Region_MiastaId = 8 },
+               new Komenda { KomendaId = 8, Adres = "Iglasta 41", Region_MiastaId = 3 },
+               new Komenda { KomendaId = 9, Adres = "Chrobrego 21", Region_MiastaId = 9 }
                );
             //Region-Miata
             /*
@@ -87,15 +87,15 @@ namespace EntityFramework
                 public string Stopien_zagrozenia { get; set; }
             */
             modelBuilder.Entity<Region_Miasta>().HasData(
-              new Region_Miasta { ID_regionu = 1, ID_miasta = 1, Stopien_zagrozenia="Niski", Nazwa="Piasta" },
-              new Region_Miasta { ID_regionu = 2, ID_miasta = 1, Stopien_zagrozenia="Wysoki", Nazwa="Skorupy" },
-              new Region_Miasta { ID_regionu = 3, ID_miasta = 5, Stopien_zagrozenia="Śmiertelny", Nazwa="Bałuty" },
-              new Region_Miasta { ID_regionu = 4, ID_miasta = 9, Stopien_zagrozenia="Średni", Nazwa="Paciorków" },
-              new Region_Miasta { ID_regionu = 5, ID_miasta = 4, Stopien_zagrozenia="Niski", Nazwa="Puchatkowo" },
-              new Region_Miasta { ID_regionu = 6, ID_miasta = 3, Stopien_zagrozenia="Wysoki", Nazwa="Niski Stok" },
-              new Region_Miasta { ID_regionu = 7, ID_miasta = 3, Stopien_zagrozenia="Niski", Nazwa="Średnia Górka" },
-              new Region_Miasta { ID_regionu = 8, ID_miasta = 8, Stopien_zagrozenia="Średni", Nazwa="Swoja" },
-              new Region_Miasta { ID_regionu = 9, ID_miasta = 7, Stopien_zagrozenia="Śmiertelny", Nazwa="Chmurzyńska Wieś" }
+              new Region_Miasta { Region_MiastaId = 1, MiastoId = 1, Stopien_zagrozenia="Niski", Nazwa="Piasta" },
+              new Region_Miasta { Region_MiastaId = 2, MiastoId = 1, Stopien_zagrozenia="Wysoki", Nazwa="Skorupy" },
+              new Region_Miasta { Region_MiastaId = 3, MiastoId = 5, Stopien_zagrozenia="Śmiertelny", Nazwa="Bałuty" },
+              new Region_Miasta { Region_MiastaId = 4, MiastoId = 9, Stopien_zagrozenia="Średni", Nazwa="Paciorków" },
+              new Region_Miasta { Region_MiastaId = 5, MiastoId = 4, Stopien_zagrozenia="Niski", Nazwa="Puchatkowo" },
+              new Region_Miasta { Region_MiastaId = 6, MiastoId = 3, Stopien_zagrozenia="Wysoki", Nazwa="Niski Stok" },
+              new Region_Miasta { Region_MiastaId = 7, MiastoId = 3, Stopien_zagrozenia="Niski", Nazwa="Średnia Górka" },
+              new Region_Miasta { Region_MiastaId = 8, MiastoId = 8, Stopien_zagrozenia="Średni", Nazwa="Swoja" },
+              new Region_Miasta { Region_MiastaId = 9, MiastoId = 7, Stopien_zagrozenia="Śmiertelny", Nazwa="Chmurzyńska Wieś" }
               );
 
         }
