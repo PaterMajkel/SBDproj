@@ -1,0 +1,51 @@
+﻿<Page x:Class="PoliceApp.KomisariatyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PoliceApp"
+      mc:Ignorable="d"
+       Title="Komisariaty" Height="516" Width="946">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Blue" Offset="0.0" />
+                <GradientStop Color="Cyan" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Blue" Offset="0.0" />
+                    <GradientStop Color="Cyan" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.jpg" />
+        <Label x:Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="734,118,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="758,280,0,0" VerticalAlignment="Top"/>
+        <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun"/>
+        <Label Content="Panel zarządzania komisariatami" FontFamily="Century Gothic"
+  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adres" HorizontalAlignment="Left" Margin="650,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="650,238,0,0" VerticalAlignment="Top"/>
+        <Label Content="Miasto" HorizontalAlignment="Left" Margin="644,202,0,0" VerticalAlignment="Top"/>
+        <ListView Name="ListViewColumns" Margin="46,97,346,54">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding ID_komendy}" />
+                    <GridViewColumn x:Name="AdresHeader" Header="Adres" Width="110" DisplayMemberBinding="{Binding Adres}"/>
+                    <GridViewColumn x:Name="RegionHeader" Header="Region"  Width="100" DisplayMemberBinding="{Binding Nazwa_regionu}"/>
+                    <GridViewColumn x:Name="StopienHeader" Header="Stopien Zagrozenia"  Width="130" DisplayMemberBinding="{Binding Stopien_zagrozenia}"/>
+                    <GridViewColumn x:Name="MiastoHeader" Header="Miasto"  Width="100" DisplayMemberBinding="{Binding Nazwa_miasta}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="716,163,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120"/>
+
+    </Grid>
+</Page>

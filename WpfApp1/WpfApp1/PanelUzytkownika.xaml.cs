@@ -38,8 +38,8 @@ namespace PoliceApp
 
         private void Button_Click_Komisariaty(object sender, RoutedEventArgs e)
         {
-            Window komisariaty = new Komisariaty();
-            komisariaty.Show();
+            //Window komisariaty = new Komisariaty();
+            //komisariaty.Show();
         }
 
 

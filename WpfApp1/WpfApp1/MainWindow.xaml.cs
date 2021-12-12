@@ -24,10 +24,11 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Uzytkownik uzytkownik;
+        public SharedData data;
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         public MainWindow(Uzytkownik uzytkownik)
@@ -40,15 +41,14 @@ namespace WpfApp1
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            Window loginPanel = new LoginPanel( ref UserPanel, ref AdminPanel, uzytkownik);
+            Window loginPanel = new LoginPanel(ref UserPanel, ref AdminPanel, data);
             loginPanel.Show();
 
         }
 
         private void AdminPanel_Click(object sender, RoutedEventArgs e)
         {
-            Window adminPanel = new AdminPanel(uzytkownik);
-            this.Close();
+            Window adminPanel = new AdminPanel();
             adminPanel.Show();
         }
     }

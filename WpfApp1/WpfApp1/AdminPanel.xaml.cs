@@ -21,19 +21,11 @@ namespace PoliceApp
     /// </summary>
     public partial class AdminPanel : Window
     {
-        private Uzytkownik uzytkownik;
-        public AdminPanel(Uzytkownik uzytkownik)
+        public AdminPanel()
         {
-            this.uzytkownik = uzytkownik;
             InitializeComponent();
         }
 
-        private void Button_Click_Back(object sender, RoutedEventArgs e)
-        {
-            Window main=new MainWindow(uzytkownik);
-            main.Show();
-            this.Close();
-        }
 
         private void Button_Click_Radiowozy(object sender, RoutedEventArgs e)
         {
@@ -49,8 +41,7 @@ namespace PoliceApp
 
         private void Button_Click_Komisariaty(object sender, RoutedEventArgs e)
         {
-            Window komisariaty = new Komisariaty();
-            komisariaty.Show();
+            AdminPages.Content = new KomisariatyPage();
         }
     }
 }

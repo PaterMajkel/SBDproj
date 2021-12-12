@@ -5,55 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoliceApp"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="450" Width="800">
+        Title="AdminPanel" Height="600" Width="946" ResizeMode="NoResize">
     <Grid>
-            <Grid.Background>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="DodgerBlue" Offset="1" />
+                <GradientStop Color="DarkBlue" Offset="0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle  HorizontalAlignment="Center" Height="469" Margin="0,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="916">
+            <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
-                    <GradientStop Color="DodgerBlue" Offset="1" />
-                    <GradientStop Color="DarkBlue" Offset="0" />
+                    <GradientStop Color="DeepSkyBlue" Offset="1" />
+                    <GradientStop Color="RoyalBlue" Offset="0" />
                 </LinearGradientBrush>
-            </Grid.Background>
-            <Rectangle  HorizontalAlignment="Left" Height="371" Margin="32,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="717">
-                <Rectangle.Fill>
-                    <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
-                        <GradientStop Color="DeepSkyBlue" Offset="1" />
-                        <GradientStop Color="RoyalBlue" Offset="0" />
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Button Content="Zarządzanie Policjantami" HorizontalAlignment="Left" Margin="65,97,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="Zarządzanie Policjantami" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="302" Height="56" Background="CadetBlue"
                 FontSize="25" Click="Button_Click_Policjanci">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Content="Zarządzanie Radiowozami" HorizontalAlignment="Left" Margin="65,180,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Zarządzanie Radiowozami" HorizontalAlignment="Left" Margin="317,10,0,0" VerticalAlignment="Top" Width="302" Height="55" Background="CadetBlue"
                 FontSize="25" Click="Button_Click_Radiowozy">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Content="Zarządzanie Komisariatami" HorizontalAlignment="Left" Margin="65,260,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Zarządzanie Komisariatami" HorizontalAlignment="Left" Margin="624,9,0,0" VerticalAlignment="Top" Width="302" Height="56" Background="CadetBlue"
                 FontSize="25" Click="Button_Click_Komisariaty">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button Content="Panel Główny" HorizontalAlignment="Left" Margin="552,341,0,0" VerticalAlignment="Top" Width="173" Height="44" Background="CadetBlue"
-            FontSize="25" Click="Button_Click_Back">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="10"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="65,42,0,0" Height="50" Width="515"
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="290,109,0,0" Height="50" Width="515"
                    FontSize="35" FontStyle="Oblique"/>
-        </Grid>
+        <Frame x:Name="AdminPages" Margin="0,70,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="//TODO WSTAWIĆ OBRAZEK" VerticalAlignment="Top" Margin="290,230,0,0" Height="50" Width="515"
+            FontSize="35" FontStyle="Oblique"/>
+    </Grid>
 </Window>

@@ -23,14 +23,14 @@ namespace PoliceApp
     {
         string login;
         List<Button> buttons;
-        Uzytkownik uzytkownik;
+        SharedData uzytkownik;
         public DatabaseService databaseService = new DatabaseService();
-        public LoginPanel(ref Button button1,ref Button button2, Uzytkownik uzytkownik)
+        public LoginPanel(ref Button userButt, ref Button adminButt, SharedData uzytkownik)
         {
             this.uzytkownik = uzytkownik;
             buttons = new List<Button>();
-            buttons.Add(button1);
-            buttons.Add(button2);
+            buttons.Add(userButt);
+            buttons.Add(adminButt);
             InitializeComponent();
         }
 
@@ -45,16 +45,16 @@ namespace PoliceApp
             var x = databaseService.GetUzytkownik(login, passwordBox.Password.ToString());
             if (x != null)
             {
-                
+                uzytkownik=new SharedData { uzytkownik=x};
                 buttons[0].IsEnabled = true;
                 if (x.Rola.ToUpper() == "ADMIN")
                     buttons[1].IsEnabled = true;
                 Close();
-                this.uzytkownik = x;
                 return;
             }
             foreach (var button in buttons)
                 button.IsEnabled = false;
+            MessageBox.Show("Złe dane logowania","Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
 
         }
 

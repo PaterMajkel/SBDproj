@@ -14,5 +14,6 @@ namespace EntityFramework.Models
         public string Adres { get; set; }
         public int ID_regionu { get; set; }
         public Region_Miasta Region { get; set; }
+
     }
 }
