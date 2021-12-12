@@ -78,5 +78,21 @@ namespace EntityFramework.Services
             }
             _context.SaveChanges();
         }
+
+        public ICollection<Miasto> GetMiastos()
+        {
+            return _context.Miastos.ToList();
+        } 
+
+        public ICollection<Region_Miasta> getRegionsOfMiasto(Miasto miasto)
+        {
+            return _context.Region_Miastas.Where(r => r.ID_miasta == miasto.ID_miasta).ToList();
+        }
+
+        public void AddKomenda(Komenda komenda)
+        {
+            _context.Add(komenda);
+            _context.SaveChanges();
+        }
     }
 }

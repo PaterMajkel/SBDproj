@@ -24,12 +24,12 @@
         </Rectangle>
         <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.jpg" />
         <Label x:Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="734,118,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="758,280,0,0" VerticalAlignment="Top"/>
-        <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="716,296,0,0" VerticalAlignment="Top" Height="30" Width="43" Click="Button_Click_DodajOrEdytuj"/>
+        <Button Content="Usuń" Margin="776,443,55,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Height="29"/>
         <Label Content="Panel zarządzania komisariatami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
         <Label Content="Adres" HorizontalAlignment="Left" Margin="650,159,0,0" VerticalAlignment="Top"/>
-        <Label Content="Region" HorizontalAlignment="Left" Margin="650,238,0,0" VerticalAlignment="Top"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="644,240,0,0" VerticalAlignment="Top"/>
         <Label Content="Miasto" HorizontalAlignment="Left" Margin="644,202,0,0" VerticalAlignment="Top"/>
         <ListView Name="ListViewColumns" Margin="46,97,346,54">
             <ListView.View>
@@ -43,9 +43,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="716,163,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="716,163,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Adres_TextChanged"/>
+        <ComboBox Name="MiastoBox" HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxMiasto_SelectionChanged"/>
+        <ComboBox Name="RegionBox" HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxRegion_SelectionChanged"/>
+        <Button Content="Edytuj" Margin="644,443,187,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"/>
+        <Button Content="Zatrzymaj" Visibility="Hidden" HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="31" Width="61"/>
 
     </Grid>
 </Page>

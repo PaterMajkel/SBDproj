@@ -1,4 +1,5 @@
 ﻿using EntityFramework.DTO;
+using EntityFramework.Models;
 using EntityFramework.Services;
 using System;
 using System.Collections.Generic;
@@ -25,10 +26,17 @@ namespace PoliceApp
         public DatabaseService databaseService = new();
         public ICollection<Komenda_Miasto_Region> data;
         public bool IdOrder = false;
+        public Miasto pickedMiasto;
+        public Region_Miasta pickedRegion;
+        public ICollection<Miasto> miasta;
+        public ICollection<Region_Miasta> regiony;
+        public string adres;
+        public bool editMode = false;
         public KomisariatyPage()
         {
             InitializeComponent();
             data = databaseService.GetKomendas();
+            miasta = databaseService.GetMiastos();
              AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ListView_OnColumnClick));
             //foreach (var x in data)
             //{
@@ -43,6 +51,7 @@ namespace PoliceApp
             //    data2.Add(data3[i%9]);
             //}
             ListViewColumns.ItemsSource = data;
+            MiastoBox.ItemsSource = miasta;
         }
         
         private void ListView_OnColumnClick(object sender, RoutedEventArgs e)
@@ -133,6 +142,62 @@ namespace PoliceApp
             }
             ListViewColumns.ItemsSource = null;
             ListViewColumns.ItemsSource = data;
+        }
+        private void Button_Click_Edytuj(object sender, RoutedEventArgs e)
+        {
+            var selected = ListViewColumns.SelectedItems.Cast<Komenda_Miasto_Region>().ToList();
+            if (selected == null)
+            {
+                MessageBox.Show("Błąd przy edytowaniu!", "Edytuj", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+           //TODO implement
+            ListViewColumns.ItemsSource = null;
+            ListViewColumns.ItemsSource = data;
+        }
+
+        private void ComboBoxMiasto_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pickedMiasto= (Miasto)MiastoBox.SelectedItem;
+            regiony = databaseService.getRegionsOfMiasto(pickedMiasto);
+            RegionBox.ItemsSource = regiony;
+        }
+
+        private void ComboBoxRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pickedRegion = (Region_Miasta)RegionBox.SelectedItem;
+
+        }
+
+        private void Button_Click_DodajOrEdytuj(object sender, RoutedEventArgs e)
+        {
+            if (!editMode)
+            {
+                if (pickedMiasto == null || pickedRegion == null || adres==null)
+                {
+                    MessageBox.Show("Wprowadzono złe dane", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else if (adres.Length == 0)
+                {
+                    MessageBox.Show("Adres nie może być pusty", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                databaseService.AddKomenda(new Komenda {Adres = adres, ID_regionu = pickedRegion.ID_regionu, Region = pickedRegion });
+                RefreshData();
+            }
+        }
+        private void RefreshData()
+        {
+            data = databaseService.GetKomendas();
+            miasta = databaseService.GetMiastos();
+            ListViewColumns.ItemsSource = data;
+            MiastoBox.ItemsSource = miasta;
+        }
+        private void Adres_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            adres = Adres.Text.ToString();
         }
     }
 }
