@@ -15,8 +15,8 @@ namespace EntityFramework.DTO
         public int Wiek { get; set; }
         //photo todo
         public string nazwa_wykroczenia { get; set; }
-        //date to do
-        // time to do
+        public string Data { get; set; }
+        public string Godzina { get; set; } 
 
     }
 }
