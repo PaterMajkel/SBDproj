@@ -13,7 +13,7 @@
                 <GradientStop Color="DarkBlue" Offset="0" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle  HorizontalAlignment="Left" Height="531" Margin="32,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="717">
+        <Rectangle  HorizontalAlignment="Left" Height="450" Margin="32,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="717">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
                     <GradientStop Color="DeepSkyBlue" Offset="1" />
@@ -21,49 +21,39 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="65,97,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Podwladni">
+        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="267" Height="41" Background="CadetBlue"
+                FontSize="20" Click="Button_Click_Podwladni">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="65,180,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Regiony">
+        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="282,8,0,0" VerticalAlignment="Top" Width="254" Height="43" Background="CadetBlue"
+                FontSize="20" Click="Button_Click_Regiony">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="65,260,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Kartoteka">
+        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="541,10,0,0" VerticalAlignment="Top" Width="249" Height="41" Background="CadetBlue"
+                FontSize="20" Click="Button_Click_Kartoteka">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Panel Główny" HorizontalAlignment="Left" Margin="576,514,0,0" VerticalAlignment="Top" Width="173" Height="44" Background="CadetBlue"
-            FontSize="25" Click="Button_Click_Back">
+        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="390" Height="41" Background="CadetBlue"
+            FontSize="20" Click="Button_Click_Wykroczenia">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="65,42,0,0" Height="50" Width="515"
-                   FontSize="35" FontStyle="Oblique"/>
-        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="65,342,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-            FontSize="25" Click="Button_Click_Wykroczenia">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Zarządzanie Przestepstwami" HorizontalAlignment="Left" Margin="65,425,0,0" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
+        <Button Content="Zarządzanie Przestepstwami" HorizontalAlignment="Left" Margin="400,56,0,0" VerticalAlignment="Top" Width="390" Height="41" Background="CadetBlue"
             FontSize="25" Click="Button_Click_Przestepstwa">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -71,6 +61,7 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Frame x:Name="UserPages" Margin="32,108,51,10" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
     </Grid>
 
 </Window>

@@ -17,7 +17,7 @@ namespace PoliceApp
     /// <summary>
     /// Logika interakcji dla klasy Radiowozy.xaml
     /// </summary>
-    public partial class Radiowozy : Window
+    public partial class Radiowozy : Page
     {
         public Radiowozy()
         {

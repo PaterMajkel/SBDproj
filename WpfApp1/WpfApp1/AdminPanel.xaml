@@ -48,6 +48,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="290,109,0,0" Height="50" Width="515"
                    FontSize="35" FontStyle="Oblique"/>
         <Frame x:Name="AdminPages" Margin="0,70,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
+        
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="//TODO WSTAWIĆ OBRAZEK" VerticalAlignment="Top" Margin="290,230,0,0" Height="50" Width="515"
             FontSize="35" FontStyle="Oblique"/>
     </Grid>

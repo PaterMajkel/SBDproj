@@ -1,4 +1,4 @@
-﻿<Window x:Class="PoliceApp.Policjanci"
+﻿<Page x:Class="PoliceApp.Policjanci"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -38,4 +38,4 @@
         <Label Content="Komenda" HorizontalAlignment="Left" Margin="530,398,0,0" VerticalAlignment="Top"/>
 
     </Grid>
-</Window>
+</Page>

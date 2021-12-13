@@ -51,5 +51,12 @@ namespace WpfApp1
             Window adminPanel = new AdminPanel();
             adminPanel.Show();
         }
+
+        private void UserPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Window paneluzytkownika = new PanelUzytkownika();
+            paneluzytkownika.Show();
+
+        }
     }
 }

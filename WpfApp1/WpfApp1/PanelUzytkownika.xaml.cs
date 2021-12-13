@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using EntityFramework.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1;
 
 namespace PoliceApp
 {
@@ -26,14 +31,14 @@ namespace PoliceApp
 
         private void Button_Click_Radiowozy(object sender, RoutedEventArgs e)
         {
-            Window radiowozy = new Radiowozy();
-            radiowozy.Show();
+            //Window radiowozy = new Radiowozy();
+            //radiowozy.Show();
         }
 
         private void Button_Click_Policjanci(object sender, RoutedEventArgs e)
         {
-            Window policjanci = new Policjanci();
-            policjanci.Show();
+           // Window policjanci = new Policjanci();
+            //policjanci.Show();
         }
 
         private void Button_Click_Komisariaty(object sender, RoutedEventArgs e)
@@ -45,17 +50,17 @@ namespace PoliceApp
 
         private void Button_Click_Podwladni(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new Podwladni();
         }
 
         private void Button_Click_Regiony(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new RegionPanel();
         }
 
         private void Button_Click_Kartoteka(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new Kartoteka();
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)

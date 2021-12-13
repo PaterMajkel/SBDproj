@@ -30,7 +30,7 @@
             </Button.Resources>
         </Button>
         <Button Name="UserPanel" IsEnabled="False" Content="Panel Policjanta" HorizontalAlignment="Center" VerticalAlignment="Top" Width="660" Height="66" Background="CadetBlue"
-                FontSize="25" Margin="0,222,0,0">
+                FontSize="25" Margin="0,222,0,0" Click="UserPanel_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>

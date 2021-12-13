@@ -14,7 +14,7 @@
                 <GradientStop Color="DarkBlue" Offset="0" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle  HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="772">
+        <Rectangle  HorizontalAlignment="Left" Height="327" Margin="10,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="772">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
                     <GradientStop Color="DeepSkyBlue" Offset="1" />
@@ -23,12 +23,19 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListBox HorizontalAlignment="Left" Height="321" Margin="22,73,0,0" VerticalAlignment="Top" Width="747"
-            ItemsSource="{Binding}" 
-            ScrollViewer.VerticalScrollBarVisibility="Visible">
-        </ListBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="22,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="18"/>
-        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="652,30,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
+        <ListView Name="ListViewColumns" Margin="46,97,390,54">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />
+                    <GridViewColumn x:Name="ImieHeader" Header="Imię" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="100" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="WiekHeader" Header="Wiek"  Width="130" DisplayMemberBinding="{Binding Wiek}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="448,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="18"/>
+        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="448,365,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
             FontSize="18">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -36,13 +43,13 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="161,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="300,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="492,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="22,14,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="161,14,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="300,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"><Run Text="Przestępstwo"/><Run Text="/Wykroczenie"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="492,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Text="Wiek"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="450,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="450,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="450,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="448,142,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" RenderTransformOrigin="0.505,3.88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="454,197,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="454,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"><Run Text="Przestępstwo"/><Run Text="/Wykroczenie"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="454,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Text="Wiek"/>
 
 
     </Grid>

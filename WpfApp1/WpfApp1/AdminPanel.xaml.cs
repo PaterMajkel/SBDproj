@@ -29,14 +29,12 @@ namespace PoliceApp
 
         private void Button_Click_Radiowozy(object sender, RoutedEventArgs e)
         {
-            Window radiowozy=new Radiowozy();
-            radiowozy.Show();
+            AdminPages.Content = new Radiowozy();
         }
 
         private void Button_Click_Policjanci(object sender, RoutedEventArgs e)
         {
-            Window policjanci=new Policjanci();
-            policjanci.Show();
+            AdminPages.Content = new Policjanci();
         }
 
         private void Button_Click_Komisariaty(object sender, RoutedEventArgs e)
