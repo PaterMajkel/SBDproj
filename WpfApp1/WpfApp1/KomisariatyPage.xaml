@@ -34,11 +34,11 @@
         <ListView Name="ListViewColumns" Margin="46,97,346,54">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding ID_komendy}" />
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KomendaId}" />
                     <GridViewColumn x:Name="AdresHeader" Header="Adres" Width="110" DisplayMemberBinding="{Binding Adres}"/>
-                    <GridViewColumn x:Name="RegionHeader" Header="Region"  Width="100" DisplayMemberBinding="{Binding Nazwa_regionu}"/>
-                    <GridViewColumn x:Name="StopienHeader" Header="Stopien Zagrozenia"  Width="130" DisplayMemberBinding="{Binding Stopien_zagrozenia}"/>
-                    <GridViewColumn x:Name="MiastoHeader" Header="Miasto"  Width="100" DisplayMemberBinding="{Binding Nazwa_miasta}"/>
+                    <GridViewColumn x:Name="RegionHeader" Header="Region"  Width="100" DisplayMemberBinding="{Binding Region_Miasta.Nazwa}"/>
+                    <GridViewColumn x:Name="StopienHeader" Header="Stopien Zagrozenia"  Width="130" DisplayMemberBinding="{Binding Region_Miasta.Stopien_zagrozenia}"/>
+                    <GridViewColumn x:Name="MiastoHeader" Header="Miasto"  Width="100" DisplayMemberBinding="{Binding Region_Miasta.Miasto.Nazwa}"/>
 
                 </GridView>
             </ListView.View>
