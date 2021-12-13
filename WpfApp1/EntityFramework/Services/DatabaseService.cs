@@ -53,6 +53,11 @@ namespace EntityFramework.Services
             var y = _context.Kartotekas.FromSqlRaw($"select * from * where id={id}");
             return query.ToList();
         }
+        public ICollection<Kartoteka> GetKartotekas()
+        {
+            var x= _context.Kartotekas.ToList();
+            return x;
+        }
         public Uzytkownik GetUzytkownik(string login, string password)
         {
             if (login == null || password == null)

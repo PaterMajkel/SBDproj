@@ -23,26 +23,87 @@ namespace PoliceApp
     /// </summary>
     public partial class Kartoteka : Page 
     {
-        /*public DatabaseService databaseService = new();
+        public DatabaseService databaseService = new();
         public ICollection<Kartoteka> data;
         public ICollection<Kartoteka> data2;
         public bool IdOrder = false;
-        public Wykroczenia pickedWykroczenia;
-        public Przestepstwo pickedPrzestepstwo;
-        public ICollection<Wykroczenia> wykroczenia;
-        public ICollection<Przestepstwo> przestepstwo;
-        public string nazwisko;
-        public string imie;
-        public bool editMode = false;
-        public int position;
-        public List<Kartoteka_Przestepstwo> selectedToEdit;*/
+        public List<Kartoteka_Przestepstwo> selectedToEdit;
 
 
         public Kartoteka()
         {
             InitializeComponent();
-           // data = databaseService.();
+            data = (ICollection<Kartoteka>)databaseService.GetKartotekas();
+            ;
 
+        }
+        private void ListView_OnColumnClick(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource.GetType().Name != "GridViewColumnHeader")
+                return;
+            string headerName=(e.OriginalSource as GridViewColumnHeader).Content.ToString();
+            switch(headerName)
+            {
+                case "ID":
+                    {
+                        if(!IdOrder)
+                        {
+                            //data = data.OrderByDescending(id => id.KartotekaId).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                       // data = data.OrderBy(id => id.KartotekaId).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Imię":
+                    {
+                        if (!IdOrder)
+                        {
+                           // data = data.OrderByDescending(id => id.Imie).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        //data = data.OrderBy(id => id.Imie).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Nazwisko":
+                    {
+                        if (!IdOrder)
+                        {
+                            //data = data.OrderByDescending(id => id.Nazwisko).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        //data = data.OrderBy(id => id.Nazwisko).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Wiek":
+                    {
+                        if (!IdOrder)
+                        {
+                            //data = data.OrderByDescending(id => id.Wiek).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        //data = data.OrderBy(id => id.Wiek).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+            }
+            ListViewColumns.ItemsSource = data;
+        }
+
+        private void ListViewColumns_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void RefreshData()
+        {
+            //data2 = databaseService.GetKartotekas();
+            ListViewColumns.ItemsSource = data;
         }
     }
 }

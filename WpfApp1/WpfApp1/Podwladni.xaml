@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PoliceApp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="Podwładni" Height="524" Width="862">
     <Grid >
         <Grid.Background>
@@ -23,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
+        <Image Margin="0,152,584,152" Stretch="Fill" Source="Images/Police2.png"/>
         <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
         <Button Content="Edytuj" HorizontalAlignment="Left" Margin="671,413,0,0" VerticalAlignment="Top"/>

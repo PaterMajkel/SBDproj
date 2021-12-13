@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PoliceApp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Kartoteka" Height="450" Width="800">
+      Title="Kartoteka" Height="448" Width="802">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
@@ -14,7 +13,7 @@
                 <GradientStop Color="DarkBlue" Offset="0" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle  HorizontalAlignment="Left" Height="327" Margin="10,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="772">
+        <Rectangle  HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="750">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
                     <GradientStop Color="DeepSkyBlue" Offset="1" />
@@ -23,13 +22,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListView Name="ListViewColumns" Margin="46,97,390,54">
+        <ListView Name="ListViewColumns" Margin="35,22,385,52" SelectionChanged="ListViewColumns_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />
                     <GridViewColumn x:Name="ImieHeader" Header="Imię" Width="110" DisplayMemberBinding="{Binding Imie}"/>
-                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="100" DisplayMemberBinding="{Binding Nazwisko}"/>
-                    <GridViewColumn x:Name="WiekHeader" Header="Wiek"  Width="130" DisplayMemberBinding="{Binding Wiek}"/>
+                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="110" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="WiekHeader" Header="Wiek"  Width="140" DisplayMemberBinding="{Binding Wiek}"/>
 
                 </GridView>
             </ListView.View>

@@ -32,7 +32,7 @@ namespace EntityFramework
             public EFDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<EFDbContext>();
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True");
 
                 return new EFDbContext(optionsBuilder.Options);
             }
@@ -97,6 +97,16 @@ namespace EntityFramework
               new Region_Miasta { Region_MiastaId = 8, MiastoId = 8, Stopien_zagrozenia="Średni", Nazwa="Swoja" },
               new Region_Miasta { Region_MiastaId = 9, MiastoId = 7, Stopien_zagrozenia="Śmiertelny", Nazwa="Chmurzyńska Wieś" }
               );
+            modelBuilder.Entity<Kartoteka>().HasData(
+                new Kartoteka {KartotekaId=1,Imie="Zuzanna", Nazwisko="Bagińska",Wiek=21 },
+                new Kartoteka { KartotekaId = 2, Imie = "Lewis", Nazwisko = "Hamilto", Wiek = 37 },
+                new Kartoteka { KartotekaId = 3, Imie = "Bruno", Nazwisko = "Czech", Wiek = 20 },
+                new Kartoteka { KartotekaId = 4, Imie = "Stachu", Nazwisko = "Jones", Wiek = 74 },
+                new Kartoteka { KartotekaId = 5, Imie = "Stanisław", Nazwisko = "Wokulski", Wiek = 30 },
+                new Kartoteka { KartotekaId = 6, Imie = "Witold", Nazwisko = "Gombrowicz", Wiek = 43 },
+                new Kartoteka { KartotekaId = 7, Imie = "Piotrek", Nazwisko = "Parker", Wiek = 30 },
+                new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23 }
+                );
 
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoliceApp"
         mc:Ignorable="d"
-        Title="PanelUzytkownika" Height="584" Width="800">
+        Title="PanelUzytkownika" Height="584" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
@@ -61,7 +61,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Frame x:Name="UserPages" Margin="32,108,51,10" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="UserPages" Margin="0,108,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
     </Grid>
 
 </Window>
