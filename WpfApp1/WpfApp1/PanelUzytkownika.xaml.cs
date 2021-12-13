@@ -60,7 +60,7 @@ namespace PoliceApp
 
         private void Button_Click_Kartoteka(object sender, RoutedEventArgs e)
         {
-            UserPages.Content = new Kartoteka();
+            UserPages.Content = new KartotekaPage();
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)

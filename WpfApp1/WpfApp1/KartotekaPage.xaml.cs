@@ -21,7 +21,7 @@ namespace PoliceApp
     /// <summary>
     /// Logika interakcji dla klasy Kartoteka.xaml
     /// </summary>
-    public partial class Kartoteka : Page 
+    public partial class KartotekaPage : Page 
     {
         public DatabaseService databaseService = new();
         public ICollection<Kartoteka> data;
@@ -30,10 +30,10 @@ namespace PoliceApp
         public List<Kartoteka_Przestepstwo> selectedToEdit;
 
 
-        public Kartoteka()
+        public KartotekaPage()
         {
             InitializeComponent();
-            data = (ICollection<Kartoteka>)databaseService.GetKartotekas();
+            data = databaseService.GetKartotekas();
             ;
 
         }

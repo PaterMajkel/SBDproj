@@ -32,8 +32,9 @@ namespace EntityFramework
             public EFDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<EFDbContext>();
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True");
-
+                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True");
+                // MICHAŁ Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True
+                // FILIP Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
                 return new EFDbContext(optionsBuilder.Options);
             }
         }
