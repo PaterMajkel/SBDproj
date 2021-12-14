@@ -22,7 +22,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListView Name="ListViewColumns" Margin="35,22,385,52" SelectionChanged="ListViewColumns_SelectionChanged">
+        <ListView MouseDoubleClick="ListView_MouseDoubleClick" Name="ListViewColumns" Margin="35,22,385,52" SelectionChanged="ListViewColumns_SelectionChanged" ItemsSource="{Binding TrackCollection}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />

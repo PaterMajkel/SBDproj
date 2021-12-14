@@ -151,5 +151,14 @@ namespace PoliceApp
             ListViewColumns.ItemsSource = null;
             ListViewColumns.ItemsSource = data;
         }
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var item = ((FrameworkElement)e.OriginalSource).DataContext as Kartoteka;
+            if (item != null)
+            {
+                Window kartotekaOsoba = new KartotekaOsoba();
+                kartotekaOsoba.Show();
+            }
+        }
     }
 }
