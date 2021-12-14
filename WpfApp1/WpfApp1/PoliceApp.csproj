@@ -23,4 +23,14 @@
     <Folder Include="UserPanelPages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="KartotekaPrzestępstwo.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="KartotekaWykroczenie.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
 </Project>

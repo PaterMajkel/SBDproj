@@ -70,12 +70,12 @@ namespace PoliceApp
 
         private void Button_Click_Wykroczenia(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new KartotekaWykroczenie();
         }
 
         private void Button_Click_Przestepstwa(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new KartotekaPrzestępstwo();
         }
     }
 }
