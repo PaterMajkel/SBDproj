@@ -32,7 +32,7 @@ namespace EntityFramework
             public EFDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<EFDbContext>();
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True");
                 // MICHAŁ Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True
                 // FILIP Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
                 return new EFDbContext(optionsBuilder.Options);
@@ -108,7 +108,40 @@ namespace EntityFramework
                 new Kartoteka { KartotekaId = 7, Imie = "Piotrek", Nazwisko = "Parker", Wiek = 30 },
                 new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23 }
                 );
-
+            modelBuilder.Entity<Policjant>().HasData(
+                new Policjant { PolicjantId = 1, Imie = "Adam", Nazwisko="Pogorzelski", RangaId=1, KomendaId=1 },
+                new Policjant { PolicjantId = 2, Imie = "Krzysztof", Nazwisko = "Gonciarz", RangaId = 2, KomendaId = 1 },
+                new Policjant { PolicjantId = 3, Imie = "Tomasz", Nazwisko = "Działowy", RangaId = 3, KomendaId = 1 },
+                new Policjant { PolicjantId = 4, Imie = "Antoni", Nazwisko = "Macierewicz", RangaId = 4, KomendaId = 1 },
+                new Policjant { PolicjantId = 5, Imie = "Darth", Nazwisko = "Vader", RangaId = 5, KomendaId = 1 }
+            );
+            modelBuilder.Entity<Ranga>().HasData(
+                new Ranga { RangaId = 1, Nazwa = "Posterunkowy", Pensja = 2800 },
+                new Ranga { RangaId = 2, Nazwa = "Starszy Posterunkowy", Pensja = 2900 },
+                new Ranga { RangaId = 3, Nazwa = "Sierżant", Pensja = 3000 },
+                new Ranga { RangaId = 4, Nazwa = "Starszy Sierżant", Pensja = 3100 },
+                new Ranga { RangaId = 5, Nazwa = "Sierżant Sztabowy", Pensja = 3200 },
+                new Ranga { RangaId = 6, Nazwa = "Młodszy Aspirant", Pensja = 3300 },
+                new Ranga { RangaId = 7, Nazwa = "Aspirant", Pensja = 3400 },
+                new Ranga { RangaId = 8, Nazwa = "Starszy Aspirant", Pensja = 3500 },
+                new Ranga { RangaId = 9, Nazwa = "Aspirant Sztabowy", Pensja = 3600 },
+                new Ranga { RangaId = 10, Nazwa = "Podkomisarz", Pensja = 3700 },
+                new Ranga { RangaId = 11, Nazwa = "Komisarz", Pensja = 3800 },
+                new Ranga { RangaId = 12, Nazwa = "Nadkomisarz", Pensja = 3900 },
+                new Ranga { RangaId = 13, Nazwa = "Podinspektor", Pensja = 4000 },
+                new Ranga { RangaId = 14, Nazwa = "Młodszy Inspektor", Pensja = 4100 },
+                new Ranga { RangaId = 15, Nazwa = "Inspektor", Pensja = 4200 },
+                new Ranga { RangaId = 16, Nazwa = "Nadinspektor", Pensja = 4300 },
+                new Ranga { RangaId = 17, Nazwa = "Generalny Inspektor", Pensja = 4400 }
+                );
+            modelBuilder.Entity<Radiowoz>().HasData(
+                new Radiowoz { RadiowozId = 1, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },
+                new Radiowoz { RadiowozId = 2, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },
+                new Radiowoz { RadiowozId = 3, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },
+                new Radiowoz { RadiowozId = 4, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },
+                new Radiowoz { RadiowozId = 5, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },
+                new Radiowoz { RadiowozId = 6, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 }
+                );
         }
     }
 }

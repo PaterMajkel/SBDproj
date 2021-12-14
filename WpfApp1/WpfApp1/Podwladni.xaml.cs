@@ -24,5 +24,10 @@ namespace PoliceApp
         {
             InitializeComponent();
         }
+
+        private void ListViewColumns_SelectionChanged()
+        {
+
+        }
     }
 }

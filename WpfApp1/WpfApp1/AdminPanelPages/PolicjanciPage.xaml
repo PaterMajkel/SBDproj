@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoliceApp"
         mc:Ignorable="d"
-                Title="Policjaci" Height="524" Width="862">
+                Title="Policjaci" Height="516" Width="946">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
-        <Rectangle HorizontalAlignment="Center" Height="446" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="784">
+        <Rectangle HorizontalAlignment="Center" Height="446" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="926">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="Blue" Offset="0.0" />
@@ -22,20 +22,34 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.png" />
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,395,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
+        <Image Margin="969,174,-385,131" Stretch="Fill" Source="/Images/Police2.png" />
+        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="666,106,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="667,319,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339"/>
-        <Label Content="Imię                 Nazwisko              Komenda&#xD;&#xA;&#xD;&#xA;Jan                   Kowalski               &#xD;&#xA;&#xD;&#xA;Adam                Nowak  " HorizontalAlignment="Left" Margin="476,124,0,0" VerticalAlignment="Top" Height="192" Width="313"/>
         <Label Content="Panel zarządzania policjantami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Label Content="Imię" HorizontalAlignment="Left" Margin="530,347,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="530,372,0,0" VerticalAlignment="Top"/>
-        <Label Content="Komenda" HorizontalAlignment="Left" Margin="530,398,0,0" VerticalAlignment="Top"/>
-
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="629,135,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="602,161,0,0" VerticalAlignment="Top"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="622,187,0,0" VerticalAlignment="Top"/>
+        <ListView Name="ListViewColumns" Margin="28,107,364,44">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PolicjantId}" />
+                    <GridViewColumn x:Name="ImieHeader" Header="Imie" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="100" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="RangaHeader" Header="Ranga"  Width="180" DisplayMemberBinding="{Binding Ranga.Nazwa}"/>
+                    <GridViewColumn x:Name="KomendaHeader" Header="Komenda"  Width="140" DisplayMemberBinding="{Binding Komenda.Adres}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="667,137,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="667,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="666,192,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="121" RenderTransformOrigin="0.45,2.463"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="622,213,0,0" VerticalAlignment="Top"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="667,218,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120" RenderTransformOrigin="0.45,2.463"/>
+        <ComboBox Name="RangaBox" HorizontalAlignment="Left" Margin="667,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" />
+        <ComboBox Name="KomendaBox" HorizontalAlignment="Left" Margin="667,279,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" />
+        <Label Content="Ranga" HorizontalAlignment="Left" Margin="605,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Komenda" HorizontalAlignment="Left" Margin="605,276,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

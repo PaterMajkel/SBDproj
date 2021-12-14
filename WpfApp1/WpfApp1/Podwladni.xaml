@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PoliceApp"
       mc:Ignorable="d" 
-      Title="Podwładni" Height="524" Width="862">
+      Title="Podwładni" Height="482" Width="800">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -22,27 +22,24 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="0,152,584,152" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
+        <ListView Name="ListViewColumns" Margin="46,97,340,54">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PolicjantId}" />
+                    <GridViewColumn x:Name="ImieHeader" Header="Imie" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="100" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="RangaHeader" Header="Ranga"  Width="60" DisplayMemberBinding="{Binding Ranga.Nazwa}"/>
+                    <GridViewColumn x:Name="KomendaHeader" Header="Komenda adres"  Width="120" DisplayMemberBinding="{Binding Komenda.Adres}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
         <Button Content="Edytuj" HorizontalAlignment="Left" Margin="671,413,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń" Margin="727,413,104,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
-        <Label Content="ID            PRZEŁOŻONY              PODWŁADNY  &#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
         <Label Content="Panel zarządzanie podwładnymi&#xA;" FontFamily="Century Gothic"
-  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
+  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="53"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Label Content="Przełożony" HorizontalAlignment="Left" Margin="530,349,0,0" VerticalAlignment="Top"/>
-        <Label Content="Podwładny" HorizontalAlignment="Left" Margin="531,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.692"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="615,413,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782"/>
 
     </Grid>
