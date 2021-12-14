@@ -24,7 +24,7 @@
         </Border>
         <StackPanel Orientation="Horizontal">
             <StackPanel Width="369">
-                <Image Source="Images/Police2.png"  Height="312" VerticalAlignment="Top" Margin="29,30,12,30" Stretch="Fill" RenderTransformOrigin="0.5,0.5" >
+                <Image Source="Images/Police2.png"  Height="333" Margin="29,30,12,30" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Width="339" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -46,7 +46,7 @@
         </StackPanel>
 
         <PasswordBox Name="passwordBox" MaxLength="16" 
-              Margin="479,224,136,166" Background="LightGray" FontSize="15" Width="185" Height="42"/>
+              Margin="479,225,136,185" Background="LightGray" FontSize="15" Width="185"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,203,0,0" TextWrapping="Wrap" Text="Haslo" VerticalAlignment="Top" Width="141"/>
         <TextBox Name="loginBox" HorizontalAlignment="Left" Height="23" Margin="479,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="15"
                  Background="LightGray" TextChanged="TextBox_TextChanged"/>

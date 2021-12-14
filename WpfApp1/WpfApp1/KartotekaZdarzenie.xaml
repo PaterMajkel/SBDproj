@@ -22,41 +22,41 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListBox HorizontalAlignment="Left" Height="203" Margin="22,198,0,0" VerticalAlignment="Top" Width="360"
+        <ListBox HorizontalAlignment="Left" Height="182" Margin="44,209,0,0" VerticalAlignment="Top" Width="326"
             ItemsSource="{Binding}" 
             ScrollViewer.VerticalScrollBarVisibility="Visible">
         </ListBox>
-        <ListBox HorizontalAlignment="Left" Height="203" Margin="436,198,0,0" VerticalAlignment="Top" Width="330"
+        <ListBox HorizontalAlignment="Left" Height="181" Margin="436,210,0,0" VerticalAlignment="Top" Width="313"
             ItemsSource="{Binding}" 
             ScrollViewer.VerticalScrollBarVisibility="Visible"/>
-        <TextBlock HorizontalAlignment="Left" Margin="22,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="282" Height="37"><Run Text="Policjanci na miejscu"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="436,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="282" Height="37"><Run Text="Sprawcy"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="22,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="75" Height="37"><Run Text="Data"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="22,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="127" Height="37"><Run Text="Nazwa"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="22,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="138" Height="37"><Run Text="Godzina"/><Run Text=":"/></TextBlock>
-        <Button Content="Powrót" HorizontalAlignment="Left" Margin="652,19,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
-            FontSize="18" Click="Button_Click">
+        <TextBlock HorizontalAlignment="Left" Margin="44,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="23" Width="282" Height="37"><Run Text="Policjanci na miejscu"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="436,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="282" Height="38"><Run Text="Sprawcy"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="50,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="75" Height="37" RenderTransformOrigin="0.9,0.68"><Run Text="Data"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="50,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="126" Height="37"><Run Text="Nazwa"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="47,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="138" Height="37"><Run Text="Godzina"/><Run Text=":"/></TextBlock>
+        <Button Content="Powrót" HorizontalAlignment="Left" Margin="632,31,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
+            FontSize="20" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="120,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="250" Height="37" Text="Kradzież"/>
-        <TextBlock HorizontalAlignment="Left" Margin="22,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="138" Height="37" Text="Typ:"/>
-        <TextBlock HorizontalAlignment="Left" Margin="97,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="250" Height="37" Text="28.11.2021"/>
-        <TextBlock HorizontalAlignment="Left" Margin="141,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="250" Height="37" Text="19:48"/>
-        <TextBlock HorizontalAlignment="Left" Margin="82,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="250" Height="37" Text="Przestępstwo"/>
+        <TextBlock HorizontalAlignment="Left" Margin="133,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="250" Height="37" Text="Kradzież"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="23" Width="138" Height="37" Text="Typ:"/>
+        <TextBlock HorizontalAlignment="Left" Margin="113,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="250" Height="37" Text="28.11.2021"/>
+        <TextBlock HorizontalAlignment="Left" Margin="146,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+           FontSize="23" Width="250" Height="37" Text="19:48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="23" Width="250" Height="37" Text="Przestępstwo"/>
 
     </Grid>
 </Window>

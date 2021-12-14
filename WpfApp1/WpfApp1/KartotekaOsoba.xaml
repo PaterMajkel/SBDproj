@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source="Images/Police2.png" Height="158" VerticalAlignment="Top" Margin="43,35,533,0" Stretch="Fill" RenderTransformOrigin="0.5,0.5" />
+        <Image Source="Images/Police2.png" Height="164" VerticalAlignment="Top" Margin="112,35,514,0" Stretch="Fill" RenderTransformOrigin="0.5,0.5" />
         <Button Content="Edytuj" HorizontalAlignment="Left" Margin="367,35,0,0" VerticalAlignment="Top" Width="140" Height="32" Background="CadetBlue"
             FontSize="20" Click="Button_Click">
             <Button.Resources>
@@ -30,21 +30,21 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="276,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   FontStyle="Oblique" FontSize="28" Width="132"><Run Text="Nazwisko"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="276,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Text="Imię"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="276,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Text="Wiek"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="413,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="132"><Run Text="Floryda"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="362,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="183"><Run Text="Grzegorz"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="367,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Text="40"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="43,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="20" Width="319" Height="27"><Run Text="Przestępstwa/Wykroczenia"/></TextBlock>
-        <ListBox HorizontalAlignment="Left" Height="163" Margin="43,235,0,0" VerticalAlignment="Top" Width="706"
+        <TextBlock HorizontalAlignment="Left" Margin="459,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                    FontSize="28" Width="132"><Run Text="Nazwisko"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="459,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="28" Width="86"><Run Text="Imię"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="459,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="28" Width="86"><Run Text="Wiek"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="593,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="28" Width="132"><Run Text="Floryda"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="530,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="28" Width="182"><Run Text="Grzegorz"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="535,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+             FontSize="28" Width="86"><Run Text="40"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="60,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center"
+            FontStyle="Oblique" FontSize="17" Width="319" Height="27"><Run Text="Przestępstwa/Wykroczenia"/></TextBlock>
+        <ListBox HorizontalAlignment="Left" Height="155" Margin="60,230,0,0" VerticalAlignment="Top" Width="670"
             ItemsSource="{Binding}" 
             ScrollViewer.VerticalScrollBarVisibility="Visible">
         </ListBox>

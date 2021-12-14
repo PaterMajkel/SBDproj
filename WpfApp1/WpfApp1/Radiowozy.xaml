@@ -6,47 +6,61 @@
         mc:Ignorable="d"
 
         Title="Radiowozy" Height="524" Width="862">
-        <Grid >
-            <Grid.Background>
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Blue" Offset="0.0" />
+                <GradientStop Color="Cyan" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Center" Height="446" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="784">
+            <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="Blue" Offset="0.0" />
                     <GradientStop Color="Cyan" Offset="1.0" />
                 </LinearGradientBrush>
-            </Grid.Background>
-            <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
-            <Rectangle HorizontalAlignment="Center" Height="446" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="784">
-                <Rectangle.Fill>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="Blue" Offset="0.0" />
-                        <GradientStop Color="Cyan" Offset="1.0" />
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
-            <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
-            <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-            <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,395,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
-            <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,418,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
-            <Button Content="Dodaj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
-            <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-            <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
-            <Label Content="ID     MODEL      MARKA        ROK PRODUKCJI         ILOŚĆ&#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
-            <Label Content="Panel zarządzanie radiowozami" FontFamily="Century Gothic"
-  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-            <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-            <Label Content="Model" HorizontalAlignment="Left" Margin="530,349,0,0" VerticalAlignment="Top"/>
-            <Label Content="Marka" HorizontalAlignment="Left" Margin="531,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.692"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
-            <Label Content="Ilość" HorizontalAlignment="Left" Margin="530,414,0,0" VerticalAlignment="Top"/>
-            <Label Content="Rok produkcji" HorizontalAlignment="Left" Margin="530,395,0,0" VerticalAlignment="Top"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
-        </Grid>
+        <Label Content="Nowa pozycja" FontSize="20" HorizontalAlignment="Left" Margin="633,111,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="660,347,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
+            FontSize="20" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" Margin="660,410,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
+            FontSize="20" Click="Button_Click"/>
+        <ListView Name="ListViewColumns" Margin="66,92,300,63" SelectionChanged="ListViewColumns_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />
+                    <GridViewColumn x:Name="ModelHeader" Header="Model" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="MarkaHeader" Header="Marka"  Width="110" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="RokProdukcjiHeader" Header="Rok Produkcji"  Width="140" DisplayMemberBinding="{Binding Wiek}"/>
+                    <GridViewColumn x:Name="IloscHeader" Header="Ilość" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <Label Content="Panel zarządzanie radiowozami" FontFamily="Century Gothic"
+  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="684,167,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="102"/>
+        <Label Content="Model" FontSize="20" HorizontalAlignment="Left" Margin="612,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Marka" FontSize="20" HorizontalAlignment="Left" Margin="616,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.692"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Ilość" FontSize="19" HorizontalAlignment="Left" Margin="636,259,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rok produkcji" FontSize="19" HorizontalAlignment="Left" Margin="562,231,0,0" VerticalAlignment="Top"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="684,199,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="102"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="684,231,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="102"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="684,264,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="102"/>
+
+    </Grid>
 </Page>

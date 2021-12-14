@@ -22,18 +22,31 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="0,152,584,152" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="671,413,0,0" VerticalAlignment="Top"/>
-        <Button Content="Usuń" Margin="727,413,104,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
-        <Label Content="ID            PRZEŁOŻONY              PODWŁADNY  &#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
+        <Image Margin="889,130,-305,130" Stretch="Fill" Source="Images/Police2.png"/>
+        <Label Content="Nowa pozycja" FontSize="20" HorizontalAlignment="Left" Margin="607,109,0,0" VerticalAlignment="Top"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="655,220,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="112"/>
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="529,363,0,0" VerticalAlignment="Top" Width="118" Height="31" Background="CadetBlue"
+            FontSize="20" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" Margin="688,363,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="CadetBlue"
+            FontSize="20" Click="Button_Click"/>
+
+        <ListView Name="ListViewColumns" Margin="64,95,350,95" SelectionChanged="ListViewColumns_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />
+                    <GridViewColumn x:Name="ImieHeader" Header="Imię" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="110" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="WiekHeader" Header="Wiek"  Width="140" DisplayMemberBinding="{Binding Wiek}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
         <Label Content="Panel zarządzanie podwładnymi&#xA;" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Label Content="Przełożony" HorizontalAlignment="Left" Margin="530,349,0,0" VerticalAlignment="Top"/>
-        <Label Content="Podwładny" HorizontalAlignment="Left" Margin="531,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="655,167,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="114"/>
+        <Label Content="Przełożony" FontSize="20" HorizontalAlignment="Left" Margin="535,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Podwładny" FontSize="20" HorizontalAlignment="Left" Margin="537,211,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -43,7 +56,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="615,413,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="615,275,0,0" VerticalAlignment="Top" Width="117" Height="32" Background="CadetBlue"
+            FontSize="20" Click="Button_Click"/>
 
     </Grid>
 </Page>

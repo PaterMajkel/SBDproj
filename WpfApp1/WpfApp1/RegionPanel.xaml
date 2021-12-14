@@ -23,19 +23,27 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,395,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
+        <ListView Name="ListViewColumns" Margin="50,109,383,46" SelectionChanged="ListViewColumns_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KartotekaId}" />
+                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="110" DisplayMemberBinding="{Binding Imie}"/>
+                    <GridViewColumn x:Name="MiastoHeader" Header="Miasto"  Width="110" DisplayMemberBinding="{Binding Nazwisko}"/>
+                    <GridViewColumn x:Name="StopienZagrozeniaHeader" Header="Stopień Zagrożenia"  Width="110" DisplayMemberBinding="{Binding Nazwisko}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Nowa pozycja" FontSize="20"  HorizontalAlignment="Left" Margin="540,109,0,0" VerticalAlignment="Top"/>
+
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
-        <Label Content="ID         NAZWA         MIASTO     STOPIEŃ ZAGROŻENIA         &#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
+
+
         <Label Content="Panel zarządzanie regionami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Label Content="Nazwa" HorizontalAlignment="Left" Margin="530,349,0,0" VerticalAlignment="Top"/>
-        <Label Content="Miasto" HorizontalAlignment="Left" Margin="531,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="555,194,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="116"/>
+        <Label Content="Nazwa" FontSize="20" HorizontalAlignment="Left" Margin="472,183,0,0" VerticalAlignment="Top"/>
+        <Label Content="Miasto" FontSize="20"  HorizontalAlignment="Left" Margin="476,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -45,9 +53,11 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="Stopiń zagrożenia" HorizontalAlignment="Left" Margin="530,395,0,0" VerticalAlignment="Top"/>
+        <Label Content="Stopiń zagrożenia" FontSize="20" HorizontalAlignment="Left" Margin="472,244,0,0" VerticalAlignment="Top"/>
         <Button Content="Edytuj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="615,452,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.978,0.582"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="555,225,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="116"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="639,256,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="116"/>
 
     </Grid>
 </Page>
