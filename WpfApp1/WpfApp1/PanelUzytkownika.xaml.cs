@@ -63,9 +63,9 @@ namespace PoliceApp
             UserPages.Content = new KartotekaPage();
         }
 
-        private void Button_Click_Back(object sender, RoutedEventArgs e)
+        private void Button_Click_Plan(object sender, RoutedEventArgs e)
         {
-
+            UserPages.Content = new PlanCheckPage();
         }
 
         private void Button_Click_Wykroczenia(object sender, RoutedEventArgs e)
