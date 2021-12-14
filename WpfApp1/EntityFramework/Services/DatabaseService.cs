@@ -183,11 +183,15 @@ namespace EntityFramework.Services
             foreach (var element in data)
             {
                 var temp = _context.Uzytkowniks.Find(element.UzytkownikId);
-                if (temp != null && temp.Rola.ToUpper()!="ADMIN")
+                if (temp != null && temp.Rola.ToUpper() != "ADMIN")
                     //_context.Remove(temp);
                     temp.IsActive = false;
 
             }
+        }
+        public void AddWykroczenias(Wykroczenia wykroczenia)
+        {
+            _context.Add(wykroczenia);
             _context.SaveChanges();
         }
     }
