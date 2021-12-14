@@ -48,6 +48,14 @@ namespace EntityFramework.Services
            
             return _context.Uzytkowniks.ToList();
         }
+        public ICollection<Przestepstwo> GetPrzestepstwos()
+        {
+            return _context.Przestepstwos.ToList();
+        }
+        public ICollection<Wykroczenia> GetWykroczenias()
+        {
+            return _context.Wykroczenias.ToList();
+        }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
             //do zrobienia wciaz -> przykladowe zapytanie do podpatrzenia sb
@@ -84,6 +92,16 @@ namespace EntityFramework.Services
             foreach(var element in data)
             {
                 var temp = _context.Komendas.Find(element.KomendaId);
+                if (temp != null)
+                    _context.Remove(temp);
+            }
+            _context.SaveChanges();
+        }
+        public void DeletePrzestepstwos(ICollection<Przestepstwo> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Przestepstwos.Find(element.PrzestepstwoId);
                 if (temp != null)
                     _context.Remove(temp);
             }
@@ -133,6 +151,11 @@ namespace EntityFramework.Services
         {
             _context.Add(radiowoz);
             _context.SaveChanges ();
+        }
+        public void AddPrzstepstwos(Przestepstwo przestepstwo)
+        {
+            _context.Add(przestepstwo);
+            _context.SaveChanges();
         }
     }
 }

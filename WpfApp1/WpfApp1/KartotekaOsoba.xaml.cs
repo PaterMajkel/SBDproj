@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityFramework.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,18 @@ namespace PoliceApp
     /// </summary>
     public partial class KartotekaOsoba : Window
     {
-        public KartotekaOsoba()
+        public Kartoteka kartoteka;
+        public KartotekaOsoba(Kartoteka osoba)
         {
+            kartoteka = osoba;
+            //Console.WriteLine(kartoteka.Nazwisko);
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+         //   Close();
+            MessageBox.Show(kartoteka.Nazwisko, "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
