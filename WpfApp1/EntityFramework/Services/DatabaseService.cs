@@ -175,5 +175,10 @@ namespace EntityFramework.Services
             _context.Add(przestepstwo);
             _context.SaveChanges();
         }
+        public void AddWykroczenias(Wykroczenia wykroczenia)
+        {
+            _context.Add(wykroczenia);
+            _context.SaveChanges();
+        }
     }
 }

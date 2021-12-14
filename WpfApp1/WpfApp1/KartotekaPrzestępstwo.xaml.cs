@@ -103,8 +103,6 @@ namespace PoliceApp
                 MessageBox.Show("Wprowadzono złe dane", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-
             databaseService.AddPrzstepstwos(new Przestepstwo { Nazwa = nazwa, Data = dzien, Godzina = godzina, });
         }
         private void Nazwa_TextChanged(object sender, TextChangedEventArgs e)
@@ -117,7 +115,7 @@ namespace PoliceApp
         }
         private void Godzina_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dzien = Godzina.Text.ToString();
+            godzina = Godzina.Text.ToString();
         }
         private void Button_Click_Usun(object sender, RoutedEventArgs e)
         {
@@ -135,12 +133,12 @@ namespace PoliceApp
         }
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var item = ((FrameworkElement)e.OriginalSource).DataContext as Kartoteka;
-            if (item != null)
-            {
-                Window kartotekaOsoba = new KartotekaOsoba(item);
-                kartotekaOsoba.Show();
-            }
+           // var item = ((FrameworkElement)e.OriginalSource).DataContext as Kartoteka;
+            //if (item != null)
+            //{
+             //   Window kartotekaOsoba = new KartotekaOsoba(item);
+             //   kartotekaOsoba.Show();
+            //}
         }
 
 
