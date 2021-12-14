@@ -32,7 +32,7 @@ namespace EntityFramework
             public EFDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<EFDbContext>();
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\czarn\\OneDrive\\Dokumenty\\GitHub\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True");
                 // MICHAŁ Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True
                 // FILIP Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
                 //Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\czarn\\OneDrive\\Dokumenty\\GitHub\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
@@ -46,7 +46,10 @@ namespace EntityFramework
 
             //Uzytkownicy
             modelBuilder.Entity<Uzytkownik>().HasData(
-                new Uzytkownik { UzytkownikId = 1, Login = "Admin", Password = "Admin", Rola = "admin" }
+                new Uzytkownik { UzytkownikId = 1, Login = "admin", Password = "admin", Rola = "admin" },
+                new Uzytkownik { UzytkownikId = 2, Login = "bruh", Password = "bruh", Rola = "", PolicjantId=5 },
+                new Uzytkownik { UzytkownikId = 3, Login = "xxx", Password = "xxx", Rola = "", PolicjantId = 3 }
+
                 );
 
             //Miasta
