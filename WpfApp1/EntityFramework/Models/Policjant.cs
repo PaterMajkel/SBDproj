@@ -20,5 +20,7 @@ namespace EntityFramework.Models
         public ICollection<Wykroczenia> Wykroczenias { get; set; }
         public ICollection<Przestepstwo> Przestepstwos { get; set; }
         public ICollection<Patrol> Patrols { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

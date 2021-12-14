@@ -15,5 +15,7 @@ namespace EntityFramework.Models
         public Miasto Miasto { get; set; }
         public string Nazwa { get; set; }
         public string Stopien_zagrozenia { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

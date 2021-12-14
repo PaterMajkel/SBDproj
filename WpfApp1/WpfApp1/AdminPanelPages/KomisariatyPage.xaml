@@ -31,7 +31,7 @@
         <Label Content="Adres" HorizontalAlignment="Left" Margin="650,159,0,0" VerticalAlignment="Top"/>
         <Label Content="Region" HorizontalAlignment="Left" Margin="644,240,0,0" VerticalAlignment="Top"/>
         <Label Content="Miasto" HorizontalAlignment="Left" Margin="644,202,0,0" VerticalAlignment="Top"/>
-        <ListView Name="ListViewColumns" Margin="46,97,346,54">
+        <ListView Name="ListViewColumns" Margin="46,118,346,54">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding KomendaId}" />
@@ -47,7 +47,14 @@
         <ComboBox Name="MiastoBox" HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxMiasto_SelectionChanged"/>
         <ComboBox Name="RegionBox" HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxRegion_SelectionChanged"/>
         <Button x:Name="EditButton" Content="Edytuj" Margin="644,443,187,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"/>
-        <Button x:Name="Abort" Content="Zatrzymaj" Visibility="Hidden"  HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="31" Width="61"/>
+        <Button x:Name="Abort" Content="Zatrzymaj" Visibility="Hidden"  HorizontalAlignment="Left" Margin="775,280,0,0" VerticalAlignment="Top" Height="31" Width="61" Click="Button_Click_Abort"/>
+        <Button x:Name="Refresh" Content="Odśwież" Margin="806,46,26,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29"/>
+        <TextBox x:Name="FilterId" HorizontalAlignment="Left" Margin="46,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" TextChanged="Adres_TextChanged"/>
+        <TextBox x:Name="FilterAdres" HorizontalAlignment="Left" Margin="155,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterRegion" HorizontalAlignment="Left" Margin="275,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterStopien" HorizontalAlignment="Left" Margin="395,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterMiasto" HorizontalAlignment="Left" Margin="515,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Filter" Content="Filtruj" Margin="605,118,300,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="29"/>
 
     </Grid>
 </Page>

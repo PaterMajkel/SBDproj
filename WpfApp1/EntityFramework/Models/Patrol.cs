@@ -19,5 +19,7 @@ namespace EntityFramework.Models
         public string Data_zakonczenia { get; set; }
         public string Godzina_rozpoczecia { get; set; }
         public string Godzina_zakonczenia { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

@@ -15,6 +15,8 @@ namespace EntityFramework.Models
         public string Nazwisko { get; set; }
         public int Wiek { get; set; }
         public byte[] Zdjecie { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
         public ICollection<Wykroczenia> Wykroczenias { get; set; }
         public ICollection<Przestepstwo> Przestepstwos { get; set; }
     }

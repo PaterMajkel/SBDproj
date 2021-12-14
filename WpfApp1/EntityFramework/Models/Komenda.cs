@@ -12,6 +12,8 @@ namespace EntityFramework.Models
         [Key]
         public int KomendaId { get; set; }
         public string Adres { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
         public int Region_MiastaId { get; set; }
         public Region_Miasta Region_Miasta { get; set; }
 

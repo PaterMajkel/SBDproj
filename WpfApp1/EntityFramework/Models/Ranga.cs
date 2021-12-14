@@ -13,5 +13,7 @@ namespace EntityFramework.Models
         public int RangaId { get; set; }
         public string Nazwa { get; set; }
         public double Pensja { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }
