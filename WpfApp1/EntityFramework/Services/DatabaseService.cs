@@ -85,7 +85,16 @@ namespace EntityFramework.Services
             }
             _context.SaveChanges();
         }
-
+        public void  DeleteKartotekas(ICollection<Kartoteka> data)
+        {
+            foreach(var element in data)
+            {
+                var temp = _context.Kartotekas.Find(element.KartotekaId);
+                if (temp != null)
+                    _context.Remove(temp);
+            }
+            _context.SaveChanges();
+        }
         public ICollection<Miasto> GetMiastos()
         {
             return _context.Miastos.ToList();
@@ -99,6 +108,11 @@ namespace EntityFramework.Services
         public void AddKomenda(Komenda komenda)
         {
             _context.Add(komenda);
+            _context.SaveChanges();
+        }
+        public void AddKartotekas(Kartoteka kartoteka)
+        {
+            _context.Add(kartoteka);
             _context.SaveChanges();
         }
     }
