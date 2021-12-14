@@ -39,6 +39,10 @@ namespace EntityFramework.Services
         {
             return _context.Rangas.ToList();
         }
+        public ICollection<Radiowoz> GetRadiowozs()
+        {
+            return _context.Radiowozs.ToList();
+        }
         public ICollection<Uzytkownik> GetUzytkowniks()
         {
            
@@ -95,6 +99,16 @@ namespace EntityFramework.Services
             }
             _context.SaveChanges();
         }
+        public void DeleteRadiowozos(ICollection<Radiowoz> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Radiowozs.Find(element.RadiowozId);
+                if (temp != null)
+                    _context.Remove(temp);
+            }
+            _context.SaveChanges();
+        }
         public ICollection<Miasto> GetMiastos()
         {
             return _context.Miastos.ToList();
@@ -114,6 +128,11 @@ namespace EntityFramework.Services
         {
             _context.Add(kartoteka);
             _context.SaveChanges();
+        }
+        public void AddRadiowozos(Radiowoz radiowoz)
+        {
+            _context.Add(radiowoz);
+            _context.SaveChanges ();
         }
     }
 }
