@@ -43,18 +43,13 @@ namespace EntityFramework.Services
         {
             return _context.Radiowozs.Where(p => p.IsActive).ToList();
         }
-        public ICollection<Uzytkownik> GetUzytkowniks()
-        {
-           
-            return _context.Uzytkowniks.Where(p => p.IsActive).ToList();
-        }
         public ICollection<Przestepstwo> GetPrzestepstwos()
         {
-            return _context.Przestepstwos.ToList();
+            return _context.Przestepstwos.Where(p => p.IsActive).ToList();
         }
         public ICollection<Wykroczenia> GetWykroczenias()
         {
-            return _context.Wykroczenias.ToList();
+            return _context.Wykroczenias.Where(p=>p.IsActive).ToList();
         }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
@@ -152,7 +147,7 @@ namespace EntityFramework.Services
 
         public ICollection<Region_Miasta> getRegionsOfMiasto(Miasto miasto)
         {
-            return _context.Region_Miastas.Where(p => p.IsActive).Where(r => r.MiastoId == miasto.MiastoId).Where(p => p.IsActive).ToList();
+            return _context.Region_Miastas.Where(p => p.IsActive).Where(r => r.MiastoId == miasto.MiastoId).ToList();
         }
 
         public void AddKomenda(Komenda komenda)
@@ -173,6 +168,26 @@ namespace EntityFramework.Services
         public void AddPrzstepstwos(Przestepstwo przestepstwo)
         {
             _context.Add(przestepstwo);
+            _context.SaveChanges();
+        }
+
+        public ICollection<Uzytkownik> GetUzytkowniks()
+        {
+            return _context.Uzytkowniks.Where(p => p.IsActive)
+                .Include(p => p.Policjant).ThenInclude(p => p.Komenda)
+                .ToList();
+                
+        }
+        public void DeleteUzytkowniks(ICollection<Uzytkownik> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Uzytkowniks.Find(element.UzytkownikId);
+                if (temp != null && temp.Rola.ToUpper()!="ADMIN")
+                    //_context.Remove(temp);
+                    temp.IsActive = false;
+
+            }
             _context.SaveChanges();
         }
     }
