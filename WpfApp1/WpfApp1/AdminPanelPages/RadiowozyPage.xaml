@@ -1,11 +1,11 @@
-﻿<Page x:Class="PoliceApp.Policjanci"
+﻿<Page x:Class="PoliceApp.RadiowozyPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PoliceApp"
         mc:Ignorable="d"
-                Title="Policjaci" Height="524" Width="862">
+
+        Title="Radiowozy" Height="524" Width="862">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -22,20 +22,31 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.png" />
+        <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
         <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="530,321,0,0" VerticalAlignment="Top"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,372,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,395,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
+        <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,418,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339"/>
-        <Label Content="Imię                 Nazwisko              Komenda&#xD;&#xA;&#xD;&#xA;Jan                   Kowalski               &#xD;&#xA;&#xD;&#xA;Adam                Nowak  " HorizontalAlignment="Left" Margin="476,124,0,0" VerticalAlignment="Top" Height="192" Width="313"/>
-        <Label Content="Panel zarządzania policjantami" FontFamily="Century Gothic"
+        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
+        <Label Content="ID     MODEL      MARKA        ROK PRODUKCJI         ILOŚĆ&#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
+        <Label Content="Panel zarządzanie radiowozami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
-        <Label Content="Imię" HorizontalAlignment="Left" Margin="530,347,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="530,372,0,0" VerticalAlignment="Top"/>
-        <Label Content="Komenda" HorizontalAlignment="Left" Margin="530,398,0,0" VerticalAlignment="Top"/>
+        <Label Content="Model" HorizontalAlignment="Left" Margin="530,349,0,0" VerticalAlignment="Top"/>
+        <Label Content="Marka" HorizontalAlignment="Left" Margin="531,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.692"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Ilość" HorizontalAlignment="Left" Margin="530,414,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rok produkcji" HorizontalAlignment="Left" Margin="530,395,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

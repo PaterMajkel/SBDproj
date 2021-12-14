@@ -34,7 +34,8 @@ namespace PoliceApp
         {
             InitializeComponent();
             data = databaseService.GetKartotekas();
-            ;
+            
+            ListViewColumns.ItemsSource = data;
 
         }
         private void ListView_OnColumnClick(object sender, RoutedEventArgs e)

@@ -17,9 +17,9 @@ namespace PoliceApp
     /// <summary>
     /// Logika interakcji dla klasy Policjanci.xaml
     /// </summary>
-    public partial class Policjanci : Page
+    public partial class PolicjanciPage : Page
     {
-        public Policjanci()
+        public PolicjanciPage()
         {
             InitializeComponent();
            // AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ListView_OnColumnClick));
