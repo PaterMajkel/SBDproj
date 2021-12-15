@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="282,10,0,0" VerticalAlignment="Top" Width="254" Height="42" Background="CadetBlue"
+        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="270,8,0,0" VerticalAlignment="Top" Width="260" Height="43" Background="CadetBlue"
                 FontSize="20" Click="Button_Click_Podwladni">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -29,7 +29,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Sprawdź Plan" HorizontalAlignment="Left" Margin="0,8,0,0" VerticalAlignment="Top" Width="277" Height="43" Background="CadetBlue"
+        <Button Content="Sprawdź Plan" HorizontalAlignment="Left" Margin="0,8,0,0" VerticalAlignment="Top" Width="260" Height="43" Background="CadetBlue"
                 FontSize="20" Click="Button_Click_Plan">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -37,7 +37,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="541,10,0,0" VerticalAlignment="Top" Width="259" Height="41" Background="CadetBlue"
+        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="540,8,0,517" VerticalAlignment="Bottom" Width="260" Height="43" Background="CadetBlue"
                 FontSize="20" Click="Button_Click_Kartoteka">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -45,7 +45,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top" Width="277" Height="41" Background="CadetBlue"
+        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top" Width="260" Height="43" Background="CadetBlue"
             FontSize="20" Click="Button_Click_Wykroczenia">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -53,7 +53,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Przestępstwami" HorizontalAlignment="Left" Margin="282,57,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+        <Button Content="Zarządzanie Przestępstwami" HorizontalAlignment="Left" Margin="270,57,0,0" VerticalAlignment="Top" Width="260" Height="43" Background="CadetBlue"
             FontSize="20" Click="Button_Click_Przestepstwa">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -62,7 +62,7 @@
             </Button.Resources>
         </Button>
         <Frame x:Name="UserPages" Margin="0,108,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
-        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="552,57,0,0" VerticalAlignment="Top" Width="248" Height="43" Background="CadetBlue"
+        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="540,57,0,0" VerticalAlignment="Top" Width="260" Height="43" Background="CadetBlue"
             FontSize="20" Click="Button_Click_Regiony">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
