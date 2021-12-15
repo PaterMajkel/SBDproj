@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoliceApp"
         mc:Ignorable="d"
-       Title="Kartoteka Zdarzenie " Height="450" Width="800">
-    <Grid>
-
+       Title="Kartoteka Zdarzenie " Height="516" Width="946">
+    <Grid >
         <Grid.Background>
-            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
-                <GradientStop Color="DodgerBlue" Offset="1" />
-                <GradientStop Color="DarkBlue" Offset="0" />
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Blue" Offset="0.0" />
+                <GradientStop Color="Cyan" Offset="1.0" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle  HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="772">
+        <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Left" Height="400" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
             <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
-                    <GradientStop Color="DeepSkyBlue" Offset="1" />
-                    <GradientStop Color="RoyalBlue" Offset="0" />
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Blue" Offset="0.0" />
+                    <GradientStop Color="Cyan" Offset="1.0" />
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ListView  MouseDoubleClick="ListView_MouseDoubleClick" Name="ListViewColumns" Margin="21,66,377,50" ItemsSource="{Binding TrackCollection}">
+        <ListView  MouseDoubleClick="ListView_MouseDoubleClick" Name="ListViewColumns" Margin="51,104,423,97" ItemsSource="{Binding TrackCollection}" SelectionChanged="ListViewColumns_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding WykroczenieId}" />
@@ -32,14 +32,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock HorizontalAlignment="Left" Margin="21,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="51,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="30" Width="391" Height="37"><Run Language="pl-pl" Text="Wykroczenie"/></TextBlock>
         <TextBlock  HorizontalAlignment="Left" Margin="617,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text="Nazwa"/></TextBlock>
         <TextBox x:Name="Nazwa" HorizontalAlignment="Left" Height="26" Margin="617,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="18" TextChanged="Nazwa_TextChanged" />
-        <TextBox x:Name="Godzina" HorizontalAlignment="Left" Height="26" Margin="619,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="117" FontSize="18" TextChanged="Godzina_TextChanged"/>
+        <TextBox x:Name="Godzina" HorizontalAlignment="Left" Height="26" Margin="618,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontSize="18" TextChanged="Godzina_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="619,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.505,3.88"><Run Language="pl-pl" Text="Data"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="619,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"><Run Language="pl-pl" Text="Godzina"/></TextBlock>
-        <Button x:Name="Delete" Content="Usuń" HorizontalAlignment="Left" Margin="442,355,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="IndianRed"
+        <Button x:Name="Delete" Content="Usuń" HorizontalAlignment="Left" Margin="739,286,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="Gray"
             FontSize="18" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -47,7 +47,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="617,247,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="Green"
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="617,286,0,0" VerticalAlignment="Top" Width="117" Height="31" Background="Gray"
             FontSize="18"  Click="Button_Click_Dodaj">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

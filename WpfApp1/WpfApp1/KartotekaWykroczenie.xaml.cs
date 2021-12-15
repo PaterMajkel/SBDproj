@@ -124,7 +124,10 @@ namespace PoliceApp
             }
         }
 
+        private void ListViewColumns_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }
 

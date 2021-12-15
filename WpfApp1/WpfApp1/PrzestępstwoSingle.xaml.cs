@@ -23,5 +23,10 @@ namespace PoliceApp
         {
             InitializeComponent();
         }
+
+        private void AddSprawca_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
