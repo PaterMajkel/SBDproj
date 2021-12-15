@@ -133,12 +133,12 @@ namespace PoliceApp
         }
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-           // var item = ((FrameworkElement)e.OriginalSource).DataContext as Kartoteka;
-            //if (item != null)
-            //{
-             //   Window kartotekaOsoba = new KartotekaOsoba(item);
-             //   kartotekaOsoba.Show();
-            //}
+           var item = ((FrameworkElement)e.OriginalSource).DataContext as Przestepstwo;
+           if (item != null)
+           {
+               Window  przestepstwo= new PrzestępstwoSingle();
+                przestepstwo.Show();
+           }
         }
 
 

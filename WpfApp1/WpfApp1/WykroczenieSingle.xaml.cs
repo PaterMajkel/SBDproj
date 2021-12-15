@@ -15,18 +15,14 @@ using System.Windows.Shapes;
 namespace PoliceApp
 {
     /// <summary>
-    /// Logika interakcji dla klasy KartotekaZdarzenie.xaml
+    /// Logika interakcji dla klasy WykroczenieSingle.xaml
     /// </summary>
-    public partial class KartotekaZdarzenie : Window
+    public partial class WykroczenieSingle : Window
     {
-        public KartotekaZdarzenie()
+        public WykroczenieSingle()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
     }
 }
