@@ -4,14 +4,16 @@ using EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntityFramework.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    partial class EFDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211214223247_addedIsActiveAttribute")]
+    partial class addedIsActiveAttribute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -762,27 +764,9 @@ namespace EntityFramework.Migrations
                         {
                             UzytkownikId = 1,
                             IsActive = true,
-                            Login = "admin",
-                            Password = "admin",
+                            Login = "Admin",
+                            Password = "Admin",
                             Rola = "admin"
-                        },
-                        new
-                        {
-                            UzytkownikId = 2,
-                            IsActive = true,
-                            Login = "bruh",
-                            Password = "bruh",
-                            PolicjantId = 5,
-                            Rola = ""
-                        },
-                        new
-                        {
-                            UzytkownikId = 3,
-                            IsActive = true,
-                            Login = "xxx",
-                            Password = "xxx",
-                            PolicjantId = 3,
-                            Rola = ""
                         });
                 });
 

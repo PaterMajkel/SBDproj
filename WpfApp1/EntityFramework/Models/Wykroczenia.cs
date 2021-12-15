@@ -16,5 +16,7 @@ namespace EntityFramework.Models
         public string Godzina { get; set; }
         public ICollection<Policjant> Policjants {get; set;}
         public ICollection<Kartoteka> Kartotekas { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

@@ -25,7 +25,6 @@ namespace PoliceApp
     {
         public DatabaseService databaseService = new();
         public ICollection<Kartoteka> data;
-        public ICollection<Kartoteka> data2;
         public bool IdOrder = false;
         public string imie;
         public string nazwisko;
@@ -121,7 +120,6 @@ namespace PoliceApp
         }
         private void RefreshData()
         {
-            data2 = databaseService.GetKartotekas();
             ListViewColumns.ItemsSource = data;
         }
         private void Imie_TextChanged(object sender, TextChangedEventArgs e)
@@ -156,7 +154,7 @@ namespace PoliceApp
             var item = ((FrameworkElement)e.OriginalSource).DataContext as Kartoteka;
             if (item != null)
             {
-                Window kartotekaOsoba = new KartotekaOsoba();
+                Window kartotekaOsoba = new KartotekaOsoba(item);
                 kartotekaOsoba.Show();
             }
         }

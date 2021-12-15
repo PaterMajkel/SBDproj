@@ -37,16 +37,19 @@ namespace EntityFramework.Services
         //TODO: zebranie wszystkich przestepstw/wykroczen danej osoby z kartoteki
         public ICollection<Ranga> GetRangas()
         {
-            return _context.Rangas.ToList();
+            return _context.Rangas.Where(p => p.IsActive).ToList();
         }
         public ICollection<Radiowoz> GetRadiowozs()
         {
-            return _context.Radiowozs.ToList();
+            return _context.Radiowozs.Where(p => p.IsActive).ToList();
         }
-        public ICollection<Uzytkownik> GetUzytkowniks()
+        public ICollection<Przestepstwo> GetPrzestepstwos()
         {
-           
-            return _context.Uzytkowniks.ToList();
+            return _context.Przestepstwos.Where(p => p.IsActive).ToList();
+        }
+        public ICollection<Wykroczenia> GetWykroczenias()
+        {
+            return _context.Wykroczenias.Where(p=>p.IsActive).ToList();
         }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
@@ -59,14 +62,14 @@ namespace EntityFramework.Services
         }
         public ICollection<Kartoteka> GetKartotekas()
         {
-            var x= _context.Kartotekas.ToList();
+            var x= _context.Kartotekas.Where(p => p.IsActive).ToList();
             return x;
         }
         public Uzytkownik GetUzytkownik(string login, string password)
         {
             if (login == null || password == null)
                 return null;
-            var uzytkownik = _context.Uzytkowniks.Where(x => x.Login == login).Where(x => x.Password == password).FirstOrDefault();
+            var uzytkownik = _context.Uzytkowniks.Where(p => p.IsActive).Where(x => x.Login == login).Where(x => x.Password == password).FirstOrDefault();
             return uzytkownik;
         }
         //xD kocham SQL ;* od majkela
@@ -77,15 +80,40 @@ namespace EntityFramework.Services
                 .Join(_context.Miastos.Join(_context.Region_Miastas, miasto=>miasto.ID_miasta, region=>region.ID_miasta, (miasto, region) => new { ID=region.ID_regionu, Nazwa_regionu= region.Nazwa, Nazwa_miasta = miasto.Nazwa, Stopien_Zagrozenia = region.Stopien_zagrozenia })
                 , komenda=>komenda.ID_regionu, _a=>_a.ID, (komenda, _a) => new Komenda_Miasto_Region { ID_komendy = komenda.ID_komendy, ID_regionu=komenda.ID_regionu, Nazwa_regionu=_a.Nazwa_regionu, Nazwa_miasta=_a.Nazwa_miasta, Stopien_zagrozenia=_a.Stopien_Zagrozenia, Adres=komenda.Adres} )
                 .ToList();*/
-            return _context.Komendas.Include(k => k.Region_Miasta).ThenInclude(kr=>kr.Miasto).ToList();
+            return _context.Komendas.Where(p=>p.IsActive).Include(k => k.Region_Miasta).ThenInclude(kr=>kr.Miasto).ToList();
         }
         public void DeleteKomendas(ICollection<Komenda> data)
         {
             foreach(var element in data)
             {
+                //var temp = _context.Komendas.Find(element.KomendaId);
+                //if (temp != null)
+                //    _context.Remove(temp);
                 var temp = _context.Komendas.Find(element.KomendaId);
                 if (temp != null)
-                    _context.Remove(temp);
+                {
+                    temp.IsActive = false;
+                }
+            }
+            _context.SaveChanges();
+        }
+        public void EditKomenda(Komenda data)
+        {
+            var edited = _context.Komendas.Where(p => p.KomendaId == data.KomendaId).FirstOrDefault();
+            if (edited==null)
+                return;
+            edited = data;
+            _context.SaveChanges();
+        }
+
+        public void DeletePrzestepstwos(ICollection<Przestepstwo> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Przestepstwos.Find(element.PrzestepstwoId);
+                if (temp != null)
+                    //_context.Remove(temp);
+                    temp.IsActive = false;
             }
             _context.SaveChanges();
         }
@@ -95,7 +123,8 @@ namespace EntityFramework.Services
             {
                 var temp = _context.Kartotekas.Find(element.KartotekaId);
                 if (temp != null)
-                    _context.Remove(temp);
+                    //_context.Remove(temp);
+                    temp.IsActive=false;
             }
             _context.SaveChanges();
         }
@@ -105,18 +134,20 @@ namespace EntityFramework.Services
             {
                 var temp = _context.Radiowozs.Find(element.RadiowozId);
                 if (temp != null)
-                    _context.Remove(temp);
+                    //_context.Remove(temp);
+                    temp.IsActive = false;
+
             }
             _context.SaveChanges();
         }
         public ICollection<Miasto> GetMiastos()
         {
-            return _context.Miastos.ToList();
+            return _context.Miastos.Where(p => p.IsActive).ToList();
         } 
 
         public ICollection<Region_Miasta> getRegionsOfMiasto(Miasto miasto)
         {
-            return _context.Region_Miastas.Where(r => r.MiastoId == miasto.MiastoId).ToList();
+            return _context.Region_Miastas.Where(p => p.IsActive).Where(r => r.MiastoId == miasto.MiastoId).ToList();
         }
 
         public void AddKomenda(Komenda komenda)
@@ -133,6 +164,35 @@ namespace EntityFramework.Services
         {
             _context.Add(radiowoz);
             _context.SaveChanges ();
+        }
+        public void AddPrzstepstwos(Przestepstwo przestepstwo)
+        {
+            _context.Add(przestepstwo);
+            _context.SaveChanges();
+        }
+
+        public ICollection<Uzytkownik> GetUzytkowniks()
+        {
+            return _context.Uzytkowniks.Where(p => p.IsActive)
+                .Include(p => p.Policjant).ThenInclude(p => p.Komenda)
+                .ToList();
+                
+        }
+        public void DeleteUzytkowniks(ICollection<Uzytkownik> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Uzytkowniks.Find(element.UzytkownikId);
+                if (temp != null && temp.Rola.ToUpper() != "ADMIN")
+                    //_context.Remove(temp);
+                    temp.IsActive = false;
+
+            }
+        }
+        public void AddWykroczenias(Wykroczenia wykroczenia)
+        {
+            _context.Add(wykroczenia);
+            _context.SaveChanges();
         }
     }
 }

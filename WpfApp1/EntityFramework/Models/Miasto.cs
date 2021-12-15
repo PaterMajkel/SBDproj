@@ -12,5 +12,7 @@ namespace EntityFramework.Models
         [Key]
         public int MiastoId { get; set; }
         public string Nazwa { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

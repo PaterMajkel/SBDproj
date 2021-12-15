@@ -18,5 +18,7 @@ namespace EntityFramework.Models
         public string Password { get; set; }
         public int? PolicjantId { get; set; }
         public Policjant Policjant { get; set; }
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }

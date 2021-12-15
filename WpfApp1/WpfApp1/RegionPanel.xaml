@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PoliceApp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-              Title="Radiowozy" Height="524" Width="862">
+      Title="Radiowozy" Height="448" Width="802">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -29,8 +28,8 @@
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,395,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463"/>
         <Button Content="Dodaj" HorizontalAlignment="Left" Margin="671,452,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń" Margin="729,452,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <ListBox HorizontalAlignment="Left" Height="205" Margin="463,111,0,0" VerticalAlignment="Top" Width="339" />
-        <Label Content="ID         NAZWA         MIASTO     STOPIEŃ ZAGROŻENIA         &#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="476,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
+        <ListBox HorizontalAlignment="Left" Height="205" Margin="383,116,0,0" VerticalAlignment="Top" Width="339" />
+        <Label Content="ID         NAZWA         MIASTO     STOPIEŃ ZAGROŻENIA         &#xA;&#xA;1&#xA;&#xA;2&#xA;&#xA;3&#xA;&#xA;4&#xA;&#xA;5&#xA;" HorizontalAlignment="Left" Margin="396,123,0,0" VerticalAlignment="Top" Height="193" Width="313"/>
         <Label Content="Panel zarządzanie regionami" FontFamily="Century Gothic"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
         <TextBlock Background="White" HorizontalAlignment="Left" Margin="633,349,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76"/>
