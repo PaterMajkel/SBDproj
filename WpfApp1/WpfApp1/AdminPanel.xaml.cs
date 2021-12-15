@@ -41,5 +41,10 @@ namespace PoliceApp
         {
             AdminPages.Content = new KomisariatyPage();
         }
+
+        private void AdminPages_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }

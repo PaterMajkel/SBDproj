@@ -25,9 +25,21 @@
         <Image Margin="1071,114,-487,190" Stretch="Fill" Source="Images/Police2.png"/>
         <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="670,108,0,0" VerticalAlignment="Top"/>
 
-        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="690,290,0,0" VerticalAlignment="Top" Click="Button_Click_Dodaj"/>
-        <Button x:Name="Delete" Content="Usuń" Margin="654,414,177,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun"/>
-        <Label Content="Panel zarządzanie radiowozami" FontFamily="Century Gothic"
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="708,262,0,0" VerticalAlignment="Top" Click="Button_Click_Dodaj" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Delete" Content="Usuń" Margin="779,452,91,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Panel zarządzanie radiowozami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
         <Label Content="Model" HorizontalAlignment="Left" Margin="621,133,0,0" VerticalAlignment="Top"/>
         <Label Content="Marka" HorizontalAlignment="Left" Margin="616,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">

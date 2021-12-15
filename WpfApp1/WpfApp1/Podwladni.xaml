@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PoliceApp"
       mc:Ignorable="d" 
-      Title="Podwładni" Height="448" Width="802">
+      Title="Podwładni" Height="516" Width="946">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
-        <Rectangle HorizontalAlignment="Center" Height="446" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="784">
+        <Rectangle HorizontalAlignment="Left" Height="400" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="Blue" Offset="0.0" />
@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ListView Name="ListViewColumns" Margin="26,97,360,54">
+        <ListView Name="ListViewColumns" Margin="60,97,381,93">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PolicjantId}" />
@@ -34,22 +34,40 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="608,374,0,0" VerticalAlignment="Top"/>
-        <Button Content="Usuń" Margin="727,413,104,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963"/>
-        <Label Content="Ustawienie Planu Podwładnemu" FontFamily="Century Gothic"
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="690,383,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Usuń" Margin="771,383,99,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Height="18" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Ustawienie Planu Podwładnemu" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="53"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="537,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782"/>
-        <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="513,173,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="PolicjantId"/>
-        <ComboBox Name="RadiowozBox" HorizontalAlignment="Left" Margin="513,125,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="RadiowozID"/>
-        <Label Content="Radiowóz ID" HorizontalAlignment="Left" Margin="507,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="Policjant ID" HorizontalAlignment="Left" Margin="507,99,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Data_roz" HorizontalAlignment="Left" Margin="513,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <TextBox x:Name="Godzina_roz" HorizontalAlignment="Left" Margin="513,329,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Data_zak" HorizontalAlignment="Left" Margin="513,292,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Godzina_Zak" HorizontalAlignment="Left" Margin="513,254,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Data Rozpoczęcia" HorizontalAlignment="Left" Margin="513,193,0,0" VerticalAlignment="Top"/>
-        <Label Content="Godzina Rozpoczęcia" HorizontalAlignment="Left" Margin="512,233,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data Zakończenia" HorizontalAlignment="Left" Margin="512,272,0,0" VerticalAlignment="Top"/>
-        <Label Content="Godzina Zakończenia" HorizontalAlignment="Left" Margin="512,310,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="609,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782" Height="18" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="630,173,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="PolicjantId"/>
+        <ComboBox Name="RadiowozBox" HorizontalAlignment="Left" Margin="630,125,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="RadiowozID"/>
+        <Label Content="Radiowóz ID" HorizontalAlignment="Left" Margin="630,147,0,0" VerticalAlignment="Top"/>
+        <Label Content="Policjant ID" HorizontalAlignment="Left" Margin="630,99,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Data_roz" HorizontalAlignment="Left" Margin="630,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Godzina_roz" HorizontalAlignment="Left" Margin="630,329,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Data_zak" HorizontalAlignment="Left" Margin="630,292,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Godzina_Zak" HorizontalAlignment="Left" Margin="630,12,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Data Rozpoczęcia" HorizontalAlignment="Left" Margin="630,193,0,0" VerticalAlignment="Top"/>
+        <Label Content="Godzina Rozpoczęcia" HorizontalAlignment="Left" Margin="630,233,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data Zakończenia" HorizontalAlignment="Left" Margin="630,272,0,0" VerticalAlignment="Top"/>
+        <Label Content="Godzina Zakończenia" HorizontalAlignment="Left" Margin="630,310,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

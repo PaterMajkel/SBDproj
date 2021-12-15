@@ -65,7 +65,7 @@
             <Label Content="Wybierz osobę z kartoteki:" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top" Width="159"/>
             <ComboBox x:Name="PolicjantBox" HorizontalAlignment="Left" Margin="408,176,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaPolicjant"/>
             <Label Content="Wybierz policjanta:" HorizontalAlignment="Left" Margin="408,148,0,0" VerticalAlignment="Top" Width="159"/>
-            <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Green"
+            <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Gray"
             FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -73,7 +73,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="DeleteSprawca" Content="Usuń" HorizontalAlignment="Left" Margin="283,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="IndianRed"
+            <Button x:Name="DeleteSprawca" Content="Usuń" HorizontalAlignment="Left" Margin="283,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Gray"
             FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -81,7 +81,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="Add_Policjant" Content="Dodaj" HorizontalAlignment="Left" Margin="765,178,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Green"
+            <Button x:Name="Add_Policjant" Content="Dodaj" HorizontalAlignment="Left" Margin="765,178,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Gray"
                 FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -89,7 +89,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="Delete_Policjant" Content="Usuń" HorizontalAlignment="Left" Margin="765,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="IndianRed"
+            <Button x:Name="Delete_Policjant" Content="Usuń" HorizontalAlignment="Left" Margin="765,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Gray"
                 FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -97,8 +97,8 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <TextBlock HorizontalAlignment="Left" Margin="720,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                FontStyle="Oblique" FontSize="28" Width="387"><Run Language="pl-pl" Text="Wykroczenie"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="695,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                FontStyle="Oblique" FontSize="28" Width="387"><Run Language="pl-pl" Text="Wykroczenie" FontFamily="Cooper Black"/></TextBlock>
         </Grid>
     </Grid>
 </Window>
