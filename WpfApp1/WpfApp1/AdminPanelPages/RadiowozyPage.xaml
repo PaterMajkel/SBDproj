@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="Refresh" Content="Odśwież" Margin="793,46,77,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="Gray">
+        <Button x:Name="Refresh" Content="Odśwież" Margin="756,51,83,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="30" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -33,18 +33,17 @@
         <TextBox x:Name="FilterModel" HorizontalAlignment="Left" Margin="137,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="FilterMarka" HorizontalAlignment="Left" Margin="257,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="FilterRok" HorizontalAlignment="Left" Margin="377,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Filter" Content="Filtruj" Margin="517,80,389,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="29"
-                 Width="40" Background="Gray">
+        <Button x:Name="Filter" Content="Filtruj" Margin="517,106,356,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="25" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Margin="1071,114,-487,190" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="670,108,0,0" VerticalAlignment="Top"/>
 
-        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="708,262,0,0" VerticalAlignment="Top" Click="Button_Click_Dodaj" Width="76" Background="Gray">
+        <Label Name="CurrentMode" Content="Nowa pozycja" FontSize="20" HorizontalAlignment="Left" Margin="670,160,0,0" VerticalAlignment="Top"/>
+
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="692,367,0,0" VerticalAlignment="Top" Click="Button_Click_Dodaj" Height="27" Width="90" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -59,15 +58,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="EditButton" Content="Edytuj" Margin="627,443,204,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"
-                Width="76" Background="Gray">
+        <Button x:Name="EditButton" Content="Edytuj" Margin="635,419,221,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="27" Width="90" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Delete" Content="Usuń" Margin="779,443,91,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Width="76" Background="Gray" Height="29">
+        <Button x:Name="Delete" Content="Usuń" Margin="756,420,105,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Height="26" FontSize="15"  Background="Red">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -76,8 +74,8 @@
         </Button>
         <Label Content="Panel zarządzanie radiowozami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Label Content="Model" HorizontalAlignment="Left" Margin="621,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="Marka" HorizontalAlignment="Left" Margin="616,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Model" HorizontalAlignment="Left" FontSize="20" Margin="604,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Marka" HorizontalAlignment="Left" FontSize="20" Margin="602,238,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -87,8 +85,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="Ilość" HorizontalAlignment="Left" Margin="626,213,0,0" VerticalAlignment="Top"/>
-        <Label Content="Rok produkcji" HorizontalAlignment="Left" Margin="583,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ilość" FontSize="20" HorizontalAlignment="Left" Margin="621,317,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rok produkcji" FontSize="20" HorizontalAlignment="Left" Margin="540,275,0,0" VerticalAlignment="Top"/>
         <ListView Name="ListViewColumns" Margin="23,108,434,44">
             <ListView.View>
                 <GridView>
@@ -100,9 +98,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="Model" Background="White" HorizontalAlignment="Left" Margin="671,134,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" TextChanged="Model_TextChanged"/>
-        <TextBox x:Name="Marka" Background="White" HorizontalAlignment="Left" Margin="671,164,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" TextChanged="Marka_TextChanged"/>
-        <TextBox x:Name="Rocznik" Background="White" HorizontalAlignment="Left" Margin="670,192,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463" TextChanged="Rocznik_TextChanged"/>
-        <TextBox x:Name="Ilosc"  Background="White" HorizontalAlignment="Left" Margin="670,218,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="76" RenderTransformOrigin="0.45,2.463" TextChanged="Ilosc_TextChanged"/>
+        <TextBox x:Name="Model" Background="White" HorizontalAlignment="Left" Margin="677,208,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="120" TextChanged="Model_TextChanged"/>
+        <TextBox x:Name="Marka" Background="White" HorizontalAlignment="Left" Margin="677,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="24" Width="120" TextChanged="Marka_TextChanged"/>
+        <TextBox x:Name="Rocznik" Background="White" HorizontalAlignment="Left" Margin="677,282,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" RenderTransformOrigin="0.45,2.463" TextChanged="Rocznik_TextChanged"/>
+        <TextBox x:Name="Ilosc"  Background="White" HorizontalAlignment="Left" Margin="677,323,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" RenderTransformOrigin="0.45,2.463" TextChanged="Ilosc_TextChanged"/>
     </Grid>
 </Page>

@@ -23,15 +23,15 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Margin="91,131,493,174" Stretch="Fill" Source="/Images/Police2.jpg" />
-        <Label x:Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="734,118,0,0" VerticalAlignment="Top"/>
-        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="776,296,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_DodajOrEdytuj" Background="Gray">
+        <Label x:Name="CurrentMode" Content="Nowa pozycja" FontSize="20" HorizontalAlignment="Left" Margin="723,160,0,0" VerticalAlignment="Top"/>
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="748,348,0,0" VerticalAlignment="Top" Height="27" Width="90" FontSize="15" Click="Button_Click_DodajOrEdytuj" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Usuń" Margin="776,443,55,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Height="29" Background="Gray">
+        <Button Content="Usuń" Margin="801,403,55,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun"  Height="27" Width="90" FontSize="15" Background="Red">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -40,9 +40,9 @@
         </Button>
         <Label Content="Panel zarządzania komisariatami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Label Content="Adres" HorizontalAlignment="Left" Margin="650,159,0,0" VerticalAlignment="Top"/>
-        <Label Content="Region" HorizontalAlignment="Left" Margin="644,240,0,0" VerticalAlignment="Top"/>
-        <Label Content="Miasto" HorizontalAlignment="Left" Margin="644,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adres" FontSize="20" HorizontalAlignment="Left" Margin="639,196,0,0" VerticalAlignment="Top"/>
+        <Label Content="Region" FontSize="20" HorizontalAlignment="Left" Margin="639,295,0,0" VerticalAlignment="Top"/>
+        <Label Content="Miasto" FontSize="20" HorizontalAlignment="Left" Margin="639,244,0,0" VerticalAlignment="Top"/>
         <ListView Name="ListViewColumns" Margin="46,118,346,54">
             <ListView.View>
                 <GridView>
@@ -55,10 +55,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="716,163,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Adres_TextChanged"/>
-        <ComboBox Name="MiastoBox" HorizontalAlignment="Left" Margin="716,206,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxMiasto_SelectionChanged"/>
-        <ComboBox Name="RegionBox" HorizontalAlignment="Left" Margin="716,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxRegion_SelectionChanged"/>
-        <Button x:Name="EditButton" Content="Edytuj" Margin="644,443,187,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"  Background="Gray">
+        <TextBox x:Name="Adres" HorizontalAlignment="Left" Margin="723,202,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="25" TextChanged="Adres_TextChanged"/>
+        <ComboBox Name="MiastoBox" HorizontalAlignment="Left" Margin="723,250,0,0" VerticalAlignment="Top" Width="140" Height="24" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxMiasto_SelectionChanged"/>
+        <ComboBox Name="RegionBox" HorizontalAlignment="Left" Margin="723,301,0,0" VerticalAlignment="Top" Width="140" Height="25" DisplayMemberPath="Nazwa" SelectionChanged="ComboBoxRegion_SelectionChanged"/>
+        <Button x:Name="EditButton" Content="Edytuj" Margin="684,403,172,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj"  Height="27" Width="90" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -72,7 +72,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Refresh" Content="Odśwież" Margin="806,46,26,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="Gray">
+        <Button x:Name="Refresh" Content="Odśwież" Margin="801,56,60,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" FontSize="15" Height="29" Width="85" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -84,8 +84,7 @@
         <TextBox x:Name="FilterRegion" HorizontalAlignment="Left" Margin="275,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="FilterStopien" HorizontalAlignment="Left" Margin="395,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="FilterMiasto" HorizontalAlignment="Left" Margin="515,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Filter" Content="Filtruj" Margin="605,118,300,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="29"
-                 Width="40" Background="Gray">
+        <Button x:Name="Filter" Content="Filtruj" Margin="605,118,237,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter"  Height="27" FontSize="15"  Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

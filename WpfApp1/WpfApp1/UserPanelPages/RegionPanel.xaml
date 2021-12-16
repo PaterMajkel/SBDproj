@@ -23,7 +23,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Content="Edytuj stopień zagrożenia" HorizontalAlignment="Left" Margin="638,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="Edytuj stopień zagrożenia" FontSize="20" HorizontalAlignment="Left" Margin="612,188,0,0" VerticalAlignment="Top"/>
         <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged" ItemsSource="{Binding TrackCollection}">
             <ListView.View>
                 <GridView>
@@ -36,15 +36,15 @@
         </ListView>
         <Label Content="Panel zarządzanie regionami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="840,412,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray">
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="794,403,0,0" VerticalAlignment="Top" FontSize="15" Height="24" Width="93" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="638,174,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Change" Content="Zmień" HorizontalAlignment="Left" Margin="779,176,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray" Click="Change_Click">
+        <ComboBox HorizontalAlignment="Left" Margin="612,230,0,0" VerticalAlignment="Top" Width="173" Height="28"/>
+        <Button x:Name="Change" Content="Zmień" HorizontalAlignment="Left" Margin="794,232,0,0" FontSize="15" VerticalAlignment="Top" Height="24" Width="93" Background="CadetBlue" Click="Change_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

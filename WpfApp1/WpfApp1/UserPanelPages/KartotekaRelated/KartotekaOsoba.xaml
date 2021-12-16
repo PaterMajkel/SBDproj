@@ -26,7 +26,7 @@
                   FontSize="28" Width="132"><Run Text="Nazwisko"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="281,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontSize="28" Width="86"><Run Text="Imię"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="276,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="281,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
            FontSize="28" Width="86"><Run Text="Wiek"/><Run Text=":"/></TextBlock>
         <Label x:Name="Nazwisko" HorizontalAlignment="Left" Margin="413,32,0,0" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="287" Height="60" ></Label>
