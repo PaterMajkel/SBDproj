@@ -1,0 +1,56 @@
+﻿<Page x:Class="PoliceApp.RegionPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PoliceApp"
+      mc:Ignorable="d" 
+      Title="Radiowozy" Height="516" Width="946">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Blue" Offset="0.0" />
+                <GradientStop Color="Cyan" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Left" Height="400" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Blue" Offset="0.0" />
+                    <GradientStop Color="Cyan" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
+        <Label Content="Edytuj stopień zagrożenia" HorizontalAlignment="Left" Margin="638,121,0,0" VerticalAlignment="Top"/>
+        <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged" ItemsSource="{Binding TrackCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="30" DisplayMemberBinding="{Binding Region_MiastaId}" />
+                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="130" DisplayMemberBinding="{Binding Nazwa}"/>
+                    <GridViewColumn x:Name="MiastoHeader" Header="Miasto"  Width="130" DisplayMemberBinding="{Binding Miasto.Nazwa}"/>
+                    <GridViewColumn x:Name="StopienHeader" Header="Stopień zagrożenia"  Width="160" DisplayMemberBinding="{Binding Stopien_zagrozenia}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Panel zarządzanie regionami" FontFamily="Cooper Black"
+  FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="840,412,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox HorizontalAlignment="Left" Margin="638,174,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Change" Content="Zmień" HorizontalAlignment="Left" Margin="779,176,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray" Click="Change_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Page>

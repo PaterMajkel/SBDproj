@@ -250,5 +250,9 @@ namespace EntityFramework.Services
         {
             return _context.Przestepstwos.Where(p => p == przestepstwo).Include(p => p.Kartotekas).Include(p => p.Policjants).First();
         }
+        public ICollection<Region_Miasta> getRegions()
+        {
+            return _context.Region_Miastas.Where(p => p.IsActive).Include(p => p.Miasto).ToList();
+        }
     }
 }

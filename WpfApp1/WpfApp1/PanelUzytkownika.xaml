@@ -61,7 +61,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Frame x:Name="UserPages" Margin="0,123,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="UserPages" Margin="0,108,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
         <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="661,76,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
             FontSize="18" Click="Button_Click_Regiony">
             <Button.Resources>
