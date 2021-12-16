@@ -56,6 +56,10 @@ namespace EntityFramework.Services
         {
             return _context.Policjants.Where(p => p.IsActive).ToList();
         }
+        public ICollection<Policjant>GetPolicjantsAndRank()
+        {
+            return _context.Policjants.Where(p => p.IsActive).Include(k => k.Ranga).ToList();
+        }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
             //do zrobienia wciaz -> przykladowe zapytanie do podpatrzenia sb

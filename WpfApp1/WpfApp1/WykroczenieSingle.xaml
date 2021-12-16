@@ -49,7 +49,7 @@
                         <GridViewColumn x:Name="IdHeader1" Header="ID."  Width="30" DisplayMemberBinding="{Binding PolicjantId}" />
                         <GridViewColumn x:Name="ImieHeader1" Header="Imie." Width="100" DisplayMemberBinding="{Binding  Imie}"/>
                         <GridViewColumn x:Name="NazwiskoHeader1" Header="Nazwisko."  Width="120" DisplayMemberBinding="{Binding  Nazwisko}"/>
-                        <GridViewColumn x:Name="RangaHeader1" Header="Ranga."  Width="100" DisplayMemberBinding="{Binding RangaId}"/>
+                        <GridViewColumn x:Name="RangaHeader1" Header="Ranga."  Width="100" DisplayMemberBinding="{Binding Ranga.Nazwa}"/>
                         <GridViewColumn x:Name="KomendaHeader1" Header="KomendaID."  Width="100" DisplayMemberBinding="{Binding KomendaId}"/>
 
                     </GridView>
