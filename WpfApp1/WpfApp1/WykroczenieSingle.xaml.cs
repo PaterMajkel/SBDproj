@@ -221,6 +221,7 @@ namespace PoliceApp
             }
             databaseService.DeletePolicjantsFromWykroczenie(wykroczenia, pickedPolicjants);
             //usuwanie lokalne, aby nie pobierać od nowa informacji
+            Refresh();
 
         }
         private void Delete_Sprawca_Click(object sender, RoutedEventArgs e)
@@ -233,6 +234,7 @@ namespace PoliceApp
             }
             databaseService.DeleteSprawcaFromWykroczenia(wykroczenia, pickedSprawcy);
             //usuwanie lokalne, aby nie pobierać od nowa informacji
+            Refresh();
 
         }
     }
