@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ListView Name="ListViewColumns" Margin="61,115,380,75">
+        <ListView  MouseDoubleClick="ListView_MouseDoubleClick" Name="ListViewColumns" Margin="61,115,380,75" ItemsSource="{Binding TrackCollection}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PolicjantId}" />

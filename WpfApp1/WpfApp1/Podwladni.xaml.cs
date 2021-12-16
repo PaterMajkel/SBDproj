@@ -109,6 +109,15 @@ namespace PoliceApp
             }
             ListViewColumns.ItemsSource = data;
         }
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var item = ((FrameworkElement)e.OriginalSource).DataContext as Patrol;
+            if (item != null)
+            {
+                Window patrolsingle = new PlanOfSuborned(item);
+                patrolsingle.Show();
+            }
+        }
 
 
     }
