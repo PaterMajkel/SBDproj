@@ -316,5 +316,11 @@ namespace EntityFramework.Services
         {
             return _context.Policjants.Where(p=>p.IsActive).Where(p=>p.KomendaId==policjant.KomendaId && p.RangaId< policjant.RangaId).Include(p=>p.Ranga).Include(p => p.Komenda).ToList();
         }
+        public void AddPatrol(Patrol patrol)
+        {
+            _context.Patrols.Add(patrol);
+            _context.SaveChanges();
+
+        }
     }
 }
