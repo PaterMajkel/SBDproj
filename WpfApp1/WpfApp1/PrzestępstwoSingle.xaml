@@ -22,13 +22,13 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <TextBlock HorizontalAlignment="Left" Margin="38,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   FontStyle="Oblique" FontSize="28" Width="132"><Run Language="pl-pl" Text="Nazwa:"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="38,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Language="pl-pl" Text="Data:"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="38,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="121"><Run Text="Godzina"/><Run Language="pl-pl" Text=":"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="43,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            <TextBlock HorizontalAlignment="Left" Margin="43,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   FontStyle="Oblique" FontSize="25" Width="132"><Run Language="pl-pl" Text="Nazwa:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="43,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="25" Width="86"><Run Language="pl-pl" Text="Data:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="43,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="25" Width="121"><Run Text="Godzina"/><Run Language="pl-pl" Text=":"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="38,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="20" Width="81" Height="27"><Run Text="Sprawcy"/><Run Language="pl-pl" Text=":"/></TextBlock>
             <ListView Name="ListViewColumnsSprawcy" Margin="38,242,526,14">
                 <ListView.View>
@@ -53,13 +53,13 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <TextBlock HorizontalAlignment="Left" Margin="410,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            <TextBlock HorizontalAlignment="Left" Margin="410,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                 FontStyle="Oblique" FontSize="20" Width="192" Height="27"><Run Language="pl-pl" Text="Policjanci na miejscu"/><Run Text=":"/></TextBlock>
-            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="44,181,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaKartoteka"/>
-            <Label Content="Wybierz osobę z kartoteki:" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top" Width="159"/>
-            <ComboBox x:Name="PolicjantBox" HorizontalAlignment="Left" Margin="410,176,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaPolicjant"/>
-            <Label Content="Wybierz policjanta:" HorizontalAlignment="Left" Margin="410,148,0,0" VerticalAlignment="Top" Width="159"/>
-            <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Gray"
+            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="43,187,0,0" VerticalAlignment="Top" Width="140" Height="25" DisplayMemberPath="NazwaKartoteka"/>
+            <Label Content="Wybierz osobę z kartoteki:" FontSize="15" HorizontalAlignment="Left" Margin="43,161,0,0" VerticalAlignment="Top" Width="190"/>
+            <ComboBox x:Name="PolicjantBox" HorizontalAlignment="Left" Margin="410,187,0,0" VerticalAlignment="Top"  Width="140" Height="25" DisplayMemberPath="NazwaPolicjant"/>
+            <Label Content="Wybierz policjanta:" FontSize="15" HorizontalAlignment="Left" Margin="410,161,0,0" VerticalAlignment="Top" Width="159"/>
+            <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="CadetBlue"
             FontSize="17" Click="AddSprawca_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -67,7 +67,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="DeleteSprawca" Content="Usuń" HorizontalAlignment="Left" Margin="283,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Gray"
+            <Button x:Name="DeleteSprawca" Content="Usuń" HorizontalAlignment="Left" Margin="283,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Red"
             FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -75,7 +75,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="Add_Policjant" Content="Dodaj" HorizontalAlignment="Left" Margin="765,178,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Gray"
+            <Button x:Name="Add_Policjant" Content="Dodaj" HorizontalAlignment="Left" Margin="765,178,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="CadetBlue"
                 FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -83,7 +83,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="Delete_Policjant" Content="Usuń" HorizontalAlignment="Left" Margin="765,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Gray"
+            <Button x:Name="Delete_Policjant" Content="Usuń" HorizontalAlignment="Left" Margin="765,209,0,0" VerticalAlignment="Top" Width="107" Height="24" Background="Red"
                 FontSize="17">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
