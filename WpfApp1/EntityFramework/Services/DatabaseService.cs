@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EntityFramework.Services
 {
     public class DatabaseService
-        {
+    {
         private EFDbContext _context;
 
         public DatabaseService()
@@ -50,11 +50,11 @@ namespace EntityFramework.Services
         }
         public ICollection<Wykroczenia> GetWykroczenias()
         {
-            return _context.Wykroczenias.Where(p=>p.IsActive).ToList();
+            return _context.Wykroczenias.Where(p => p.IsActive).ToList();
         }
         public ICollection<Policjant> GetPolicjants()
         {
-            return _context.Policjants.Where(p=>p.IsActive).ToList();
+            return _context.Policjants.Where(p => p.IsActive).ToList();
         }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
@@ -67,7 +67,7 @@ namespace EntityFramework.Services
         }
         public ICollection<Kartoteka> GetKartotekas()
         {
-            var x= _context.Kartotekas.Where(p => p.IsActive).ToList();
+            var x = _context.Kartotekas.Where(p => p.IsActive).ToList();
             return x;
         }
         public Uzytkownik GetUzytkownik(string login, string password)
@@ -85,11 +85,11 @@ namespace EntityFramework.Services
                 .Join(_context.Miastos.Join(_context.Region_Miastas, miasto=>miasto.ID_miasta, region=>region.ID_miasta, (miasto, region) => new { ID=region.ID_regionu, Nazwa_regionu= region.Nazwa, Nazwa_miasta = miasto.Nazwa, Stopien_Zagrozenia = region.Stopien_zagrozenia })
                 , komenda=>komenda.ID_regionu, _a=>_a.ID, (komenda, _a) => new Komenda_Miasto_Region { ID_komendy = komenda.ID_komendy, ID_regionu=komenda.ID_regionu, Nazwa_regionu=_a.Nazwa_regionu, Nazwa_miasta=_a.Nazwa_miasta, Stopien_zagrozenia=_a.Stopien_Zagrozenia, Adres=komenda.Adres} )
                 .ToList();*/
-            return _context.Komendas.Where(p=>p.IsActive).Include(k => k.Region_Miasta).ThenInclude(kr=>kr.Miasto).ToList();
+            return _context.Komendas.Where(p => p.IsActive).Include(k => k.Region_Miasta).ThenInclude(kr => kr.Miasto).ToList();
         }
         public void DeleteKomendas(ICollection<Komenda> data)
         {
-            foreach(var element in data)
+            foreach (var element in data)
             {
                 //var temp = _context.Komendas.Find(element.KomendaId);
                 //if (temp != null)
@@ -105,7 +105,7 @@ namespace EntityFramework.Services
         public void EditKomenda(Komenda data)
         {
             var edited = _context.Komendas.Where(p => p.KomendaId == data.KomendaId).FirstOrDefault();
-            if (edited==null)
+            if (edited == null)
                 return;
             edited = data;
             _context.SaveChanges();
@@ -122,14 +122,14 @@ namespace EntityFramework.Services
             }
             _context.SaveChanges();
         }
-        public void  DeleteKartotekas(ICollection<Kartoteka> data)
+        public void DeleteKartotekas(ICollection<Kartoteka> data)
         {
-            foreach(var element in data)
+            foreach (var element in data)
             {
                 var temp = _context.Kartotekas.Find(element.KartotekaId);
                 if (temp != null)
                     //_context.Remove(temp);
-                    temp.IsActive=false;
+                    temp.IsActive = false;
             }
             _context.SaveChanges();
         }
@@ -148,7 +148,7 @@ namespace EntityFramework.Services
         public ICollection<Miasto> GetMiastos()
         {
             return _context.Miastos.Where(p => p.IsActive).ToList();
-        } 
+        }
 
         public ICollection<Region_Miasta> getRegionsOfMiasto(Miasto miasto)
         {
@@ -168,7 +168,7 @@ namespace EntityFramework.Services
         public void AddRadiowozos(Radiowoz radiowoz)
         {
             _context.Add(radiowoz);
-            _context.SaveChanges ();
+            _context.SaveChanges();
         }
         public void AddPrzstepstwos(Przestepstwo przestepstwo)
         {
@@ -181,7 +181,7 @@ namespace EntityFramework.Services
             return _context.Uzytkowniks.Where(p => p.IsActive)
                 .Include(p => p.Policjant).ThenInclude(p => p.Komenda)
                 .ToList();
-                
+
         }
         public void DeleteUzytkowniks(ICollection<Uzytkownik> data)
         {
@@ -198,7 +198,7 @@ namespace EntityFramework.Services
         {
             if (uzytkownik == null)
                 return;
-            if(uzytkownik.Rola.ToUpper()=="ADMIN")
+            if (uzytkownik.Rola.ToUpper() == "ADMIN")
             {
                 uzytkownik.PolicjantId = 1;
                 _context.Uzytkowniks.Add(uzytkownik);
@@ -239,12 +239,12 @@ namespace EntityFramework.Services
         {
             //var x =File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Police.png"));
             ////var y = Path.Combine(Directory.GetCurrentDirectory(), "Police.png");
-             ;
+            ;
             return _context.Kartotekas.Where(p => p == kartoteka).Include(p => p.Wykroczenias).Include(p => p.Przestepstwos).First();
         }
         public Wykroczenia getWykroczenieByObj(Wykroczenia wykroczenia)
         {
-            return _context.Wykroczenias.Where(p=>p==wykroczenia).Include(p=>p.Kartotekas).Include(p=>p.Policjants).First();
+            return _context.Wykroczenias.Where(p => p == wykroczenia).Include(p => p.Kartotekas).Include(p => p.Policjants).First();
         }
         public Przestepstwo getPrzestepstwoByObj(Przestepstwo przestepstwo)
         {
@@ -264,20 +264,49 @@ namespace EntityFramework.Services
         }
         public void AddKartotekaToPrzestepstwo(Przestepstwo przestepstwo, Kartoteka kartoteka)
         {
-            var temp = _context.Przestepstwos.Where(p => p.IsActive).Where(p=>p.PrzestepstwoId==przestepstwo.PrzestepstwoId).Include(p => p.Kartotekas).First();
-            if (temp!=null)
+            var temp = _context.Przestepstwos.Where(p => p.IsActive).Where(p => p.PrzestepstwoId == przestepstwo.PrzestepstwoId).Include(p => p.Kartotekas).First();
+            if (temp != null)
             {
                 temp.Kartotekas.Add(kartoteka);
                 _context.SaveChanges();
             }
         }
+
         public Uzytkownik GetUzytkownikByObj(Uzytkownik data)
         {
-            if(data!=null)
+            if (data != null)
             {
-                return _context.Uzytkowniks.Where(p => p.IsActive && p.PolicjantId==data.PolicjantId).Include(p => p.Policjant).ThenInclude(p => p.Patrols).ThenInclude(p => p.Radiowoz).First();
+                return _context.Uzytkowniks.Where(p => p.IsActive && p.PolicjantId == data.PolicjantId).Include(p => p.Policjant).ThenInclude(p => p.Patrols).ThenInclude(p => p.Radiowoz).First();
             }
             return null;
+        }
+        public void AddPolicjatToPrzestepstwo(Przestepstwo przestepstwo, Policjant policjant)
+        {
+            var temp = _context.Przestepstwos.Where(p => p.IsActive).Where(p => p.PrzestepstwoId == przestepstwo.PrzestepstwoId).Include(p => p.Policjants).First();
+            if (temp != null)
+            {
+                temp.Policjants.Add(policjant);
+                _context.SaveChanges();
+            }
+        }
+        public void AddKartotekaToWykroczenie(Wykroczenia wykroczenia, Kartoteka kartoteka)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive).Where(p => p.WykroczenieId == wykroczenia.WykroczenieId).Include(p => p.Kartotekas).First();
+            if (temp != null)
+            {
+                temp.Kartotekas.Add(kartoteka);
+                _context.SaveChanges();
+            }
+        }
+        public void AddPolicjantToWykroczenie(Wykroczenia wykroczenia, Policjant policjant)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive).Where(p => p.WykroczenieId == wykroczenia.WykroczenieId).Include(p => p.Policjants).First();
+            if (temp != null)
+            {
+                temp.Policjants.Add(policjant);
+                _context.SaveChanges();
+            }
+
         }
     }
 }

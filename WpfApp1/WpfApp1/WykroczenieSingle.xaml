@@ -57,12 +57,12 @@
             </ListView>
             <TextBlock HorizontalAlignment="Left" Margin="408,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                 FontStyle="Oblique" FontSize="20" Width="192" Height="27"><Run Language="pl-pl" Text="Policjanci na miejscu"/><Run Text=":"/></TextBlock>
-            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="43,182,0,0" VerticalAlignment="Top" Width="150" Height="25" DisplayMemberPath="KartotekaId" SelectionChanged="ComboBoxKartoteka_SelectionChanged"/>
+            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="43,182,0,0" VerticalAlignment="Top" Width="150" Height="25" DisplayMemberPath="KartotekaId"/>
             <Label Content="Wybierz osobę z kartoteki:" FontSize="15" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top" Width="197"/>
-            <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="408,182,0,0" VerticalAlignment="Top" Width="150" Height="25" DisplayMemberPath="PolicjantId" SelectionChanged="ComboBoxPolicjant_SelectionChanged"/>
+            <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="408,182,0,0" VerticalAlignment="Top" Width="150" Height="25" DisplayMemberPath="PolicjantId"/>
             <Label Content="Wybierz policjanta:" FontSize="15" HorizontalAlignment="Left" Margin="408,153,0,0" VerticalAlignment="Top" Width="159"/>
             <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="282,178,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="CadetBlue"
-            FontSize="17">
+            FontSize="17" Click="AddSprawca_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -78,7 +78,7 @@
                 </Button.Resources>
             </Button>
             <Button x:Name="Add_Policjant" Content="Dodaj" HorizontalAlignment="Left" Margin="765,182,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="CadetBlue"
-                FontSize="17">
+                FontSize="17" Click="Add_Policjant_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
