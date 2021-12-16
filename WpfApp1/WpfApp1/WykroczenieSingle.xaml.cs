@@ -35,7 +35,7 @@ namespace PoliceApp
         {
             wykroczenia = databaseService.getWykroczenieByObj(wykro);
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
             InitializeComponent();
             Nazwa.Content = wykroczenia.Nazwa;
             Data.Content = wykroczenia.Data;
@@ -172,7 +172,7 @@ namespace PoliceApp
         {
             wykroczenia = databaseService.getWykroczenieByObj(wykroczenia);
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
 
             ListViewColumnsPolicjanci.ItemsSource = null;
             ListViewColumnsSprawcy.ItemsSource = null;
