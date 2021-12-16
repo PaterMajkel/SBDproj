@@ -39,20 +39,20 @@
         <ListView  Name="ListViewColumnsPrzestepstwa" Margin="57,246,475,39">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding Przestepstwo.PrzestepstwaId}" />
-                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Przestepstwo.Nazwa}"/>
-                    <GridViewColumn x:Name="DataHeader" Header="Data"  Width="110" DisplayMemberBinding="{Binding Przestepstwo.Data}"/>
-                    <GridViewColumn x:Name="GodzinaHeader" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Przestepstwo.Godzina}"/>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PrzestepstwaId}" />
+                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Nazwa}"/>
+                    <GridViewColumn x:Name="DataHeader" Header="Data"  Width="110" DisplayMemberBinding="{Binding Data}"/>
+                    <GridViewColumn x:Name="GodzinaHeader" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Godzina}"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <ListView  x:Name="ListViewColumnsWykroczenia" Margin="509,246,26,39">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="IdHeader1" Header="ID"  Width="20" DisplayMemberBinding="{Binding Wykroczenia.WykroczenieId}" />
-                    <GridViewColumn x:Name="NazwaHeader1" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Wykroczenia.Nazwa}"/>
-                    <GridViewColumn x:Name="DataHeader1" Header="Data"  Width="110" DisplayMemberBinding="{Binding Wykroczenia.Data}"/>
-                    <GridViewColumn x:Name="GodzinaHeader1" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Wykroczenia.Godzina}"/>
+                    <GridViewColumn x:Name="IdHeader1" Header="ID"  Width="20" DisplayMemberBinding="{Binding WykroczenieId}" />
+                    <GridViewColumn x:Name="NazwaHeader1" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Nazwa}"/>
+                    <GridViewColumn x:Name="DataHeader1" Header="Data"  Width="110" DisplayMemberBinding="{Binding Data}"/>
+                    <GridViewColumn x:Name="GodzinaHeader1" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Godzina}"/>
                 </GridView>
             </ListView.View>
         </ListView>
