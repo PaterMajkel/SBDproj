@@ -29,6 +29,7 @@ namespace PoliceApp
         public Policjant pickedPolicjant;
         public ICollection<Kartoteka> kartoteka;
         public ICollection<Policjant> policjant;
+        public Wykroczenia wykroczeniepom;
         public WykroczenieSingle(Wykroczenia wykro)
         {
             wykroczenia = databaseService.getWykroczenieByObj(wykro);
@@ -45,6 +46,20 @@ namespace PoliceApp
 
             KartotekaBox.ItemsSource = kartoteka;
             PolicjantBox.ItemsSource= policjant;
+        }
+        private void Button_Click_DodajSprawce(object sender, RoutedEventArgs e)
+        {
+            if(pickedKartoteka==null)
+            {
+                MessageBox.Show("Nie Wybrano Sprawcy", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            wykroczeniepom.WykroczenieId = wykroczenia.WykroczenieId;
+            wykroczeniepom.Nazwa = wykroczenia.Nazwa;
+            wykroczeniepom.Data = wykroczenia.Data;
+            wykroczeniepom.Godzina = wykroczenia.Godzina;
+
+
         }
         private void ComboBoxPolicjant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
