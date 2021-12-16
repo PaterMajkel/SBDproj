@@ -137,7 +137,7 @@ namespace PoliceApp
                         IdOrder = !IdOrder;
                         break;
                     }
-                case "KomendaID.":
+                case "KomendaId.":
                     {
                         if (!IdOrder)
                         {
