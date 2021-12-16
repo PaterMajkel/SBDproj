@@ -34,14 +34,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="722,354,0,0" VerticalAlignment="Top" Height="28" Width="88" Background="CadetBlue">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Usuń" Margin="834,354,33,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Height="28" Background="Red">
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="825,52,0,0" VerticalAlignment="Top" Height="28" Width="88" Background="CadetBlue" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -50,7 +43,7 @@
         </Button>
         <Label Content="Ustawienie Planu Podwładnemu" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="53"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="608,354,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782" Height="28" Width="88" Background="CadetBlue">
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="706,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782" Height="28" Width="88" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

@@ -13,7 +13,7 @@ namespace EntityFramework.Models
         public int PatrolId { get; set; }
         public int RadiowozId { get; set; }
         public Radiowoz Radiowoz { get; set; }
-        public ICollection<Policjant> Policjant { get; set; }
+        public ICollection<Policjant> Policjants { get; set; }
         public string Data_rozpoczecia { get; set; }
         public string Data_zakonczenia { get; set; }
         public string Godzina_rozpoczecia { get; set; }
