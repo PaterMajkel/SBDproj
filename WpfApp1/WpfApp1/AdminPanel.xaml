@@ -21,24 +21,24 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Zarządzanie Policjantami" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="302" Height="56" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Policjanci">
+        <Button Content="Zarządzanie Policjantami" HorizontalAlignment="Left" Margin="15,9,0,0" VerticalAlignment="Top" Width="276" Height="56" Background="CadetBlue"
+                FontSize="23" Click="Button_Click_Policjanci">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Radiowozami" HorizontalAlignment="Left" Margin="317,10,0,0" VerticalAlignment="Top" Width="302" Height="55" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Radiowozy">
+        <Button Content="Zarządzanie Radiowozami" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="288" Height="55" Background="CadetBlue"
+                FontSize="23" Click="Button_Click_Radiowozy">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Komisariatami" HorizontalAlignment="Left" Margin="624,9,0,0" VerticalAlignment="Top" Width="302" Height="56" Background="CadetBlue"
-                FontSize="25" Click="Button_Click_Komisariaty">
+        <Button Content="Zarządzanie Komisariatami" HorizontalAlignment="Left" Margin="647,9,0,0" VerticalAlignment="Top" Width="284" Height="56" Background="CadetBlue"
+                FontSize="23" Click="Button_Click_Komisariaty">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -48,7 +48,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Panel Administratora" VerticalAlignment="Top" Margin="290,109,0,0" Height="50" Width="515"
                    FontSize="35" FontStyle="Oblique"/>
         <Frame x:Name="AdminPages" Margin="0,70,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden" Navigated="AdminPages_Navigated"/>
-        
+
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="//TODO WSTAWIĆ OBRAZEK" VerticalAlignment="Top" Margin="290,230,0,0" Height="50" Width="515"
             FontSize="35" FontStyle="Oblique"/>
     </Grid>

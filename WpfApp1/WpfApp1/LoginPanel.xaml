@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="DeepSkyBlue">
-            <Button Content="Zaloguj się" Background="CadetBlue" Margin="479,270,138,87" Click="Button_Click">
+            <Button Content="Zaloguj się" Background="CadetBlue" Margin="479,273,138,84" Click="Button_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -52,7 +52,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="479,107,0,0" TextWrapping="Wrap" Text="Panel Logowania" VerticalAlignment="Top" Height="42" Width="214" 
                    FontSize="25" FontStyle="Oblique"/>
         <PasswordBox Name="passwordBox" MaxLength="16" 
-              Margin="479,224,136,166" Background="LightGray" FontSize="15" Width="185" Height="42"/>
+              Margin="479,225,122,166" Background="LightGray" FontSize="15"/>
 
     </Grid>
 </Window>
