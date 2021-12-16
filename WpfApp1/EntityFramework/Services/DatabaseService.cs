@@ -254,5 +254,13 @@ namespace EntityFramework.Services
         {
             return _context.Region_Miastas.Where(p => p.IsActive).Include(p => p.Miasto).ToList();
         }
+        public void editRegion(Region_Miasta data)
+        {
+            var edited = _context.Region_Miastas.Where(p => p.Region_MiastaId == data.Region_MiastaId).FirstOrDefault();
+            if (edited == null)
+                return;
+            edited = data;
+            _context.SaveChanges();
+        }
     }
 }

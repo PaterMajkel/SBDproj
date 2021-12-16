@@ -24,7 +24,14 @@
         </Rectangle>
         <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
         <Label Content="Edytuj stopień zagrożenia" HorizontalAlignment="Left" Margin="638,121,0,0" VerticalAlignment="Top"/>
-        <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged" ItemsSource="{Binding TrackCollection}">
+        <Button x:Name="Refresh" Content="Odśwież" Margin="806,46,26,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="30" DisplayMemberBinding="{Binding Region_MiastaId}" />
@@ -36,14 +43,14 @@
         </ListView>
         <Label Content="Panel zarządzanie regionami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="840,412,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray">
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="840,412,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray" Click="Button_Click_Edit">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="638,174,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="EditBox" HorizontalAlignment="Left" Margin="638,174,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Change" Content="Zmień" HorizontalAlignment="Left" Margin="779,176,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray" Click="Change_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
