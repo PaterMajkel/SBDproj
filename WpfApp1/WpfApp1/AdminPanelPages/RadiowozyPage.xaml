@@ -22,8 +22,27 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <Button x:Name="Refresh" Content="Odśwież" Margin="793,46,77,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox x:Name="FilterId" HorizontalAlignment="Left" Margin="28,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="FilterModel" HorizontalAlignment="Left" Margin="137,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterMarka" HorizontalAlignment="Left" Margin="257,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterRok" HorizontalAlignment="Left" Margin="377,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Filter" Content="Filtruj" Margin="517,80,389,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="29"
+                 Width="40" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Image Margin="1071,114,-487,190" Stretch="Fill" Source="Images/Police2.png"/>
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="670,108,0,0" VerticalAlignment="Top"/>
+        <Label Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="670,108,0,0" VerticalAlignment="Top"/>
 
         <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="708,262,0,0" VerticalAlignment="Top" Click="Button_Click_Dodaj" Width="76" Background="Gray">
             <Button.Resources>
@@ -32,7 +51,23 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Delete" Content="Usuń" Margin="779,452,91,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Width="76" Background="Gray">
+
+        <Button x:Name="Abort" Content="Zatrzymaj" Visibility="Hidden"  HorizontalAlignment="Left" Margin="621,262,0,0" VerticalAlignment="Top" Height="20" Width="68" Click="Button_Click_Abort" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="EditButton" Content="Edytuj" Margin="627,443,204,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"
+                Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Delete" Content="Usuń" Margin="779,443,91,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Usun" Width="76" Background="Gray" Height="29">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

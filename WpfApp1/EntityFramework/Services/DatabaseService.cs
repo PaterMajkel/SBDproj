@@ -222,5 +222,13 @@ namespace EntityFramework.Services
             edited = uzytkownik;
             _context.SaveChanges();
         }
+        public void EditRadiowoz(Radiowoz data)
+        {
+            var edited = _context.Radiowozs.Where(p => p.RadiowozId == data.RadiowozId).FirstOrDefault();
+            if (edited == null)
+                return;
+            edited = data;
+            _context.SaveChanges();
+        }
     }
 }

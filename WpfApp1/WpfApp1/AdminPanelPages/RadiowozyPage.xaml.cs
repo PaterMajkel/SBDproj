@@ -31,6 +31,8 @@ namespace PoliceApp
         public string marka;
         public int rocznik;
         public int ilosc;
+        private bool editMode = false;
+        private Radiowoz selectedToEdit;
         public RadiowozyPage()
         {
             InitializeComponent();
@@ -98,23 +100,35 @@ namespace PoliceApp
         }
         private void Button_Click_Dodaj(object sender, RoutedEventArgs e)
         {
-            if (marka == null || model == null || rocznik == 0 || ilosc==0)
+            if (!editMode)
             {
-                MessageBox.Show("Wprowadzono złe dane", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (marka == null || model == null || rocznik == 0 || ilosc == 0)
+                {
+                    MessageBox.Show("Wprowadzono złe dane", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else if (rocznik <= 2005 || rocznik >= 2021)
+                {
+                    MessageBox.Show("Samochod nie moze byc starszy niz z 2005 roku lub pochodzić z przyszłości ", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else if (ilosc <= 0)
+                {
+                    MessageBox.Show("Zła ilość", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                for (int i = 0; i < ilosc; i++)
+                    databaseService.AddRadiowozos(new Radiowoz { Model = model, Marka = marka, Rok_produkcji = rocznik, });
                 return;
             }
-            else if (rocznik <= 2005 || rocznik >= 2021)
-            {
-                MessageBox.Show("Samochod nie moze byc starszy niz z 2005 roku lub pochodzić z przyszłości ", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            else if(ilosc<=0)
-            {
-                MessageBox.Show("Zła ilość", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            for(int i = 0; i < ilosc;i++)
-                databaseService.AddRadiowozos(new Radiowoz{ Model = model, Marka = marka, Rok_produkcji = rocznik, });
+            selectedToEdit.Model = Model.Text;
+            selectedToEdit.Marka = Marka.Text;
+            selectedToEdit.Rok_produkcji= int.Parse(Rocznik.Text);
+
+            databaseService.EditRadiowoz(selectedToEdit);
+            AbortChange();
+            RefreshData();
+
         }
         private void Model_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -147,6 +161,64 @@ namespace PoliceApp
                 data.Remove(element);
             ListViewColumns.ItemsSource = null;
             ListViewColumns.ItemsSource = data;
+        }
+        private void Button_Click_Filter(object sender, RoutedEventArgs e)
+        {
+            ListViewColumns.ItemsSource = data
+               .Where(p => p.RadiowozId.ToString().Contains(FilterId.Text))
+               .Where(p => p.Marka.ToUpper().Contains(FilterMarka.Text.ToUpper()))
+               .Where(p => p.Model.ToUpper().Contains(FilterModel.Text.ToUpper()))
+               .Where(p => p.Rok_produkcji.ToString().Contains(FilterRok.Text.ToUpper()))
+               .ToList();
+        }
+        private void RefreshData()
+        {
+            data = databaseService.GetRadiowozs();
+            ListViewColumns.ItemsSource = data;
+        }
+
+        private void Button_Click_Refresh(object sender, RoutedEventArgs e)
+        {
+            RefreshData();
+        }
+        private void Button_Click_Abort(object sender, RoutedEventArgs e)
+        {
+            AbortChange();
+        }
+        public void AbortChange()
+        {
+            editMode = false;
+            AddEdit.Content = "Dodaj";
+            Abort.Visibility = Visibility.Hidden;
+            CurrentMode.Content = $"Nowa pozycja";
+            EditButton.IsEnabled = true;
+            
+            Model.Text = "";
+            Marka.Text = "";
+            Rocznik.Text = "";
+            Ilosc.Text = "";
+            Ilosc.IsEnabled = true;
+
+        }
+
+        private void Button_Click_Edytuj(object sender, RoutedEventArgs e)
+        {
+            selectedToEdit = (Radiowoz)ListViewColumns.SelectedItem;
+            if (selectedToEdit == null)
+            {
+                MessageBox.Show("Błąd przy edytowaniu!", "Edytuj", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            editMode = true;
+            AddEdit.Content = "Zmień";
+            EditButton.IsEnabled = false;
+            Abort.Visibility = Visibility.Visible;
+            Marka.Text = selectedToEdit.Marka;
+            Model.Text = selectedToEdit.Model;
+            Rocznik.Text = selectedToEdit.Rok_produkcji.ToString();
+            Ilosc.IsEnabled = false;
+            CurrentMode.Content = $"Edytuj pozycję";
         }
     }
 }

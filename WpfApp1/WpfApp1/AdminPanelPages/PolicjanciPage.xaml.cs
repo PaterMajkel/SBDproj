@@ -221,9 +221,9 @@ namespace PoliceApp
                 }
                 else if (isAdmin && (Login.Text.Length == 0 || Password.Text.Length == 0))
                 {
-
+                    MessageBox.Show("Wartości nie mogą być puste", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
+ 
                 policjant = new Policjant { Imie = Name.Text, Nazwisko = Sunrame.Text, KomendaId = ((Komenda)KomendaBox.SelectedItem).KomendaId, RangaId = ((Ranga)RangaBox.SelectedItem).RangaId};
 
                 databaseService.AddUzytkownik(new Uzytkownik { Login = Login.Text, Password = Password.Text, Rola = isAdmin ? "Admin" : "" }, policjant);
