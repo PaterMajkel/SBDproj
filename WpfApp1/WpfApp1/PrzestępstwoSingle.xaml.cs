@@ -23,8 +23,8 @@ namespace PoliceApp
     /// </summary>
     public partial class PrzestępstwoSingle : Window
     {
-        public Przestepstwo przestepstwo;
         private DatabaseService databaseService = new();
+        public Przestepstwo przestepstwo;
         public Kartoteka pickedKartoteka;
         public Policjant pickedPolicjant;
         public ICollection<Kartoteka> kartoteka;
@@ -32,13 +32,12 @@ namespace PoliceApp
         public PrzestępstwoSingle(Przestepstwo przes)
         {
             przestepstwo = databaseService.getPrzestepstwoByObj(przes);
+            InitializeComponent();
             kartoteka = databaseService.GetKartotekas();
             policjant = databaseService.GetPolicjants();
-            InitializeComponent();
             Nazwa.Content = przestepstwo.Nazwa;
             Data.Content = przestepstwo.Data;
             Godzina.Content = przestepstwo.Godzina;
-
 
             ListViewColumnsPolicjanci.ItemsSource = przestepstwo.Policjants;
             ListViewColumnsSprawcy.ItemsSource = przestepstwo.Kartotekas;
