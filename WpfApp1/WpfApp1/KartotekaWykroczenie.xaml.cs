@@ -123,7 +123,20 @@ namespace PoliceApp
                 wykroczeniesingle.Show();
             }
         }
-
+        private void Button_Click_Usun(object sender, RoutedEventArgs e)
+        {
+            var selected = ListViewColumns.SelectedItems.Cast<Wykroczenia>().ToList();
+            if (selected == null)
+            {
+                MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            databaseService.DeleteWykroczenias(selected);
+            foreach (var element in selected)
+                data.Remove(element);
+            ListViewColumns.ItemsSource = null;
+            ListViewColumns.ItemsSource = data;
+        }
         private void ListViewColumns_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

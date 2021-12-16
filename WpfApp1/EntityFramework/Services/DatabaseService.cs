@@ -126,6 +126,17 @@ namespace EntityFramework.Services
             }
             _context.SaveChanges();
         }
+        public void DeleteWykroczenias(ICollection<Wykroczenia> data)
+        {
+            foreach (var element in data)
+            {
+                var temp = _context.Wykroczenias.Find(element.WykroczenieId);
+                if (temp != null)
+                    //_context.Remove(temp);
+                    temp.IsActive = false;
+            }
+            _context.SaveChanges();
+        }
         public void DeleteKartotekas(ICollection<Kartoteka> data)
         {
             foreach (var element in data)
