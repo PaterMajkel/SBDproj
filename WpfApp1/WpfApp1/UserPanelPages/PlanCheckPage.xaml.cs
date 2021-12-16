@@ -24,13 +24,16 @@ namespace PoliceApp
         private SharedData singleton = SharedData.GetInstance(null);
         private Uzytkownik uzytkownik;
         private DatabaseService databaseService = new();
+        private bool IdOrder = false;
         public PlanCheckPage()
         {
             uzytkownik = databaseService.GetUzytkownikByObj(singleton.uzytkownik);
 
             InitializeComponent();
             ListViewColumns.ItemsSource = uzytkownik.Policjant.Patrols;
-        }
+            //AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ListView_OnColumnClick));
 
+        }
+        
     }
 }

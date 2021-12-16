@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Height="100" Margin="212,220,0,0" VerticalAlignment="Top" Width="100"/>
-        <Rectangle HorizontalAlignment="Left" Height="400" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
+        <Rectangle HorizontalAlignment="Left" Height="445" Margin="24,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="904">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="Blue" Offset="0.0" />
@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ListView Name="ListViewColumns" Margin="60,97,381,93">
+        <ListView Name="ListViewColumns" Margin="61,115,380,75">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PolicjantId}" />
