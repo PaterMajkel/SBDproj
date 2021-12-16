@@ -117,7 +117,7 @@ namespace EntityFramework
                 new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock8.jpg")) }
                 );
             modelBuilder.Entity<Policjant>().HasData(
-                new Policjant { PolicjantId = 1, Imie = "Admin", Nazwisko = "Admin", RangaId = 1, KomendaId = 1, IsActive = false },
+                new Policjant { PolicjantId = 1, Imie = "Admin", Nazwisko = "Admin", RangaId = 18, KomendaId = 1, IsActive = false },
                 new Policjant { PolicjantId = 2, Imie = "Krzysztof", Nazwisko = "Gonciarz", RangaId = 2, KomendaId = 2 },
                 new Policjant { PolicjantId = 3, Imie = "Tomasz", Nazwisko = "Działowy", RangaId = 3, KomendaId = 3 },
                 new Policjant { PolicjantId = 4, Imie = "Antoni", Nazwisko = "Macierewicz", RangaId = 4, KomendaId = 4 },
