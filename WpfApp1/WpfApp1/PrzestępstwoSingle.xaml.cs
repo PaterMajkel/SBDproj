@@ -29,21 +29,142 @@ namespace PoliceApp
         public Policjant pickedPolicjant;
         public ICollection<Kartoteka> kartoteka;
         public ICollection<Policjant> policjant;
+        public bool IdOrder = false;
         public PrzestępstwoSingle(Przestepstwo przes)
         {
             przestepstwo = databaseService.getPrzestepstwoByObj(przes);
             InitializeComponent();
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
             Nazwa.Content = przestepstwo.Nazwa;
             Data.Content = przestepstwo.Data;
             Godzina.Content = przestepstwo.Godzina;
 
             ListViewColumnsPolicjanci.ItemsSource = przestepstwo.Policjants;
             ListViewColumnsSprawcy.ItemsSource = przestepstwo.Kartotekas;
-
+            AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ListView_OnColumnClick));
             KartotekaBox.ItemsSource = kartoteka;
             PolicjantBox.ItemsSource = policjant;
+        }
+        private void ListView_OnColumnClick(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource.GetType().Name != "GridViewColumnHeader")
+                return;
+            string headerName = (e.OriginalSource as GridViewColumnHeader).Content.ToString();
+            switch (headerName)
+            {
+                case "ID":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderByDescending(id => id.KartotekaId).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderBy(id => id.KartotekaId).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Imie":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderByDescending(id => id.Imie).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderBy(id => id.Imie).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Nazwisko":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderByDescending(id => id.Nazwisko).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderBy(id => id.Nazwisko).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Wiek":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Kartotekas = przestepstwo.Kartotekas.OrderByDescending(id => id.Wiek).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        kartoteka = kartoteka.OrderBy(id => id.Wiek).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "ID.":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Policjants = przestepstwo.Policjants.OrderByDescending(id => id.PolicjantId).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Policjants = przestepstwo.Policjants.OrderBy(id => id.PolicjantId).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Imie.":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Policjants = przestepstwo.Policjants.OrderByDescending(id => id.Imie).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Policjants = przestepstwo.Policjants.OrderBy(id => id.Imie).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Nazwisko.":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Policjants = przestepstwo.Policjants.OrderByDescending(id => id.Nazwisko).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Policjants = przestepstwo.Policjants.OrderBy(id => id.Nazwisko).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "KomendaID.":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Policjants = przestepstwo.Policjants.OrderByDescending(id => id.KomendaId).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Policjants = przestepstwo.Policjants.OrderBy(id => id.KomendaId).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+                case "Ranga.":
+                    {
+                        if (!IdOrder)
+                        {
+                            przestepstwo.Policjants = przestepstwo.Policjants.OrderByDescending(id => id.RangaId).ToList();
+                            IdOrder = !IdOrder;
+                            break;
+                        }
+                        przestepstwo.Policjants = przestepstwo.Policjants.OrderBy(id => id.RangaId).ToList();
+                        IdOrder = !IdOrder;
+                        break;
+                    }
+            }
+            ListViewColumnsSprawcy.ItemsSource = przestepstwo.Kartotekas;
+            ListViewColumnsPolicjanci.ItemsSource = przestepstwo.Policjants;
+
         }
 
         private void AddSprawca_Click(object sender, RoutedEventArgs e)
@@ -63,7 +184,7 @@ namespace PoliceApp
         {
             przestepstwo = databaseService.getPrzestepstwoByObj(przestepstwo);
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
 
             ListViewColumnsPolicjanci.ItemsSource = null;
             ListViewColumnsSprawcy.ItemsSource = null;
