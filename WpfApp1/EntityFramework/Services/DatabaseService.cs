@@ -275,6 +275,47 @@ namespace EntityFramework.Services
                 _context.SaveChanges();
             }
         }
+         public void DeletePolicjantsFromPrzestepstwo(Przestepstwo data, ICollection<Policjant> police)
+        {
+            var temp = _context.Przestepstwos.Where(p=> p.IsActive && p.PrzestepstwoId==data.PrzestepstwoId).Include(p=>p.Policjants).First();
+            foreach (var element in police)
+            {
+                if (element != null)
+                    temp.Policjants.Remove(element);
+            }
+            _context.SaveChanges();
+        }
+     
+        public void DeleteSprawcaFromPrzestepstwo(Przestepstwo data, ICollection<Kartoteka> przestepca)
+        {
+            var temp = _context.Przestepstwos.Where(p => p.IsActive && p.PrzestepstwoId == data.PrzestepstwoId).Include(p => p.Kartotekas).First();
+            foreach (var element in przestepca)
+            {
+                if (element != null)
+                    temp.Kartotekas.Remove(element);
+            }
+            _context.SaveChanges();
+        }
+        public void DeletePolicjantsFromWykroczenie(Wykroczenia data, ICollection<Policjant> police)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive && p.WykroczenieId == data.WykroczenieId).Include(p => p.Policjants).First();
+            foreach (var element in police)
+            {
+                if (element != null)
+                    temp.Policjants.Remove(element);
+            }
+            _context.SaveChanges();
+        }
+        public void DeleteSprawcaFromWykroczenia(Wykroczenia data, ICollection<Kartoteka> przestepca)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive && p.WykroczenieId == data.WykroczenieId).Include(p => p.Kartotekas).First();
+            foreach (var element in przestepca)
+            {
+                if (element != null)
+                    temp.Kartotekas.Remove(element);
+            }
+            _context.SaveChanges();
+        }
 
         public Uzytkownik GetUzytkownikByObj(Uzytkownik data)
         {
