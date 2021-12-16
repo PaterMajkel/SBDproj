@@ -23,8 +23,20 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Margin="39,153,545,152" Stretch="Fill" Source="Images/Police2.png"/>
+
+
+
+
         <Label Content="Edytuj stopień zagrożenia" FontSize="20" HorizontalAlignment="Left" Margin="612,188,0,0" VerticalAlignment="Top"/>
-        <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged" ItemsSource="{Binding TrackCollection}">
+        <Button x:Name="Refresh" Content="Odśwież" Margin="811,57,59,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="CadetBlue">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ListView Name="ListViewColumns" Margin="97,121,390,89" SelectionChanged="ListViewColumns_SelectionChanged">
+
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="30" DisplayMemberBinding="{Binding Region_MiastaId}" />
@@ -36,15 +48,19 @@
         </ListView>
         <Label Content="Panel zarządzanie regionami" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="794,403,0,0" VerticalAlignment="Top" FontSize="15" Height="24" Width="93" Background="CadetBlue">
+
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="794,403,0,0" VerticalAlignment="Top" FontSize="15" Height="24" Width="93" Background="CadetBlue" Click="Button_Click_Edit">
+
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="612,230,0,0" VerticalAlignment="Top" Width="173" Height="28"/>
+
+        <ComboBox Name="EditBox"  HorizontalAlignment="Left" Margin="612,230,0,0" VerticalAlignment="Top" Width="173" Height="28"/>
         <Button x:Name="Change" Content="Zmień" HorizontalAlignment="Left" Margin="794,232,0,0" FontSize="15" VerticalAlignment="Top" Height="24" Width="93" Background="CadetBlue" Click="Change_Click">
+
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
