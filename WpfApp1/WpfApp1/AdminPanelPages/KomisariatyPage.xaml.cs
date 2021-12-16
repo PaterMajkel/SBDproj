@@ -32,7 +32,6 @@ namespace PoliceApp
         public ICollection<Region_Miasta> regiony;
         public string adres;
         public bool editMode = false;
-        public int position;
         public Komenda selectedToEdit;
         public KomisariatyPage()
         {
@@ -154,7 +153,6 @@ namespace PoliceApp
                 return;
             }
             
-            //TODO implement
             editMode = true;
             AddEdit.Content = "Zmień";
             EditButton.IsEnabled = false;
@@ -206,16 +204,16 @@ namespace PoliceApp
             RefreshData();
 
         }
+        private void Adres_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            adres = Adres.Text.ToString();
+        }
         private void RefreshData()
         {
             data = databaseService.GetKomendas();
             miasta = databaseService.GetMiastos();
             ListViewColumns.ItemsSource = data;
             MiastoBox.ItemsSource = miasta;
-        }
-        private void Adres_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            adres = Adres.Text.ToString();
         }
 
         private void Button_Click_Refresh(object sender, RoutedEventArgs e)

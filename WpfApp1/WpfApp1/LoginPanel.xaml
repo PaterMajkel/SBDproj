@@ -45,14 +45,14 @@
             <StackPanel Width="100"/>
         </StackPanel>
 
-        <PasswordBox Name="passwordBox" MaxLength="16" 
-              Margin="479,224,136,166" Background="LightGray" FontSize="15" Width="185" Height="42"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,203,0,0" TextWrapping="Wrap" Text="Haslo" VerticalAlignment="Top" Width="141"/>
         <TextBox Name="loginBox" HorizontalAlignment="Left" Height="23" Margin="479,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="15"
                  Background="LightGray" TextChanged="TextBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,154,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Margin="479,107,0,0" TextWrapping="Wrap" Text="Panel Logowania" VerticalAlignment="Top" Height="42" Width="214" 
                    FontSize="25" FontStyle="Oblique"/>
+        <PasswordBox Name="passwordBox" MaxLength="16" 
+              Margin="479,224,136,166" Background="LightGray" FontSize="15" Width="185" Height="42"/>
 
     </Grid>
 </Window>

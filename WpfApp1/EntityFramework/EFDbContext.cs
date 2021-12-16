@@ -32,10 +32,11 @@ namespace EntityFramework
             public EFDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<EFDbContext>();
-                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\HP\\Desktop\\SS\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True");
                 // MICHAŁ Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\test\\SBDproj\\WpfApp1\\EntityFramework\\Policja.mdf\";Integrated Security=True
                 // FILIP Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=I:\\Filip\\SEMESTR5\\Projekt\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
-                //Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\czarn\\OneDrive\\Dokumenty\\GitHub\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
+                // ZUZIA Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\czarn\\OneDrive\\Dokumenty\\GitHub\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
+                // SYLWIA Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\HP\\Desktop\\SS\\SBDproj\\WpfApp1\\EntityFramework\\Database1.mdf;Integrated Security=True
                 return new EFDbContext(optionsBuilder.Options);
             }
         }
@@ -46,7 +47,7 @@ namespace EntityFramework
 
             //Uzytkownicy
             modelBuilder.Entity<Uzytkownik>().HasData(
-                new Uzytkownik { UzytkownikId = 1, Login = "admin", Password = "admin", Rola = "admin" },
+                new Uzytkownik { UzytkownikId = 1, Login = "admin", Password = "admin", Rola = "admin", PolicjantId = 1 },
                 new Uzytkownik { UzytkownikId = 2, Login = "bruh", Password = "bruh", Rola = "", PolicjantId=5 },
                 new Uzytkownik { UzytkownikId = 3, Login = "xxx", Password = "xxx", Rola = "", PolicjantId = 3 }
 
@@ -73,7 +74,7 @@ namespace EntityFramework
                 public Region_Miasta Region { get; set; }
              */
             modelBuilder.Entity<Komenda>().HasData(
-               new Komenda { KomendaId = 1, Adres = "Muchomorska 9", Region_MiastaId = 1 },
+               new Komenda { KomendaId = 1, Adres = "Panel Admina", Region_MiastaId = 1, IsActive=false },
                new Komenda { KomendaId = 2, Adres = "Zawadiaków 14", Region_MiastaId = 2 },
                new Komenda { KomendaId = 3, Adres = "Mirosławska 15", Region_MiastaId = 4 },
                new Komenda { KomendaId = 4, Adres = "Piątków 21/7", Region_MiastaId = 5 },
@@ -81,7 +82,9 @@ namespace EntityFramework
                new Komenda { KomendaId = 6, Adres = "Obi-Wana Kenobiego 3", Region_MiastaId = 7 },
                new Komenda { KomendaId = 7, Adres = "Plackowa 98", Region_MiastaId = 8 },
                new Komenda { KomendaId = 8, Adres = "Iglasta 41", Region_MiastaId = 3 },
-               new Komenda { KomendaId = 9, Adres = "Chrobrego 21", Region_MiastaId = 9 }
+               new Komenda { KomendaId = 9, Adres = "Chrobrego 21", Region_MiastaId = 9 },
+               new Komenda { KomendaId = 10, Adres = "Muchomorska 9", Region_MiastaId = 1 }
+
                );
             //Region-Miata
             /*
@@ -113,11 +116,12 @@ namespace EntityFramework
                 new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23 }
                 );
             modelBuilder.Entity<Policjant>().HasData(
-                new Policjant { PolicjantId = 1, Imie = "Adam", Nazwisko="Pogorzelski", RangaId=1, KomendaId=1 },
-                new Policjant { PolicjantId = 2, Imie = "Krzysztof", Nazwisko = "Gonciarz", RangaId = 2, KomendaId = 1 },
-                new Policjant { PolicjantId = 3, Imie = "Tomasz", Nazwisko = "Działowy", RangaId = 3, KomendaId = 1 },
-                new Policjant { PolicjantId = 4, Imie = "Antoni", Nazwisko = "Macierewicz", RangaId = 4, KomendaId = 1 },
-                new Policjant { PolicjantId = 5, Imie = "Darth", Nazwisko = "Vader", RangaId = 5, KomendaId = 1 }
+                new Policjant { PolicjantId = 1, Imie = "Admin", Nazwisko = "Admin", RangaId = 1, KomendaId = 1, IsActive = false },
+                new Policjant { PolicjantId = 2, Imie = "Krzysztof", Nazwisko = "Gonciarz", RangaId = 2, KomendaId = 2 },
+                new Policjant { PolicjantId = 3, Imie = "Tomasz", Nazwisko = "Działowy", RangaId = 3, KomendaId = 3 },
+                new Policjant { PolicjantId = 4, Imie = "Antoni", Nazwisko = "Macierewicz", RangaId = 4, KomendaId = 4 },
+                new Policjant { PolicjantId = 5, Imie = "Darth", Nazwisko = "Vader", RangaId = 5, KomendaId = 2 },
+                new Policjant { PolicjantId = 6, Imie = "Adam", Nazwisko="Pogorzelski", RangaId=1, KomendaId=2 }
             );
             modelBuilder.Entity<Ranga>().HasData(
                 new Ranga { RangaId = 1, Nazwa = "Posterunkowy", Pensja = 2800 },
@@ -136,7 +140,9 @@ namespace EntityFramework
                 new Ranga { RangaId = 14, Nazwa = "Młodszy Inspektor", Pensja = 4100 },
                 new Ranga { RangaId = 15, Nazwa = "Inspektor", Pensja = 4200 },
                 new Ranga { RangaId = 16, Nazwa = "Nadinspektor", Pensja = 4300 },
-                new Ranga { RangaId = 17, Nazwa = "Generalny Inspektor", Pensja = 4400 }
+                new Ranga { RangaId = 17, Nazwa = "Generalny Inspektor", Pensja = 4400 },
+                new Ranga { RangaId = 18, Nazwa = "Admin", Pensja = 0, IsActive=false }
+
                 );
             modelBuilder.Entity<Radiowoz>().HasData(
                 new Radiowoz { RadiowozId = 1, Model = "M3", Marka = "BMW", Rok_produkcji = 2016 },

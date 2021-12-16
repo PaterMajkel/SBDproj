@@ -23,8 +23,21 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Margin="969,174,-385,131" Stretch="Fill" Source="/Images/Police2.png" />
-        <Label Content="Nowa pozycja" HorizontalAlignment="Left" Margin="666,106,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="667,319,0,0" VerticalAlignment="Top" Click="Button_Click_AddOrEdit"/>
+        <Label Name="CurrentMode" Content="Nowa pozycja" HorizontalAlignment="Left" Margin="666,106,0,0" VerticalAlignment="Top"/>
+        <Button Name="AddEdit" Content="Dodaj" HorizontalAlignment="Left" Margin="766,310,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_DodajOrEdytuj" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Abort" Content="Zatrzymaj" Visibility="Hidden"  HorizontalAlignment="Left" Margin="684,309,0,0" VerticalAlignment="Top" Height="31" Width="62" Click="Button_Click_Abort" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Button Content="Usuń" Margin="747,443,84,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Height="29" Click="Button_Click_Delete" Width="76" Background="Gray">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -37,24 +50,39 @@
         <Label Content="Imię" HorizontalAlignment="Left" Margin="629,135,0,0" VerticalAlignment="Top"/>
         <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="602,161,0,0" VerticalAlignment="Top"/>
         <Label Content="Login" HorizontalAlignment="Left" Margin="622,187,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FilterId" HorizontalAlignment="Left" Margin="28,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="FilterImie" HorizontalAlignment="Left" Margin="137,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterNazwisko" HorizontalAlignment="Left" Margin="257,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterRanga" HorizontalAlignment="Left" Margin="377,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterIdKomendy" HorizontalAlignment="Left" Margin="497,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FilterAdres"  HorizontalAlignment="Left" Margin="617,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Filter" Content="Filtruj" Margin="595,109,311,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Filter" Height="29"
+                 Width="40" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <ListView Name="ListViewColumns" Margin="28,107,364,44">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding UzytkownikId}" />
                     <GridViewColumn x:Name="ImieHeader" Header="Imie" Width="110" DisplayMemberBinding="{Binding Policjant.Imie}"/>
                     <GridViewColumn x:Name="NazwiskoHeader" Header="Nazwisko"  Width="100" DisplayMemberBinding="{Binding Policjant.Nazwisko}"/>
-                    <GridViewColumn x:Name="RangaHeader" Header="Ranga"  Width="180" DisplayMemberBinding="{Binding Policjant.Ranga.Nazwa}"/>
-                    <GridViewColumn x:Name="KomendaHeader" Header="Komenda"  Width="140" DisplayMemberBinding="{Binding Policjant.Komenda.Adres}"/>
+                    <GridViewColumn x:Name="RangaHeader" Header="Ranga"  Width="120" DisplayMemberBinding="{Binding Policjant.Ranga.Nazwa}"/>
+                    <GridViewColumn x:Name="KomendaIdHeader" Header="ID Komendy"  Width="70" DisplayMemberBinding="{Binding Policjant.Komenda.KomendaId}"/>
+                    <GridViewColumn x:Name="KomendaHeader" Header="Adres Komendy"  Width="130" DisplayMemberBinding="{Binding Policjant.Komenda.Adres}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock x:Name="Name"  Background="White" HorizontalAlignment="Left" Margin="667,137,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
-        <TextBlock x:Name="Sunrame"  Background="White" HorizontalAlignment="Left" Margin="667,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
-        <TextBlock x:Name="Login"  Background="White" HorizontalAlignment="Left" Margin="666,192,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="121" RenderTransformOrigin="0.45,2.463"/>
+        <TextBox x:Name="Name"  Background="White" HorizontalAlignment="Left" Margin="667,137,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
+        <TextBox x:Name="Sunrame"  Background="White" HorizontalAlignment="Left" Margin="667,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120"/>
+        <TextBox x:Name="Login"  Background="White" HorizontalAlignment="Left" Margin="666,192,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="121" RenderTransformOrigin="0.45,2.463"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="622,213,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Password"  Background="White" HorizontalAlignment="Left" Margin="667,218,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120" RenderTransformOrigin="0.45,2.463"/>
+        <TextBox x:Name="Password"  Background="White" HorizontalAlignment="Left" Margin="667,218,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="120" RenderTransformOrigin="0.45,2.463"/>
         <ComboBox Name="RangaBox" HorizontalAlignment="Left" Margin="667,0,0,0" VerticalAlignment="Center" Width="120" DisplayMemberPath="Nazwa" />
-        <ComboBox Name="KomendaBox" HorizontalAlignment="Left" Margin="667,279,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nazwa" />
+        <ComboBox Name="KomendaBox" HorizontalAlignment="Left" Margin="667,279,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="KomendaId" />
         <Label Content="Ranga" HorizontalAlignment="Left" Margin="605,0,0,0" VerticalAlignment="Center"/>
         <Label Content="Komenda" HorizontalAlignment="Left" Margin="605,276,0,0" VerticalAlignment="Top"/>
         <Button x:Name="EditButton" Content="Edytuj" Margin="627,443,204,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Edytuj" Height="29"
@@ -65,6 +93,14 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button x:Name="Refresh" Content="Odśwież" Margin="806,46,26,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Click="Button_Click_Refresh" Height="29" Width="76" Background="Gray">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <CheckBox x:Name="AdminCheckBox" Content="Administrator" HorizontalAlignment="Left" Margin="792,206,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" />
 
     </Grid>
 </Page>

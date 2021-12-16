@@ -189,9 +189,37 @@ namespace EntityFramework.Services
 
             }
         }
+        public void AddUzytkownik(Uzytkownik uzytkownik, Policjant policjant)
+        {
+            if (uzytkownik == null)
+                return;
+            if(uzytkownik.Rola.ToUpper()=="ADMIN")
+            {
+                uzytkownik.PolicjantId = 1;
+                _context.Uzytkowniks.Add(uzytkownik);
+            }
+            else
+            {
+                _context.Policjants.Add(policjant);
+                _context.SaveChanges();
+
+                uzytkownik.PolicjantId = policjant.PolicjantId;
+                _context.Uzytkowniks.Add(uzytkownik);
+
+            }
+            _context.SaveChanges();
+        }
         public void AddWykroczenias(Wykroczenia wykroczenia)
         {
             _context.Add(wykroczenia);
+            _context.SaveChanges();
+        }
+        public void EditUzytkownik(Uzytkownik uzytkownik)
+        {
+            var edited = _context.Uzytkowniks.Where(p => p.UzytkownikId == uzytkownik.UzytkownikId).FirstOrDefault();
+            if (edited == null)
+                return;
+            edited = uzytkownik;
             _context.SaveChanges();
         }
     }
