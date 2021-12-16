@@ -24,7 +24,6 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public SharedData data;
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +40,7 @@ namespace WpfApp1
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            Window loginPanel = new LoginPanel(ref UserPanel, ref AdminPanel, data);
+            Window loginPanel = new LoginPanel(ref UserPanel, ref AdminPanel);
             loginPanel.Show();
 
         }

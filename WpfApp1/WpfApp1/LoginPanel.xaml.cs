@@ -25,9 +25,8 @@ namespace PoliceApp
         List<Button> buttons;
         SharedData uzytkownik;
         public DatabaseService databaseService = new DatabaseService();
-        public LoginPanel(ref Button userButt, ref Button adminButt, SharedData uzytkownik)
+        public LoginPanel(ref Button userButt, ref Button adminButt)
         {
-            this.uzytkownik = uzytkownik;
             buttons = new List<Button>();
             buttons.Add(userButt);
             buttons.Add(adminButt);
@@ -43,10 +42,13 @@ namespace PoliceApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            SharedData.RemoveInstance();
+            foreach (var button in buttons)
+                button.IsEnabled = false;
             var x = databaseService.GetUzytkownik(login, passwordBox.Password.ToString());
             if (x != null)
             {
-                uzytkownik=new SharedData { uzytkownik=x};
+                uzytkownik = SharedData.GetInstance(uzytkownik: x);
                 buttons[0].IsEnabled = true;
                 if (x.Rola.ToUpper() == "ADMIN")
                     buttons[1].IsEnabled = true;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntityFramework.Models;
+using EntityFramework.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,16 @@ namespace PoliceApp
     /// </summary>
     public partial class PlanCheckPage : Page
     {
+        private SharedData singleton = SharedData.GetInstance(null);
+        private Uzytkownik uzytkownik;
+        private DatabaseService databaseService = new();
         public PlanCheckPage()
         {
+            uzytkownik = databaseService.GetUzytkownikByObj(singleton.uzytkownik);
+
             InitializeComponent();
+            ListViewColumns.ItemsSource = uzytkownik.Policjant.Patrols;
         }
+
     }
 }

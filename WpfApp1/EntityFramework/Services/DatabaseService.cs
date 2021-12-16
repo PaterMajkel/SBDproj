@@ -271,5 +271,13 @@ namespace EntityFramework.Services
                 _context.SaveChanges();
             }
         }
+        public Uzytkownik GetUzytkownikByObj(Uzytkownik data)
+        {
+            if(data!=null)
+            {
+                return _context.Uzytkowniks.Where(p => p.IsActive && p.PolicjantId==data.PolicjantId).Include(p => p.Policjant).ThenInclude(p => p.Patrols).ThenInclude(p => p.Radiowoz).First();
+            }
+            return null;
+        }
     }
 }

@@ -29,24 +29,6 @@ namespace PoliceApp
             InitializeComponent();
         }
 
-        private void Button_Click_Radiowozy(object sender, RoutedEventArgs e)
-        {
-            //Window radiowozy = new Radiowozy();
-            //radiowozy.Show();
-        }
-
-        private void Button_Click_Policjanci(object sender, RoutedEventArgs e)
-        {
-           // Window policjanci = new Policjanci();
-            //policjanci.Show();
-        }
-
-        private void Button_Click_Komisariaty(object sender, RoutedEventArgs e)
-        {
-            //Window komisariaty = new Komisariaty();
-            //komisariaty.Show();
-        }
-
 
         private void Button_Click_Podwladni(object sender, RoutedEventArgs e)
         {
