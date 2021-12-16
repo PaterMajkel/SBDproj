@@ -262,5 +262,14 @@ namespace EntityFramework.Services
             edited = data;
             _context.SaveChanges();
         }
+        public void AddKartotekaToPrzestepstwo(Przestepstwo przestepstwo, Kartoteka kartoteka)
+        {
+            var temp = _context.Przestepstwos.Where(p => p.IsActive).Where(p=>p.PrzestepstwoId==przestepstwo.PrzestepstwoId).Include(p => p.Kartotekas).First();
+            if (temp!=null)
+            {
+                temp.Kartotekas.Add(kartoteka);
+                _context.SaveChanges();
+            }
+        }
     }
 }
