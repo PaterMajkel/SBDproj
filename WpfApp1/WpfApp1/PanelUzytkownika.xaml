@@ -21,40 +21,40 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Left" Margin="317,10,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-                FontSize="20" Click="Button_Click_Podwladni">
+        <Button Content="Zarządzanie Podwladnymi" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+                FontSize="18" Click="Button_Click_Podwladni">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Sprawdź Plan" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-                FontSize="20" Click="Button_Click_Plan">
+        <Button Content="Sprawdź Plan" HorizontalAlignment="Left" Margin="15,26,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+                FontSize="18" Click="Button_Click_Plan">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="624,9,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-                FontSize="20" Click="Button_Click_Kartoteka">
+        <Button Content="Zarządzanie Kartoteką" HorizontalAlignment="Left" Margin="661,28,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+                FontSize="18" Click="Button_Click_Kartoteka">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-            FontSize="20" Click="Button_Click_Wykroczenia">
+        <Button Content="Zarządzanie Wykroczeniami" HorizontalAlignment="Left" Margin="15,77,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+            FontSize="18" Click="Button_Click_Wykroczenia">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Zarządzanie Przestępstwami" HorizontalAlignment="Left" Margin="317,58,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-            FontSize="20" Click="Button_Click_Przestepstwa">
+        <Button Content="Zarządzanie Przestępstwami" HorizontalAlignment="Center" Margin="0,77,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+            FontSize="18" Click="Button_Click_Przestepstwa">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -62,8 +62,8 @@
             </Button.Resources>
         </Button>
         <Frame x:Name="UserPages" Margin="0,108,0,0" Panel.ZIndex="10" NavigationUIVisibility="Hidden"/>
-        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="624,58,0,0" VerticalAlignment="Top" Width="302" Height="45" Background="CadetBlue"
-            FontSize="20" Click="Button_Click_Regiony">
+        <Button Content="Zarządzanie Regionami" HorizontalAlignment="Left" Margin="661,76,0,0" VerticalAlignment="Top" Width="270" Height="41" Background="CadetBlue"
+            FontSize="18" Click="Button_Click_Regiony">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

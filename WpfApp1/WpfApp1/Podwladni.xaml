@@ -34,14 +34,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="690,383,0,0" VerticalAlignment="Top" Height="18" Width="76" Background="Gray">
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="722,354,0,0" VerticalAlignment="Top" Height="28" Width="88" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Usuń" Margin="771,383,99,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Height="18" Width="76" Background="Gray">
+        <Button Content="Usuń" Margin="834,354,33,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,2.963" Height="28" Background="Red">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -50,24 +50,24 @@
         </Button>
         <Label Content="Ustawienie Planu Podwładnemu" FontFamily="Cooper Black"
   FontSize="36" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="53"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="609,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782" Height="18" Width="76" Background="Gray">
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="608,354,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.422,-1.782" Height="28" Width="88" Background="CadetBlue">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="630,173,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="PolicjantId"/>
-        <ComboBox Name="RadiowozBox" HorizontalAlignment="Left" Margin="630,125,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="RadiowozID"/>
-        <Label Content="Radiowóz ID" HorizontalAlignment="Left" Margin="630,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="Policjant ID" HorizontalAlignment="Left" Margin="630,99,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Data_roz" HorizontalAlignment="Left" Margin="630,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Godzina_roz" HorizontalAlignment="Left" Margin="630,329,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Data_zak" HorizontalAlignment="Left" Margin="630,292,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Godzina_Zak" HorizontalAlignment="Left" Margin="630,12,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <Label Content="Data Rozpoczęcia" HorizontalAlignment="Left" Margin="630,193,0,0" VerticalAlignment="Top"/>
-        <Label Content="Godzina Rozpoczęcia" HorizontalAlignment="Left" Margin="630,233,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data Zakończenia" HorizontalAlignment="Left" Margin="630,272,0,0" VerticalAlignment="Top"/>
-        <Label Content="Godzina Zakończenia" HorizontalAlignment="Left" Margin="630,310,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="766,161,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="PolicjantId"/>
+        <ComboBox Name="RadiowozBox" HorizontalAlignment="Left" Margin="608,161,0,0" VerticalAlignment="Top" Width="123" DisplayMemberPath="RadiowozID"/>
+        <Label Content="Radiowóz ID"  FontSize="15" HorizontalAlignment="Left" Margin="766,131,0,0" VerticalAlignment="Top"/>
+        <Label Content="Policjant ID" FontSize="15" HorizontalAlignment="Left" Margin="603,131,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Data_roz" HorizontalAlignment="Left" Margin="608,233,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Height="20"/>
+        <TextBox x:Name="Godzina_roz"  Height="20" HorizontalAlignment="Left" Margin="766,297,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="Data_zak" HorizontalAlignment="Left" Margin="608,297,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  Height="20"/>
+        <TextBox x:Name="Godzina_Zak"  Height="20" HorizontalAlignment="Left" Margin="766,233,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Data Rozpoczęcia"  FontSize="15" HorizontalAlignment="Left" Margin="603,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Godzina Rozpoczęcia"  FontSize="15" HorizontalAlignment="Left" Margin="762,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data Zakończenia" FontSize="15" HorizontalAlignment="Left" Margin="603,271,0,0" VerticalAlignment="Top"/>
+        <Label Content="Godzina Zakończenia" FontSize="15" HorizontalAlignment="Left" Margin="762,271,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
