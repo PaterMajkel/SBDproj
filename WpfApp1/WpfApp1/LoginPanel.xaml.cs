@@ -32,6 +32,7 @@ namespace PoliceApp
             buttons.Add(userButt);
             buttons.Add(adminButt);
             InitializeComponent();
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

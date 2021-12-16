@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -229,6 +230,13 @@ namespace EntityFramework.Services
                 return;
             edited = data;
             _context.SaveChanges();
+        }
+        public Kartoteka getKartotekaByObj(Kartoteka kartoteka)
+        {
+            //var x =File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Police.png"));
+            ////var y = Path.Combine(Directory.GetCurrentDirectory(), "Police.png");
+             ;
+            return _context.Kartotekas.Where(p => p == kartoteka).Include(p => p.Wykroczenias).Include(p => p.Przestepstwos).First();
         }
     }
 }

@@ -21,38 +21,38 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source="Images/Police2.png" Height="158" VerticalAlignment="Top" Margin="43,35,731,0" Stretch="Fill" RenderTransformOrigin="0.5,0.5" />
+        <Image Name="Image" Height="158" VerticalAlignment="Top" Margin="43,35,731,0" Stretch="Fill" RenderTransformOrigin="0.5,0.5" />
         <TextBlock HorizontalAlignment="Left" Margin="281,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    FontStyle="Oblique" FontSize="28" Width="132"><Run Text="Nazwisko"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="281,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="86"><Run Text="Imię"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="276,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="86"><Run Text="Wiek"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="413,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="132"><Run Text="Floryda"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="362,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="183"><Run Text="Grzegorz"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="367,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Text="40"/></TextBlock>
+        <Label x:Name="Nazwisko" HorizontalAlignment="Left" Margin="413,25,0,0" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="142" Height="61" ></Label>
+        <Label Name="Imie" HorizontalAlignment="Left" Margin="362,65,0,0"  VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="183" Height="55"></Label>
+        <Label Name="Wiek" HorizontalAlignment="Left" Margin="367,108,0,0"  VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="110" Height="61"/>
         <TextBlock HorizontalAlignment="Left" Margin="57,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="20" Width="319" Height="27"><Run Text="Przestępstwa"/><Run Language="pl-pl" Text=":"/></TextBlock>
         <ListView  Name="ListViewColumnsPrzestepstwa" Margin="57,246,475,39">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding PrzestepstwaId}" />
-                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Nazwa}"/>
-                    <GridViewColumn x:Name="DataHeader" Header="Data"  Width="110" DisplayMemberBinding="{Binding Data}"/>
-                    <GridViewColumn x:Name="GodzinaHeader" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Godzina}"/>
+                    <GridViewColumn x:Name="IdHeader" Header="ID"  Width="20" DisplayMemberBinding="{Binding Przestepstwo.PrzestepstwaId}" />
+                    <GridViewColumn x:Name="NazwaHeader" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Przestepstwo.Nazwa}"/>
+                    <GridViewColumn x:Name="DataHeader" Header="Data"  Width="110" DisplayMemberBinding="{Binding Przestepstwo.Data}"/>
+                    <GridViewColumn x:Name="GodzinaHeader" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Przestepstwo.Godzina}"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <ListView  x:Name="ListViewColumnsWykroczenia" Margin="509,246,26,39">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="IdHeader1" Header="ID"  Width="20" DisplayMemberBinding="{Binding WykroczenieId}" />
-                    <GridViewColumn x:Name="NazwaHeader1" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Nazwa}"/>
-                    <GridViewColumn x:Name="DataHeader1" Header="Data"  Width="110" DisplayMemberBinding="{Binding Data}"/>
-                    <GridViewColumn x:Name="GodzinaHeader1" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Godzina}"/>
+                    <GridViewColumn x:Name="IdHeader1" Header="ID"  Width="20" DisplayMemberBinding="{Binding Wykroczenia.WykroczenieId}" />
+                    <GridViewColumn x:Name="NazwaHeader1" Header="Nazwa" Width="200" DisplayMemberBinding="{Binding Wykroczenia.Nazwa}"/>
+                    <GridViewColumn x:Name="DataHeader1" Header="Data"  Width="110" DisplayMemberBinding="{Binding Wykroczenia.Data}"/>
+                    <GridViewColumn x:Name="GodzinaHeader1" Header="Godzina"  Width="70" DisplayMemberBinding="{Binding Wykroczenia.Godzina}"/>
                 </GridView>
             </ListView.View>
         </ListView>

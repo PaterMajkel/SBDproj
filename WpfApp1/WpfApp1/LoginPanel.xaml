@@ -24,7 +24,7 @@
         </Border>
         <StackPanel Orientation="Horizontal">
             <StackPanel Width="369">
-                <Image Source="Images/Police2.png"  Height="312" VerticalAlignment="Top" Margin="29,30,12,30" Stretch="Fill" RenderTransformOrigin="0.5,0.5" >
+                <Image Source="/Police2.png"  Height="312" VerticalAlignment="Top" Margin="29,30,12,30" Stretch="Fill" RenderTransformOrigin="0.5,0.5" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

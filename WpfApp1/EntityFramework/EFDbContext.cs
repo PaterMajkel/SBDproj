@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,14 +107,14 @@ namespace EntityFramework
               new Region_Miasta { Region_MiastaId = 9, MiastoId = 7, Stopien_zagrozenia="Śmiertelny", Nazwa="Chmurzyńska Wieś" }
               );
             modelBuilder.Entity<Kartoteka>().HasData(
-                new Kartoteka {KartotekaId=1,Imie="Zuzanna", Nazwisko="Bagińska",Wiek=21 },
-                new Kartoteka { KartotekaId = 2, Imie = "Lewis", Nazwisko = "Hamilto", Wiek = 37 },
-                new Kartoteka { KartotekaId = 3, Imie = "Bruno", Nazwisko = "Czech", Wiek = 20 },
-                new Kartoteka { KartotekaId = 4, Imie = "Stachu", Nazwisko = "Jones", Wiek = 74 },
-                new Kartoteka { KartotekaId = 5, Imie = "Stanisław", Nazwisko = "Wokulski", Wiek = 30 },
-                new Kartoteka { KartotekaId = 6, Imie = "Witold", Nazwisko = "Gombrowicz", Wiek = 43 },
-                new Kartoteka { KartotekaId = 7, Imie = "Piotrek", Nazwisko = "Parker", Wiek = 30 },
-                new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23 }
+                new Kartoteka {KartotekaId=1,Imie="Zuzanna", Nazwisko="Bagińska",Wiek=21, Zdjecie= File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock1.jpg")) },
+                new Kartoteka { KartotekaId = 2, Imie = "Lewis", Nazwisko = "Hamilto", Wiek = 37, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock2.jpg")) },
+                new Kartoteka { KartotekaId = 3, Imie = "Bruno", Nazwisko = "Czech", Wiek = 20, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock3.jpg")) },
+                new Kartoteka { KartotekaId = 4, Imie = "Stachu", Nazwisko = "Jones", Wiek = 74, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock4.jpg")) },
+                new Kartoteka { KartotekaId = 5, Imie = "Stanisław", Nazwisko = "Wokulski", Wiek = 30, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock5.jpg")) },
+                new Kartoteka { KartotekaId = 6, Imie = "Witold", Nazwisko = "Gombrowicz", Wiek = 43, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock6.jpg")) },
+                new Kartoteka { KartotekaId = 7, Imie = "Piotrek", Nazwisko = "Parker", Wiek = 30, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock7.jpg")) },
+                new Kartoteka { KartotekaId = 8, Imie = "Sara", Nazwisko = "Sudoł", Wiek = 23, Zdjecie = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Images\\stock8.jpg")) }
                 );
             modelBuilder.Entity<Policjant>().HasData(
                 new Policjant { PolicjantId = 1, Imie = "Admin", Nazwisko = "Admin", RangaId = 1, KomendaId = 1, IsActive = false },

@@ -29,8 +29,8 @@ namespace PoliceApp
         public bool IdOrder = false;
         public string model;
         public string marka;
-        public int rocznik;
-        public int ilosc;
+        public int? rocznik;
+        public int? ilosc;
         private bool editMode = false;
         private Radiowoz selectedToEdit;
         public RadiowozyPage()
@@ -118,7 +118,7 @@ namespace PoliceApp
                     return;
                 }
                 for (int i = 0; i < ilosc; i++)
-                    databaseService.AddRadiowozos(new Radiowoz { Model = model, Marka = marka, Rok_produkcji = rocznik, });
+                    databaseService.AddRadiowozos(new Radiowoz { Model = model, Marka = marka, Rok_produkcji = (int)rocznik });
                 return;
             }
             selectedToEdit.Model = Model.Text;
