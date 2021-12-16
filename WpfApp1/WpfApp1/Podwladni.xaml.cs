@@ -111,7 +111,7 @@ namespace PoliceApp
         }
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var item = ((FrameworkElement)e.OriginalSource).DataContext as Patrol;
+            var item = ((FrameworkElement)e.OriginalSource).DataContext as Policjant;
             if (item != null)
             {
                 Window patrolsingle = new PlanOfSuborned(item);

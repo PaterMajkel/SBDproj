@@ -27,10 +27,12 @@ namespace PoliceApp
         public Policjant policjant;
         private DatabaseService databaseService = new();
 
-        public PlanOfSuborned(Patrol pato)
+        public PlanOfSuborned(Policjant pato)
         {
-           // policjant=databaseService.GetPolicjantByObj()
             InitializeComponent();
+            policjant = databaseService.GetPolicjantByObj(pato);
+            Nazwa.Content = policjant.PolicjantId;
+            ListViewColumns.ItemsSource = policjant.Patrols;
         }
     }
 }
