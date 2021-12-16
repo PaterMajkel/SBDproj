@@ -74,5 +74,19 @@ namespace PoliceApp
             KartotekaBox.ItemsSource = kartoteka;
             PolicjantBox.ItemsSource = policjant;
         }
+
+        private void Add_Policjant_Click(object sender, RoutedEventArgs e)
+        {
+            pickedPolicjant = (Policjant)PolicjantBox.SelectedItem;
+            if(pickedPolicjant!=null)
+            {
+                if(przestepstwo.Policjants.Contains(pickedPolicjant))
+                {
+                    MessageBox.Show("Dana osoba nie może uczystniczyć w jednym wydarzeniu kilkukrotnie", "Co Ty wyprawiasz?", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                databaseService.AddPolicjatToPrzestepstwo(przestepstwo, pickedPolicjant);
+            }
+            Refresh();
+        }
     }
 }

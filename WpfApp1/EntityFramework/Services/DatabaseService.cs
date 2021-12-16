@@ -271,5 +271,32 @@ namespace EntityFramework.Services
                 _context.SaveChanges();
             }
         }
+        public void AddPolicjatToPrzestepstwo(Przestepstwo przestepstwo, Policjant policjant)
+        {
+            var temp = _context.Przestepstwos.Where(p => p.IsActive).Where(p => p.PrzestepstwoId == przestepstwo.PrzestepstwoId).Include(p => p.Policjants).First();
+            if (temp != null)
+            {
+                temp.Policjants.Add(policjant);
+                _context.SaveChanges();
+            }
+        }
+        public void AddKartotekaToWykroczenie(Wykroczenia wykroczenia, Kartoteka kartoteka)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive).Where(p => p.WykroczenieId == wykroczenia.WykroczenieId).Include(p => p.Kartotekas).First();
+            if (temp != null)
+            {
+                temp.Kartotekas.Add(kartoteka);
+                _context.SaveChanges();
+            }
+        }
+        public void AddPolicjantToWykroczenie(Wykroczenia wykroczenia, Policjant policjant)
+        {
+            var temp = _context.Wykroczenias.Where(p => p.IsActive).Where(p => p.WykroczenieId == wykroczenia.WykroczenieId).Include(p => p.Policjants).First();
+            if (temp != null)
+            {
+                temp.Policjants.Add(policjant);
+                _context.SaveChanges();
+            }
+        }
     }
 }
