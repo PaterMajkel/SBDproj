@@ -69,6 +69,14 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button x:Name="AddImage" Content="Zdjęcie" HorizontalAlignment="Left" Margin="617,177,0,0" VerticalAlignment="Top" Width="117" Height="32" Background="Gray"
+            FontSize="18" Click="Button_Click_AddImage">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
     </Grid>

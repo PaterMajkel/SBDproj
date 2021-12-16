@@ -119,6 +119,7 @@ namespace PoliceApp
                 }
                 for (int i = 0; i < ilosc; i++)
                     databaseService.AddRadiowozos(new Radiowoz { Model = model, Marka = marka, Rok_produkcji = (int)rocznik });
+                RefreshData();
                 return;
             }
             selectedToEdit.Model = Model.Text;

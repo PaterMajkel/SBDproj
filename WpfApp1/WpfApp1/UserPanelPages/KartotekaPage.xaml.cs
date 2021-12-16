@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
 
 namespace PoliceApp
 {
@@ -30,6 +32,7 @@ namespace PoliceApp
         public string nazwisko;
         public int wiek;
         public List<Kartoteka_Przestepstwo> selectedToEdit;
+        private byte[] pickedImage;
 
 
         public KartotekaPage()
@@ -105,7 +108,7 @@ namespace PoliceApp
         }
         private void Button_Click_Dodaj(object sender, RoutedEventArgs e)
         {
-            if(imie==null || nazwisko==null || wiek==0)
+            if (imie == null || nazwisko == null || wiek == 0 || pickedImage == null)
             {
                 MessageBox.Show("Wprowadzono złe dane", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -116,10 +119,13 @@ namespace PoliceApp
                 return;
             }
 
-            databaseService.AddKartotekas(new Kartoteka {Imie=imie,Nazwisko=nazwisko,Wiek=wiek,Zdjecie=null,});
+            databaseService.AddKartotekas(new Kartoteka {Imie=imie,Nazwisko=nazwisko,Wiek=wiek,Zdjecie=pickedImage});
+            RefreshData();
+            pickedImage = null;
         }
         private void RefreshData()
         {
+            data = databaseService.GetKartotekas();
             ListViewColumns.ItemsSource = data;
         }
         private void Imie_TextChanged(object sender, TextChangedEventArgs e)
@@ -157,6 +163,22 @@ namespace PoliceApp
                 Window kartotekaOsoba = new KartotekaOsoba(item);
                 kartotekaOsoba.Show();
             }
+        }
+
+        private void Button_Click_AddImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog  = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.Filter = "PNG Image|*.png | JPG Image | *.jpg";
+            fileDialog.DefaultExt = ".png | *.jpg";
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                pickedImage = File.ReadAllBytes(fileDialog.FileName);
+                    return;
+            }
+            MessageBox.Show("Nie udało się pobrać pliku", "bruh", MessageBoxButton.OK,MessageBoxImage.Error);
+
         }
     }
 }
