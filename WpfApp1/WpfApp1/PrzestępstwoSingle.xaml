@@ -48,7 +48,7 @@
                         <GridViewColumn x:Name="ImieHeader1" Header="Imie" Width="100" DisplayMemberBinding="{Binding Imie}"/>
                         <GridViewColumn x:Name="NazwiskoHeader1" Header="Nazwisko"  Width="120" DisplayMemberBinding="{Binding Nazwisko}"/>
                         <GridViewColumn x:Name="RangaHeader1" Header="Ranga"  Width="100" DisplayMemberBinding="{Binding Ranga.Nazwa}"/>
-                        <GridViewColumn x:Name="KomendaHeader1" Header="Komenda ID"  Width="100" DisplayMemberBinding="{Binding KomendaID}"/>
+                        <GridViewColumn x:Name="KomendaHeader1" Header="Komenda ID"  Width="100" DisplayMemberBinding="{Binding KomendaId}"/>
 
                     </GridView>
                 </ListView.View>

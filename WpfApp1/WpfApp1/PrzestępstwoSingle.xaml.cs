@@ -35,7 +35,7 @@ namespace PoliceApp
             przestepstwo = databaseService.getPrzestepstwoByObj(przes);
             InitializeComponent();
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
             Nazwa.Content = przestepstwo.Nazwa;
             Data.Content = przestepstwo.Data;
             Godzina.Content = przestepstwo.Godzina;
@@ -184,7 +184,7 @@ namespace PoliceApp
         {
             przestepstwo = databaseService.getPrzestepstwoByObj(przestepstwo);
             kartoteka = databaseService.GetKartotekas();
-            policjant = databaseService.GetPolicjants();
+            policjant = databaseService.GetPolicjantsAndRank();
 
             ListViewColumnsPolicjanci.ItemsSource = null;
             ListViewColumnsSprawcy.ItemsSource = null;
