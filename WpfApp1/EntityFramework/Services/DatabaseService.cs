@@ -308,5 +308,9 @@ namespace EntityFramework.Services
             }
 
         }
+        public ICollection<Policjant> GetPodwladni(Policjant policjant)
+        {
+            return _context.Policjants.Where(p=>p.IsActive).Where(p=>p.KomendaId==policjant.KomendaId && p.RangaId< policjant.RangaId).Include(p=>p.Ranga).Include(p => p.Komenda).ToList();
+        }
     }
 }
