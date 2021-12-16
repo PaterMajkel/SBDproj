@@ -119,7 +119,7 @@ namespace PoliceApp
             var item = ((FrameworkElement)e.OriginalSource).DataContext as Wykroczenia;
             if (item != null)
             {
-                Window wykroczeniesingle = new WykroczenieSingle();
+                Window wykroczeniesingle = new WykroczenieSingle(item);
                 wykroczeniesingle.Show();
             }
         }

@@ -28,12 +28,8 @@
             FontStyle="Oblique" FontSize="28" Width="86"><Run Language="pl-pl" Text="Data:"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="38,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="121"><Run Text="Godzina"/><Run Language="pl-pl" Text=":"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="136,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="132"><Run Language="pl-pl" Text="To do"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="110,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="184"><Run Language="pl-pl" Text="to do"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="164,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Language="pl-pl" Text="to do"/></TextBlock>
+            <Label x:Name="Nazwa" HorizontalAlignment="Left" Margin="143,25,0,0" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="534" Height="42" ></Label>
             <TextBlock HorizontalAlignment="Left" Margin="43,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="20" Width="81" Height="27"><Run Text="Sprawcy"/><Run Language="pl-pl" Text=":"/></TextBlock>
             <ListView Name="ListViewColumnsSprawcy" Margin="38,242,526,14">
@@ -61,9 +57,9 @@
             </ListView>
             <TextBlock HorizontalAlignment="Left" Margin="408,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                 FontStyle="Oblique" FontSize="20" Width="192" Height="27"><Run Language="pl-pl" Text="Policjanci na miejscu"/><Run Text=":"/></TextBlock>
-            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="44,181,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaKartoteka"/>
+            <ComboBox Name="KartotekaBox" HorizontalAlignment="Left" Margin="44,181,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaKartoteka" SelectionChanged="ComboBoxKartoteka_SelectionChanged"/>
             <Label Content="Wybierz osobę z kartoteki:" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top" Width="159"/>
-            <ComboBox x:Name="PolicjantBox" HorizontalAlignment="Left" Margin="408,176,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaPolicjant"/>
+            <ComboBox Name="PolicjantBox" HorizontalAlignment="Left" Margin="408,176,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazwaPolicjant" SelectionChanged="ComboBoxPolicjant_SelectionChanged"/>
             <Label Content="Wybierz policjanta:" HorizontalAlignment="Left" Margin="408,148,0,0" VerticalAlignment="Top" Width="159"/>
             <Button Name="AddSprawca" Content="Dodaj" HorizontalAlignment="Left" Margin="283,179,0,0" VerticalAlignment="Top" Width="107" Height="25" Background="Gray"
             FontSize="17">
@@ -99,6 +95,10 @@
             </Button>
             <TextBlock HorizontalAlignment="Left" Margin="695,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                 FontStyle="Oblique" FontSize="28" Width="387"><Run Language="pl-pl" Text="Wykroczenie" FontFamily="Cooper Black"/></TextBlock>
+            <Label x:Name="Data" HorizontalAlignment="Left" Margin="122,67,0,0" VerticalAlignment="Top"
+                FontStyle="Oblique" FontSize="28" Width="534" Height="42" />
+            <Label x:Name="Godzina" HorizontalAlignment="Left" Margin="159,106,0,0" VerticalAlignment="Top"
+                FontStyle="Oblique" FontSize="28" Width="534" Height="42" />
         </Grid>
     </Grid>
 </Window>

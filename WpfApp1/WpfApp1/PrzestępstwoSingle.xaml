@@ -28,12 +28,6 @@
             FontStyle="Oblique" FontSize="28" Width="86"><Run Language="pl-pl" Text="Data:"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="38,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="121"><Run Text="Godzina"/><Run Language="pl-pl" Text=":"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="136,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="132"><Run Language="pl-pl" Text="To do"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="110,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="184"><Run Language="pl-pl" Text="to do"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="164,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="86"><Run Language="pl-pl" Text="to do"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="43,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="20" Width="81" Height="27"><Run Text="Sprawcy"/><Run Language="pl-pl" Text=":"/></TextBlock>
             <ListView Name="ListViewColumnsSprawcy" Margin="38,242,526,14">
@@ -100,5 +94,11 @@
             <TextBlock HorizontalAlignment="Left" Margin="668,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                 FontStyle="Oblique" FontSize="28" Width="212"><Run Language="pl-pl" Text="Przestępstwo" FontFamily="Cooper Black"/></TextBlock>
         </Grid>
+        <Label x:Name="Data" HorizontalAlignment="Left" Margin="122,67,0,0" VerticalAlignment="Top"
+                FontStyle="Oblique" FontSize="28" Width="534" Height="42" />
+        <Label x:Name="Godzina" HorizontalAlignment="Left" Margin="159,106,0,0" VerticalAlignment="Top"
+                FontStyle="Oblique" FontSize="28" Width="534" Height="42" />
+        <Label x:Name="Nazwa" HorizontalAlignment="Left" Margin="143,25,0,0" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="534" Height="42" ></Label>
     </Grid>
 </Window>

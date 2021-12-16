@@ -28,11 +28,11 @@
             FontSize="28" Width="86"><Run Text="Imię"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="276,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
            FontSize="28" Width="86"><Run Text="Wiek"/><Run Text=":"/></TextBlock>
-        <Label x:Name="Nazwisko" HorizontalAlignment="Left" Margin="413,25,0,0" VerticalAlignment="Top"
-            FontStyle="Oblique" FontSize="28" Width="142" Height="61" ></Label>
-        <Label Name="Imie" HorizontalAlignment="Left" Margin="362,65,0,0"  VerticalAlignment="Top"
+        <Label x:Name="Nazwisko" HorizontalAlignment="Left" Margin="413,32,0,0" VerticalAlignment="Top"
+            FontStyle="Oblique" FontSize="28" Width="287" Height="60" ></Label>
+        <Label Name="Imie" HorizontalAlignment="Left" Margin="362,72,0,0"  VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="183" Height="55"></Label>
-        <Label Name="Wiek" HorizontalAlignment="Left" Margin="367,108,0,0"  VerticalAlignment="Top"
+        <Label Name="Wiek" HorizontalAlignment="Left" Margin="367,114,0,0"  VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="28" Width="110" Height="61"/>
         <TextBlock HorizontalAlignment="Left" Margin="57,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontStyle="Oblique" FontSize="20" Width="319" Height="27"><Run Text="Przestępstwa"/><Run Language="pl-pl" Text=":"/></TextBlock>

@@ -52,6 +52,10 @@ namespace EntityFramework.Services
         {
             return _context.Wykroczenias.Where(p=>p.IsActive).ToList();
         }
+        public ICollection<Policjant> GetPolicjants()
+        {
+            return _context.Policjants.Where(p=>p.IsActive).ToList();
+        }
         public ICollection<Kartoteka> GetKartotekasCoughtByPolicjantId(int id)
         {
             //do zrobienia wciaz -> przykladowe zapytanie do podpatrzenia sb
@@ -237,6 +241,14 @@ namespace EntityFramework.Services
             ////var y = Path.Combine(Directory.GetCurrentDirectory(), "Police.png");
              ;
             return _context.Kartotekas.Where(p => p == kartoteka).Include(p => p.Wykroczenias).Include(p => p.Przestepstwos).First();
+        }
+        public Wykroczenia getWykroczenieByObj(Wykroczenia wykroczenia)
+        {
+            return _context.Wykroczenias.Where(p=>p==wykroczenia).Include(p=>p.Kartotekas).Include(p=>p.Policjants).First();
+        }
+        public Przestepstwo getPrzestepstwoByObj(Przestepstwo przestepstwo)
+        {
+            return _context.Przestepstwos.Where(p => p == przestepstwo).Include(p => p.Kartotekas).Include(p => p.Policjants).First();
         }
     }
 }

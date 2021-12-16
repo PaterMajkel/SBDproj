@@ -136,7 +136,7 @@ namespace PoliceApp
            var item = ((FrameworkElement)e.OriginalSource).DataContext as Przestepstwo;
            if (item != null)
            {
-               Window  przestepstwo= new PrzestępstwoSingle();
+               Window  przestepstwo= new PrzestępstwoSingle(item);
                 przestepstwo.Show();
            }
         }

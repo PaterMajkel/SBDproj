@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EntityFramework.DTO;
+using EntityFramework.Models;
+using EntityFramework.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +13,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PoliceApp
@@ -19,9 +23,36 @@ namespace PoliceApp
     /// </summary>
     public partial class WykroczenieSingle : Window
     {
-        public WykroczenieSingle()
+        public Wykroczenia wykroczenia;
+        private DatabaseService databaseService = new();
+        public Kartoteka pickedKartoteka;
+        public Policjant pickedPolicjant;
+        public ICollection<Kartoteka> kartoteka;
+        public ICollection<Policjant> policjant;
+        public WykroczenieSingle(Wykroczenia wykro)
         {
+            wykroczenia = databaseService.getWykroczenieByObj(wykro);
+            kartoteka = databaseService.GetKartotekas();
+            policjant = databaseService.GetPolicjants();
             InitializeComponent();
+            Nazwa.Content = wykroczenia.Nazwa;
+            Data.Content = wykroczenia.Data;
+            Godzina.Content = wykroczenia.Godzina;
+
+
+            ListViewColumnsPolicjanci.ItemsSource = wykroczenia.Policjants;
+            ListViewColumnsSprawcy.ItemsSource = wykroczenia.Kartotekas;
+
+            KartotekaBox.ItemsSource = kartoteka;
+            PolicjantBox.ItemsSource= policjant;
+        }
+        private void ComboBoxPolicjant_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pickedPolicjant = (Policjant)PolicjantBox.SelectedItem;
+        }
+        private void ComboBoxKartoteka_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pickedKartoteka = (Kartoteka)KartotekaBox.SelectedItem;
         }
 
     }
