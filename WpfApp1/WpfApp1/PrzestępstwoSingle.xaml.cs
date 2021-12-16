@@ -49,9 +49,9 @@ namespace PoliceApp
         private void AddSprawca_Click(object sender, RoutedEventArgs e)
         {
             pickedKartoteka = (Kartoteka)KartotekaBox.SelectedItem;
-            if(pickedKartoteka != null)
+            if (pickedKartoteka != null)
             {
-                if(przestepstwo.Kartotekas.Contains(pickedKartoteka))
+                if (przestepstwo.Kartotekas.Contains(pickedKartoteka))
                 {
                     MessageBox.Show("Dana osoba nie może uczystniczyć w jednym wydarzeniu kilkukrotnie", "Co Ty wyprawiasz?", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -78,9 +78,9 @@ namespace PoliceApp
         private void Add_Policjant_Click(object sender, RoutedEventArgs e)
         {
             pickedPolicjant = (Policjant)PolicjantBox.SelectedItem;
-            if(pickedPolicjant!=null)
+            if (pickedPolicjant != null)
             {
-                if(przestepstwo.Policjants.Contains(pickedPolicjant))
+                if (przestepstwo.Policjants.Contains(pickedPolicjant))
                 {
                     MessageBox.Show("Dana osoba nie może uczystniczyć w jednym wydarzeniu kilkukrotnie", "Co Ty wyprawiasz?", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -88,5 +88,31 @@ namespace PoliceApp
             }
             Refresh();
         }
+        private void Delete_Policjant_Click(object sender, RoutedEventArgs e)
+        {
+            var pickedPolicjants = ListViewColumnsPolicjanci.SelectedItems.Cast<Policjant>().ToList();
+            if (pickedPolicjants == null)
+            {
+                MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            databaseService.DeletePolicjantsFromPrzestepstwo(przestepstwo, pickedPolicjants);
+            //usuwanie lokalne, aby nie pobierać od nowa informacji
+
+        }
+        private void Delete_Sprawca_Click(object sender, RoutedEventArgs e)
+        {
+            var pickedSprawcy = ListViewColumnsSprawcy.SelectedItems.Cast<Kartoteka>().ToList();
+            if (pickedSprawcy == null)
+            {
+                MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            databaseService.DeleteSprawcaFromPrzestepstwo(przestepstwo, pickedSprawcy);
+            //usuwanie lokalne, aby nie pobierać od nowa informacji
+
+        }
     }
+
 }
+

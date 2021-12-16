@@ -211,5 +211,30 @@ namespace PoliceApp
             }
             Refresh();
         }
+        private void Delete_Policjant_Click(object sender, RoutedEventArgs e)
+        {
+            var pickedPolicjants = ListViewColumnsPolicjanci.SelectedItems.Cast<Policjant>().ToList();
+            if (pickedPolicjants == null)
+            {
+                MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            databaseService.DeletePolicjantsFromWykroczenie(wykroczenia, pickedPolicjants);
+            //usuwanie lokalne, aby nie pobierać od nowa informacji
+
+        }
+        private void Delete_Sprawca_Click(object sender, RoutedEventArgs e)
+        {
+            var pickedSprawcy = ListViewColumnsSprawcy.SelectedItems.Cast<Kartoteka>().ToList();
+            if (pickedSprawcy == null)
+            {
+                MessageBox.Show("Błąd przy usuwaniu!", "Usuń", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            databaseService.DeleteSprawcaFromWykroczenia(wykroczenia, pickedSprawcy);
+            //usuwanie lokalne, aby nie pobierać od nowa informacji
+
+        }
     }
 }
+
