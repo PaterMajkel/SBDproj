@@ -363,5 +363,13 @@ namespace EntityFramework.Services
             _context.SaveChanges();
 
         }
+        public Policjant GetPolicjantByObj(Policjant data)
+        {
+            if (data != null)
+            {
+                return _context.Policjants.Where(p => p.IsActive && p.PolicjantId == data.PolicjantId).Include(p => p.Patrols).ThenInclude(p => p.Radiowoz).First();
+            }
+            return null;
+        }
     }
 }
