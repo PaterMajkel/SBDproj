@@ -169,8 +169,8 @@ namespace PoliceApp
         {
             OpenFileDialog fileDialog  = new OpenFileDialog();
             fileDialog.Multiselect = false;
-            fileDialog.Filter = "PNG Image|*.png | JPG Image | *.jpg";
-            fileDialog.DefaultExt = ".png | *.jpg";
+            fileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) |*.jpg; *.jpeg; *.png";
+            //fileDialog.DefaultExt = ".png | *.jpg";
             bool? result = fileDialog.ShowDialog();
             if (result == true)
             {
